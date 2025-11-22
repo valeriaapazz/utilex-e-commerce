@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilex - E‑Commerce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e4f4cc;
+    }
+
+    header {
+      background: #0b63ce;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    h2 {
+      margin-left: 20px;
+      color: #0a4ea1;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .producto {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    button {
+      background: #0b63ce;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #094a99;
+    }
+
+    #carrito {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    }
+
+    #vaciar {
+      background: #2fa52f;
+    }
+
+    #vaciar:hover {
+      background: #1f7c1f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/mnt/data/c667e4dd-b6d0-42f9-9045-5f48c415d7c0.png" alt="Logo Utilex" />
+    <h1>Utilex - Tienda Escolar</h1>
+    <p>Simulador de compra interactivo</p>
+  </header>
+
+  <h2>Productos</h2>
+  <div class="container">
+    <div class="producto">
+      <img src="https://via.placeholder.com/250x180?text=Cuaderno+A4" />
+      <h3>Cuaderno A4</h3>
+      <p>Precio: S/ 12.50</p>
+      <button onclick="agregar('Cuaderno A4', 12.50)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://via.placeholder.com/250x180?text=Lapicero+Azul" />
+      <h3>Lapicero Azul</h3>
+      <p>Precio: S/ 2.00</p>
+      <button onclick="agregar('Lapicero Azul', 2.00)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://via.placeholder.com/250x180?text=Mochila+Escolar" />
+      <h3>Mochila Escolar</h3>
+      <p>Precio: S/ 75.00</p>
+      <button onclick="agregar('Mochila Escolar', 75.00)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://via.placeholder.com/250x180?text=Caja+de+Colores" />
+      <h3>Caja de Colores</h3>
+      <p>Precio: S/ 18.90</p>
+      <button onclick="agregar('Caja de Colores', 18.90)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="carrito">
+    <h2>🛍 Carrito de Compras</h2>
+    <ul id="lista"></ul>
+    <h3 id="total">Total: S/ 0.00</h3>
+    <button id="vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+  </div>
+
+  <script>
+    let carrito = [];
+
+    function agregar(nombre, precio) {
+      carrito.push({ nombre, precio });
+      renderCarrito();
+    }
+
+    function renderCarrito() {
+      const lista = document.getElementById('lista');
+      lista.innerHTML = '';
+
+      let suma = 0;
+      carrito.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nombre} - S/ ${item.precio.toFixed(2)}`;
+        lista.appendChild(li);
+        suma += item.precio;
+      });
+
+      document.getElementById('total').textContent = `Total: S/ ${suma.toFixed(2)}`;
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      renderCarrito();
+    }
+  </script>
+</body>
+</html>
