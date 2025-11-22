@@ -1,196 +1,435 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Utilex - Todo para la lista escolar</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #e4f4cc;
+    :root{
+      --blue:#0b63ce;
+      --blue-dark:#094a99;
+      --green:#2fa52f;
+      --bg:#eaf8e8;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:12px;
+      --shadow: 0 8px 20px rgba(12,38,84,0.08);
     }
 
-    header {
-      background: #0b63ce;
-      padding: 20px;
-      text-align: center;
-      color: white;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg,#e4f4cc 0%, #eaf8e8 100%);
+      color:#0b1b2b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:40px;
     }
 
-    header img {
-      max-width: 200px;
-      display: block;
-      margin: 0 auto 10px auto;
+    /* Header */
+    header{
+      background:var(--blue);
+      color:white;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      box-shadow: 0 6px 18px rgba(11,99,206,0.14);
+    }
+    header img.logo{
+      height:56px;
+      width:auto;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--green) 0%, var(--blue) 100%);
+      padding:6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    header .brand{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    header h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.2px;
+    }
+    header p{
+      margin:2px 0 0 0;
+      font-size:13px;
+      opacity:0.95;
     }
 
-    h2 {
-      margin-left: 20px;
-      color: #0a4ea1;
+    /* Layout */
+    .wrap{
+      max-width:1100px;
+      margin:22px auto;
+      padding:0 18px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      align-items:start;
     }
 
-    .container {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    /* Products */
+    .catalogue{
+      background:transparent;
+    }
+    .catalogue h2{
+      color:var(--blue-dark);
+      margin:0 0 12px 4px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+      gap:16px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:12px;
+      box-shadow:var(--shadow);
+      transition:transform .18s ease, box-shadow .18s ease;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      overflow:hidden;
+    }
+    .card:hover{ transform:translateY(-6px); box-shadow: 0 14px 30px rgba(12,38,84,0.12); }
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:8px;
+      background:#f0f0f0;
+    }
+    .card h3{ margin:0; font-size:16px; }
+    .price-row{ display:flex; justify-content:space-between; align-items:center; gap:8px; }
+    .price{ font-weight:700; color:var(--blue-dark); }
+    .controls{ display:flex; gap:8px; align-items:center; margin-top:6px; }
+    .controls input[type="number"]{
+      width:68px;
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px solid #e6e7eb;
+      font-size:14px;
+    }
+    .btn{
+      background:var(--blue);
+      color:white;
+      border:none;
+      padding:9px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn:hover{ background:var(--blue-dark); }
+
+    /* Carrito */
+    .sidebar{
+      position:relative;
+    }
+    #carrito{
+      position:sticky;
+      top:18px;
+      background:var(--card);
+      padding:16px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    #carrito h2{ margin:0 0 10px 0; font-size:18px; }
+    #lista{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; max-height:420px; overflow:auto; }
+    .item{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:8px;
+      border-radius:8px;
+      transition:background .12s;
+    }
+    .item:hover{ background:#f7fafc; }
+    .item img{ width:56px; height:56px; object-fit:cover; border-radius:6px; }
+    .item .meta{ flex:1; }
+    .item .meta b{ display:block; font-size:14px; }
+    .item .meta small{ color:var(--muted); font-size:12px; }
+    .item .qty{ display:flex; gap:6px; align-items:center; }
+    .small-btn{
+      background:#eef2ff;
+      border:1px solid #e0e7ff;
+      padding:6px 8px;
+      border-radius:6px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .remove{
+      background:transparent;
+      color:#ff4d4f;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+      font-size:14px;
     }
 
-    .producto {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s ease;
+    .totals{
+      margin-top:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+      border-top:1px dashed #e6e7eb;
+      padding-top:10px;
+    }
+    .pay{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+    }
+    .pay .btn-pay{
+      background:var(--green);
+      border:none;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      color:white;
+      font-weight:700;
+    }
+    .pay .btn-empty{
+      background:transparent;
+      border:1px solid #e6e7eb;
+      padding:10px 12px;
+      border-radius:8px;
+      cursor:pointer;
     }
 
-    .producto:hover {
-      transform: scale(1.03);
+    /* empty state */
+    .empty{ color:var(--muted); padding:8px 0; }
+
+    /* responsive */
+    @media (max-width:980px){
+      .wrap{ grid-template-columns:1fr 320px; padding:0 14px; }
+    }
+    @media (max-width:780px){
+      .wrap{ grid-template-columns:1fr; }
+      header{ padding:14px; gap:10px; }
+      header img.logo{ height:48px; }
+      #carrito{ position:static; margin-top:18px; }
     }
 
-    .producto img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
+    /* subtle animation for add */
+    @keyframes pop {
+      0%{ transform:scale(.96); opacity:.6 }
+      60%{ transform:scale(1.03) }
+      100%{ transform:scale(1) }
     }
-
-    button {
-      background: #0b63ce;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-      width: 100%;
-      font-size: 14px;
-    }
-
-    button:hover {
-      background: #094a99;
-    }
-
-    #carrito {
-      background: white;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    }
-
-    #vaciar {
-      background: #2fa52f;
-    }
-
-    #vaciar:hover {
-      background: #1f7c1f;
-    }
-
-    /* optimización móviles */
-    @media (max-width: 600px) {
-      .container {
-        padding: 10px;
-        grid-template-columns: 1fr;
-      }
-
-      button {
-        font-size: 16px;
-      }
-    }
+    .flash{ animation: pop .28s ease; }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="img/logo-utilex.png" alt="Utilex">
-    <h1>Utilex - Todo para la lista escolar</h1>
-    <p>Simulador de compra interactivo</p>
+    <!-- logo from /img/logo.png (use exactly that filename on GitHub) -->
+    <img class="logo" src="img/logo.png" alt="Utilex logo">
+    <div class="brand">
+      <h1>Utilex</h1>
+      <p>Todo para la lista escolar</p>
+    </div>
   </header>
 
-  <h2>Todo para la lista escolar</h2>
+  <div class="wrap">
+    <!-- left: products -->
+    <section class="catalogue">
+      <h2>Todo para la lista escolar</h2>
+      <div class="grid" id="productsGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
 
-  <div class="container">
-    <div class="producto">
-      <img src="https://c.pxhere.com/images/d4/f1/ec095e1a06a4bcdf525c52b86f48-1445885.jpg!d" alt="Cuaderno A4">
-      <h3>Cuaderno A4</h3>
-      <p>Precio: S/ 12.50</p>
-      <label>Cantidad: <input type="number" id="cant-cuaderno" value="1" min="1"></label>
-      <button onclick="agregar('Cuaderno A4', 12.50, 'cant-cuaderno')">Agregar al carrito</button>
-    </div>
+    <!-- right: carrito -->
+    <aside class="sidebar">
+      <div id="carrito">
+        <h2>🛍 Carrito</h2>
+        <ul id="lista"></ul>
+        <div class="totals">
+          <div>
+            <small class="empty" id="emptyText">Tu carrito está vacío.</small>
+          </div>
+          <div><strong id="totalText">S/ 0.00</strong></div>
+        </div>
 
-    <div class="producto">
-      <img src="https://pixabay.com/get/gb7206f27d1e4b7e79217558e877928e646353d174eb204764cedee670d09fd6459e3ff8fe8039ab3b33eae5eb4d8530f0b244b714c847e7a8e2de2d3bd2c8ca7_640.jpg" alt="Lapicero Azul">
-      <h3>Lapicero Azul</h3>
-      <p>Precio: S/ 2.00</p>
-      <label>Cantidad: <input type="number" id="cant-lapicero" value="1" min="1"></label>
-      <button onclick="agregar('Lapicero Azul', 2.00, 'cant-lapicero')">Agregar al carrito</button>
-    </div>
-
-    <div class="producto">
-      <img src="https://pixabay.com/get/g912bc2761e7d4529693717b2e2d65629c22df8fbd3f1671bfdc0d22423d83adba600b79f2876aa4879a0efa9c5b2a1ed_640.jpg" alt="Mochila Escolar">
-      <h3>Mochila Escolar</h3>
-      <p>Precio: S/ 75.00</p>
-      <label>Cantidad: <input type="number" id="cant-mochila" value="1" min="1"></label>
-      <button onclick="agregar('Mochila Escolar', 75.00, 'cant-mochila')">Agregar al carrito</button>
-    </div>
-
-    <div class="producto">
-      <img src="https://pixabay.com/get/g5dfaadb5e3b4afab8f93b20c3578b6c712fa5e816b2dc9622d6b7d88b8a1bca7d5c466ca58838d89bb6b8f4abb335cc4_640.jpg" alt="Caja de Colores">
-      <h3>Caja de Colores</h3>
-      <p>Precio: S/ 18.90</p>
-      <label>Cantidad: <input type="number" id="cant-colores" value="1" min="1"></label>
-      <button onclick="agregar('Caja de Colores', 18.90, 'cant-colores')">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <div id="carrito">
-    <h2>🛍 Carrito de Compras</h2>
-    <ul id="lista"></ul>
-    <h3 id="total">Total: S/ 0.00</h3>
-    <button id="vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
-    <button onclick="simularPago()">💳 Pagar</button>
+        <div class="pay">
+          <button class="btn-pay" id="payBtn">💳 Pagar</button>
+          <button class="btn-empty" id="emptyBtn">Vaciar carrito</button>
+        </div>
+      </div>
+    </aside>
   </div>
 
   <script>
+    // PRODUCTOS: usa los nombres que subiste (si GitHub guarda espacios, se usan %20)
+    const productos = [
+      {
+        id: 'cuaderno',
+        nombre: 'Cuaderno cuadriculado anillado',
+        precio: 12.50,
+        img: 'img/Cuaderno%20cuadriculado%20anillado.png'
+      },
+      {
+        id: 'lapicero',
+        nombre: 'Lapicero Azul',
+        precio: 2.00,
+        img: 'img/lapicero%20azul.png'
+      },
+      {
+        id: 'mochila',
+        nombre: 'Mochila Dragon',
+        precio: 75.00,
+        img: 'img/Mochila%20Dragon.png'
+      },
+      {
+        id: 'colores',
+        nombre: 'Caja de Colores',
+        precio: 18.90,
+        img: 'img/caja%20de%20colores.png'
+      }
+    ];
+
+    // carrito: array de {id, nombre, precio, cantidad, img}
     let carrito = [];
 
-    function agregar(nombre, precio, cantidadId) {
-      const cantidad = parseInt(document.getElementById(cantidadId).value);
-      carrito.push({ nombre, precio, cantidad });
+    // render productos
+    const grid = document.getElementById('productsGrid');
+
+    function createCard(p){
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.nombre}" onerror="this.style.opacity=.25">
+        <h3>${p.nombre}</h3>
+        <div class="price-row">
+          <div class="price">S/ ${p.precio.toFixed(2)}</div>
+        </div>
+        <div class="controls">
+          <input type="number" min="1" value="1" id="qty-${p.id}">
+          <button class="btn" data-id="${p.id}">Agregar</button>
+        </div>
+      `;
+      // add listener
+      card.querySelector('.btn').addEventListener('click', () => {
+        const q = parseInt(card.querySelector('input').value) || 1;
+        agregarCarrito(p.id, q);
+        // little flash
+        card.classList.add('flash');
+        setTimeout(()=>card.classList.remove('flash'),300);
+      });
+      return card;
+    }
+
+    productos.forEach(p => grid.appendChild(createCard(p)));
+
+    // DOM carrito
+    const lista = document.getElementById('lista');
+    const totalText = document.getElementById('totalText');
+    const emptyText = document.getElementById('emptyText');
+    const payBtn = document.getElementById('payBtn');
+    const emptyBtn = document.getElementById('emptyBtn');
+
+    function agregarCarrito(id, cantidad){
+      const prod = productos.find(x => x.id === id);
+      if(!prod) return;
+      const existente = carrito.find(i => i.id === id);
+      if(existente){
+        existente.cantidad += cantidad;
+      } else {
+        carrito.push({
+          id: prod.id,
+          nombre: prod.nombre,
+          precio: prod.precio,
+          cantidad: cantidad,
+          img: prod.img
+        });
+      }
       renderCarrito();
     }
 
-    function renderCarrito() {
-      const lista = document.getElementById('lista');
+    function renderCarrito(){
       lista.innerHTML = '';
-
-      let suma = 0;
-      carrito.forEach((item, i) => {
+      if(carrito.length === 0){
+        emptyText.style.display = 'block';
+      } else {
+        emptyText.style.display = 'none';
+      }
+      let total = 0;
+      carrito.forEach((item, idx) => {
+        total += item.precio * item.cantidad;
         const li = document.createElement('li');
-        li.textContent = `${item.nombre} — ${item.cantidad} × S/ ${item.precio.toFixed(2)} = S/ ${(item.precio * item.cantidad).toFixed(2)}`;
+        li.className = 'item';
+        li.innerHTML = `
+          <img src="${item.img}" alt="${item.nombre}" onerror="this.style.opacity=.35">
+          <div class="meta">
+            <b>${item.nombre}</b>
+            <small>S/ ${item.precio.toFixed(2)} c/u</small>
+          </div>
+          <div class="qty">
+            <button class="small-btn" data-action="decrease" data-idx="${idx}">−</button>
+            <div style="min-width:36px;text-align:center">${item.cantidad}</div>
+            <button class="small-btn" data-action="increase" data-idx="${idx}">+</button>
+            <button class="remove" data-action="remove" data-idx="${idx}" title="Eliminar">×</button>
+          </div>
+        `;
         lista.appendChild(li);
-        suma += item.precio * item.cantidad;
       });
 
-      document.getElementById('total').textContent = `Total: S/ ${suma.toFixed(2)}`;
+      totalText.textContent = `S/ ${total.toFixed(2)}`;
+
+      // attach handlers
+      lista.querySelectorAll('[data-action]').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          const act = btn.getAttribute('data-action');
+          const idx = parseInt(btn.getAttribute('data-idx'));
+          if(act === 'increase') carrito[idx].cantidad++;
+          if(act === 'decrease') {
+            carrito[idx].cantidad = Math.max(1, carrito[idx].cantidad - 1);
+          }
+          if(act === 'remove') carrito.splice(idx,1);
+          renderCarrito();
+        });
+      });
     }
 
-    function vaciarCarrito() {
+    emptyBtn.addEventListener('click', ()=>{
+      if(carrito.length === 0) return;
+      if(confirm('¿Vaciar todo el carrito?')) {
+        carrito = [];
+        renderCarrito();
+      }
+    });
+
+    payBtn.addEventListener('click', ()=>{
+      const total = carrito.reduce((s,it)=> s + it.precio * it.cantidad, 0);
+      if(total === 0){
+        alert('Tu carrito está vacío. Añade productos antes de pagar.');
+        return;
+      }
+      // Simulación de pago: pedir nombre y dni (ejemplo)
+      const nombre = prompt('Nombre del cliente para la simulación de pago:');
+      if(!nombre) { alert('Pago cancelado.'); return; }
+      const metodo = prompt('Ingrese medio de pago simulado (ej: tarjeta, YAPE, efectivo):', 'tarjeta');
+      alert(`Pago simulado realizado ✅\nCliente: ${nombre}\nMétodo: ${metodo}\nTotal: S/ ${total.toFixed(2)}\n\nGracias por comprar en Utilex.`);
       carrito = [];
       renderCarrito();
-    }
+    });
 
-    function simularPago() {
-      const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
-      if (total === 0) {
-        alert('Tu carrito está vacío.');
-      } else {
-        alert(`Pago simulado realizado con éxito. Total pagado: S/ ${total.toFixed(2)}`);
-        vaciarCarrito();
-      }
-    }
+    // initial render
+    renderCarrito();
+
+    // helper: try to preload images (silent)
+    productos.forEach(p=>{
+      const img = new Image();
+      img.src = p.img;
+    });
+
   </script>
 </body>
 </html>
