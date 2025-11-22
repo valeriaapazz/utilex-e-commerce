@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utilex - E‑Commerce</title>
+  <title>Utilex - Todo para la lista escolar</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -51,6 +52,8 @@
 
     .producto img {
       width: 100%;
+      height: 180px;
+      object-fit: cover;
       border-radius: 8px;
     }
 
@@ -85,43 +88,60 @@
     #vaciar:hover {
       background: #1f7c1f;
     }
+
+    /* optimización móviles */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+        grid-template-columns: 1fr;
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="/mnt/data/c667e4dd-b6d0-42f9-9045-5f48c415d7c0.png" alt="Logo Utilex" />
-    <h1>Utilex - Tienda Escolar</h1>
+    <img src="img/logo-utilex.png" alt="Utilex">
+    <h1>Utilex - Todo para la lista escolar</h1>
     <p>Simulador de compra interactivo</p>
   </header>
 
-  <h2>Productos</h2>
+  <h2>Todo para la lista escolar</h2>
+
   <div class="container">
     <div class="producto">
-      <img src="https://via.placeholder.com/250x180?text=Cuaderno+A4" />
+      <img src="https://c.pxhere.com/images/d4/f1/ec095e1a06a4bcdf525c52b86f48-1445885.jpg!d" alt="Cuaderno A4">
       <h3>Cuaderno A4</h3>
       <p>Precio: S/ 12.50</p>
-      <button onclick="agregar('Cuaderno A4', 12.50)">Agregar al carrito</button>
+      <label>Cantidad: <input type="number" id="cant-cuaderno" value="1" min="1"></label>
+      <button onclick="agregar('Cuaderno A4', 12.50, 'cant-cuaderno')">Agregar al carrito</button>
     </div>
 
     <div class="producto">
-      <img src="https://via.placeholder.com/250x180?text=Lapicero+Azul" />
+      <img src="https://pixabay.com/get/gb7206f27d1e4b7e79217558e877928e646353d174eb204764cedee670d09fd6459e3ff8fe8039ab3b33eae5eb4d8530f0b244b714c847e7a8e2de2d3bd2c8ca7_640.jpg" alt="Lapicero Azul">
       <h3>Lapicero Azul</h3>
       <p>Precio: S/ 2.00</p>
-      <button onclick="agregar('Lapicero Azul', 2.00)">Agregar al carrito</button>
+      <label>Cantidad: <input type="number" id="cant-lapicero" value="1" min="1"></label>
+      <button onclick="agregar('Lapicero Azul', 2.00, 'cant-lapicero')">Agregar al carrito</button>
     </div>
 
     <div class="producto">
-      <img src="https://via.placeholder.com/250x180?text=Mochila+Escolar" />
+      <img src="https://pixabay.com/get/g912bc2761e7d4529693717b2e2d65629c22df8fbd3f1671bfdc0d22423d83adba600b79f2876aa4879a0efa9c5b2a1ed_640.jpg" alt="Mochila Escolar">
       <h3>Mochila Escolar</h3>
       <p>Precio: S/ 75.00</p>
-      <button onclick="agregar('Mochila Escolar', 75.00)">Agregar al carrito</button>
+      <label>Cantidad: <input type="number" id="cant-mochila" value="1" min="1"></label>
+      <button onclick="agregar('Mochila Escolar', 75.00, 'cant-mochila')">Agregar al carrito</button>
     </div>
 
     <div class="producto">
-      <img src="https://via.placeholder.com/250x180?text=Caja+de+Colores" />
+      <img src="https://pixabay.com/get/g5dfaadb5e3b4afab8f93b20c3578b6c712fa5e816b2dc9622d6b7d88b8a1bca7d5c466ca58838d89bb6b8f4abb335cc4_640.jpg" alt="Caja de Colores">
       <h3>Caja de Colores</h3>
       <p>Precio: S/ 18.90</p>
-      <button onclick="agregar('Caja de Colores', 18.90)">Agregar al carrito</button>
+      <label>Cantidad: <input type="number" id="cant-colores" value="1" min="1"></label>
+      <button onclick="agregar('Caja de Colores', 18.90, 'cant-colores')">Agregar al carrito</button>
     </div>
   </div>
 
@@ -130,13 +150,15 @@
     <ul id="lista"></ul>
     <h3 id="total">Total: S/ 0.00</h3>
     <button id="vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button onclick="simularPago()">💳 Pagar</button>
   </div>
 
   <script>
     let carrito = [];
 
-    function agregar(nombre, precio) {
-      carrito.push({ nombre, precio });
+    function agregar(nombre, precio, cantidadId) {
+      const cantidad = parseInt(document.getElementById(cantidadId).value);
+      carrito.push({ nombre, precio, cantidad });
       renderCarrito();
     }
 
@@ -145,11 +167,11 @@
       lista.innerHTML = '';
 
       let suma = 0;
-      carrito.forEach((item) => {
+      carrito.forEach((item, i) => {
         const li = document.createElement('li');
-        li.textContent = `${item.nombre} - S/ ${item.precio.toFixed(2)}`;
+        li.textContent = `${item.nombre} — ${item.cantidad} × S/ ${item.precio.toFixed(2)} = S/ ${(item.precio * item.cantidad).toFixed(2)}`;
         lista.appendChild(li);
-        suma += item.precio;
+        suma += item.precio * item.cantidad;
       });
 
       document.getElementById('total').textContent = `Total: S/ ${suma.toFixed(2)}`;
@@ -158,6 +180,16 @@
     function vaciarCarrito() {
       carrito = [];
       renderCarrito();
+    }
+
+    function simularPago() {
+      const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+      if (total === 0) {
+        alert('Tu carrito está vacío.');
+      } else {
+        alert(`Pago simulado realizado con éxito. Total pagado: S/ ${total.toFixed(2)}`);
+        vaciarCarrito();
+      }
     }
   </script>
 </body>
