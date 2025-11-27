@@ -29,6 +29,10 @@
     }
 
     /* Header */
+    <!-- BANNER PRINCIPAL -->
+<section class="main-banner">
+  <img src="img/banner%201.png" alt="Banner Utilex" onerror="this.style.opacity=0.3">
+</section>
     header{
       background:var(--blue);
       color:white;
@@ -226,6 +230,36 @@
     .flash{ animation: pop .28s ease; }
   </style>
 </head>
+  /* Banner principal estilo e-commerce */
+.main-banner {
+  width: 100%;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.main-banner img {
+  width: 100%;
+  max-width: 1080px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  height: 280px;
+  transition: transform 0.3s ease;
+}
+
+.main-banner img:hover {
+  transform: scale(1.02);
+}
+
+/* responsive para celulares */
+@media (max-width: 780px){
+  .main-banner img {
+    height: 180px;
+  }
+}
 <body>
 
   <header>
