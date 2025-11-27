@@ -212,4 +212,182 @@
       padding-top:10px;
     }
 
-    @keyframes pop
+    @keyframes pop {
+      0%{ transform:scale(.96); opacity:.6 }
+      60%{ transform:scale(1.03) }
+      100%{ transform:scale(1) }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img class="logo" src="img/logo.png" alt="Utilex logo">
+    <div class="brand">
+      <h1>Utilex</h1>
+      <p>Todo para la lista escolar</p>
+    </div>
+  </header>
+
+  <!-- ✅ BANNER DEBAJO DEL HEADER -->
+  <section class="main-banner">
+    <img src="img/banner%201.png" alt="Banner Utilex" onerror="this.style.opacity=.3">
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="wrap">
+
+    <!-- CATÁLOGO -->
+    <section class="catalogue">
+      <h2>Productos escolares</h2>
+      <div class="grid" id="productsGrid"></div>
+    </section>
+
+    <!-- CARRITO -->
+    <aside>
+      <div id="carrito">
+        <h2>🛍 Carrito</h2>
+        <ul id="lista"></ul>
+
+        <div class="totals">
+          <small id="emptyText">Tu carrito está vacío.</small>
+          <strong id="totalText">S/ 0.00</strong>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:12px;">
+          <button class="btn" id="payBtn">💳 Pagar</button>
+          <button class="btn" id="emptyBtn">Vaciar carrito</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const productos = [
+      {
+        id: 'logo',
+        nombre: 'Logo',
+        precio: 0,
+        img: 'img/logo.png'
+      },
+      {
+        id: 'lapicero',
+        nombre: 'Lapicero Azul',
+        precio: 2.00,
+        img: 'img/lapicero%20azul.png'
+      },
+      {
+        id: 'mochila',
+        nombre: 'Mochila Dragon',
+        precio: 75.00,
+        img: 'img/Mochila%20Dragon.png'
+      },
+      {
+        id: 'colores',
+        nombre: 'Caja de colores',
+        precio: 18.90,
+        img: 'img/caja%20de%20colores.png'
+      },
+      {
+        id: 'cuaderno',
+        nombre: 'Cuaderno cuadriculado anillado',
+        precio: 12.50,
+        img: 'img/Cuaderno%20cuadriculado%20anillado.png'
+      }
+    ];
+
+    const grid = document.getElementById('productsGrid');
+    function createCard(p){
+      const card = document.createElement('article');
+      card.className='card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.nombre}">
+        <h3>${p.nombre}</h3>
+        <div class="price">S/ ${p.precio.toFixed(2)}</div>
+        <div class="controls">
+          <input type="number" min="1" value="1" id="qty-${p.id}">
+          <button class="btn">Agregar</button>
+        </div>
+      `;
+      card.querySelector('.btn').addEventListener('click',()=>{
+        const qty = parseInt(document.getElementById('qty-'+p.id).value) || 1;
+        agregarCarrito(p.id, qty);
+      });
+      return card;
+    }
+
+    productos.forEach(p=> grid.appendChild(createCard(p)));
+
+    let carrito=[];
+    const lista=document.getElementById('lista');
+    const totalText=document.getElementById('totalText');
+    const emptyText=document.getElementById('emptyText');
+
+    function agregarCarrito(id,cantidad){
+      const prod = productos.find(x=>x.id===id);
+      if(!prod) return;
+      const ex = carrito.find(i=>i.id===id);
+      if(ex) ex.cantidad+=cantidad;
+      else carrito.push({...prod, cantidad});
+      renderCarrito();
+    }
+
+    function renderCarrito(){
+      lista.innerHTML='';
+      let total=0;
+      carrito.forEach((it,idx)=>{
+        total+=it.precio*it.cantidad;
+        const li=document.createElement('li');
+        li.className='item';
+        li.innerHTML=`
+          <img src="${it.img}" alt="${it.nombre}">
+          <div class="meta">
+            <b>${it.nombre}</b>
+            <small>S/ ${it.precio.toFixed(2)} c/u</small>
+          </div>
+          <div class="qty">
+            <button class="small-btn" data="dec" idx="${idx}">−</button>
+            <div style="min-width:32px;text-align:center">${it.cantidad}</div>
+            <button class="small-btn" data="inc" idx="${idx}">+</button>
+            <button class="remove" data="rm" idx="${idx}">×</button>
+          </div>
+        `;
+        lista.appendChild(li);
+      });
+
+      totalText.textContent='S/ '+total.toFixed(2);
+      emptyText.style.display = carrito.length ? 'none':'block';
+
+      lista.querySelectorAll('button[data]').forEach(b=>{
+        b.addEventListener('click',()=>{
+          const t=b.getAttribute('data');
+          const i=+b.getAttribute('idx');
+          if(t==='inc') carrito[i].cantidad++;
+          if(t==='dec') carrito[i].cantidad=Math.max(1,carrito[i].cantidad-1);
+          if(t==='rm') carrito.splice(i,1);
+          renderCarrito();
+        });
+      });
+    }
+
+    document.getElementById('emptyBtn').addEventListener('click',()=>{
+      if(confirm('¿Vaciar todo el carrito?')){ carrito=[]; renderCarrito(); }
+    });
+
+    document.getElementById('payBtn').addEventListener('click',()=>{
+      const total = carrito.reduce((s,it)=> s+ it.precio* it.cantidad,0);
+      if(!total){ alert('Carrito vacío'); return;}
+      const nombre=prompt('Nombre cliente');
+      if(!nombre) return;
+      const metodo=prompt('Método de pago','tarjeta');
+      alert(`Pago simulado ✅\nCliente:${nombre}\nMétodo:${metodo}\nTotal:S/ ${total.toFixed(2)}`);
+      carrito=[]; renderCarrito();
+    });
+
+    renderCarrito();
+  </script>
+
+</body>
+</html>
