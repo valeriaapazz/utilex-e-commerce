@@ -196,16 +196,19 @@ h2{
 }
 
 .circulos-categorias{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  justify-content:center;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+  justify-items:center;
   margin-bottom:30px;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .circulo{
-  width:120px;
-  height:120px;
+  width:140px;
+  height:140px;
   background:var(--verde);
   color:white;
   border-radius:50%;
@@ -214,7 +217,7 @@ h2{
   align-items:center;
   text-align:center;
   font-weight:600;
-  padding:10px;
+  padding:15px;
   cursor:pointer;
   font-size:14px;
   transition:0.3s;
@@ -225,29 +228,42 @@ h2{
   background:var(--azul);
 }
 
-@media (max-width: 768px){
+@media (max-width: 1024px){
   .circulos-categorias{
-    gap:12px;
-    margin-bottom:20px;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
   }
   
   .circulo{
-    width:100px;
-    height:100px;
+    width:120px;
+    height:120px;
+  }
+}
+
+@media (max-width: 768px){
+  .circulos-categorias{
+    grid-template-columns:repeat(2, 1fr);
+    gap:15px;
+  }
+  
+  .circulo{
+    width:110px;
+    height:110px;
     font-size:13px;
+    padding:12px;
   }
 }
 
 @media (max-width: 480px){
   .circulos-categorias{
-    gap:10px;
+    gap:12px;
   }
   
   .circulo{
-    width:85px;
-    height:85px;
+    width:90px;
+    height:90px;
     font-size:12px;
-    padding:8px;
+    padding:10px;
   }
 }
 
@@ -627,7 +643,7 @@ h2{
 <div class="productos-lado">
 <div class="section-container">
 
-<h2>SECCIÓN 1: ÚTILES ESCOLARES</h2>
+<h2>ÚTILES ESCOLARES</h2>
 <div class="circulos-categorias">
 
   <div class="circulo" onclick="irAPagina('cuadernos')">📘 Cuadernos</div>
@@ -637,6 +653,19 @@ h2{
   <div class="circulo" onclick="irAPagina('manualidades')">✂️ Materiales de Manualidades</div>
   <div class="circulo" onclick="irAPagina('medicion')">📏 Instrumentos de Medición</div>
   <div class="circulo" onclick="irAPagina('organizacion')">📂 Organización Escolar</div>
+
+</div>
+
+<h2 style="margin-top:40px;">MATERIALES DE OFICINA</h2>
+<div class="circulos-categorias">
+
+  <div class="circulo" onclick="irAPagina('papeleria')">📄 Papelería</div>
+  <div class="circulo" onclick="irAPagina('escrituraProfesional')">🖊️ Escritura Profesional</div>
+  <div class="circulo" onclick="irAPagina('organizacionArchivo')">🗄️ Organización y Archivo</div>
+  <div class="circulo" onclick="irAPagina('encoladoSujecion')">📌 Encolado y Sujeción</div>
+  <div class="circulo" onclick="irAPagina('engrapadoCorte')">✂️ Engrapado y Corte</div>
+  <div class="circulo" onclick="irAPagina('organizacionEscritorio')">🖥️ Organización de Escritorio</div>
+  <div class="circulo" onclick="irAPagina('equiposAccesorios')">⚙️ Equipos y Accesorios</div>
 
 </div>
 
