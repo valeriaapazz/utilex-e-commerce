@@ -70,9 +70,8 @@ header{
   width:100%;
   height:auto;
   display:block;
-  object-fit:cover;
-  max-height:300px;
-  min-height:120px;
+  object-fit:contain;
+  max-height:400px;
   animation:slideDown 0.8s ease;
 }
 
@@ -81,8 +80,26 @@ body{
   padding-bottom:50px;
 }
 
-.section-container{
+.contenido-principal{
+  display:flex;
+  gap:25px;
   padding:25px;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.productos-lado{
+  flex:1;
+  min-width:0;
+}
+
+.carrito-lado{
+  width:350px;
+  flex-shrink:0;
+}
+
+.section-container{
+  width:100%;
 }
 
 h2{
@@ -124,8 +141,44 @@ h2{
 
 .productos{
   display:none;
-  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns:repeat(4, 1fr);
   gap:20px;
+}
+
+@media (max-width: 1200px){
+  .productos{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px){
+  .contenido-principal{
+    flex-direction:column;
+  }
+  
+  .carrito-lado{
+    width:100%;
+  }
+  
+  .productos{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .productos{
+    grid-template-columns:repeat(1, 1fr);
+  }
+  
+  .circulos-categorias{
+    gap:10px;
+  }
+  
+  .circulo{
+    width:100px;
+    height:100px;
+    font-size:12px;
+  }
 }
 
 .product-card{
@@ -187,10 +240,13 @@ h2{
 .carrito-section{
   background:white;
   padding:20px;
-  margin:25px;
   border-radius:15px;
   box-shadow:0 4px 8px rgba(0,0,0,0.1);
   animation:fadeIn 0.8s ease;
+  position:sticky;
+  top:20px;
+  max-height:calc(100vh - 40px);
+  overflow-y:auto;
 }
 
 .carrito-section h3{
@@ -371,6 +427,9 @@ h2{
   onerror="this.outerHTML='<div style=\'background:linear-gradient(135deg, #28a745, #007bff);text-align:center;padding:80px 20px;color:white;font-size:28px;font-weight:bold\'>🎒 UTILEX - Todo para tu lista escolar 📚</div>'"/>
 </section>
 
+<div class="contenido-principal">
+  
+<div class="productos-lado">
 <div class="section-container">
 
 <h2>SECCIÓN 1: ÚTILES ESCOLARES</h2>
@@ -400,7 +459,9 @@ h2{
 </div>
 
 </div>
+</div>
 
+<div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
   <div id="carritoLista"></div>
@@ -408,6 +469,9 @@ h2{
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
   <button id="btnPagar" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
+</div>
+
+</div>
 
 <div class="payment-overlay" id="paymentOverlay">
   <div class="payment-box">
