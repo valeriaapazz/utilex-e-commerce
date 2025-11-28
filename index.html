@@ -207,6 +207,27 @@ h2{
   line-height:1.4;
   border-bottom:1px dashed #ddd;
   padding-bottom:5px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.carrito-item-info{
+  flex:1;
+}
+
+.btn-eliminar{
+  background:#dc3545;
+  border:none;
+  color:white;
+  padding:5px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:12px;
+  transition:0.3s;
+}
+.btn-eliminar:hover{
+  opacity:0.8;
 }
 
 #carritoTotal{
@@ -225,6 +246,7 @@ h2{
   cursor:pointer;
   font-size:14px;
   transition:0.3s;
+  margin-right:10px;
 }
 .btn-vaciar:hover{
   opacity:0.8;
@@ -312,10 +334,16 @@ h2{
   font-size:14px;
 }
 
+.no-resultados{
+  text-align:center;
+  padding:20px;
+  color:#666;
+  font-style:italic;
+}
+
 @keyframes fadeIn{ from{opacity:0} to{opacity:1}}
 @keyframes popIn{ 0%{transform:scale(0.7);opacity:0} 100%{transform:scale(1);opacity:1}}
 @keyframes slideDown{ from{transform:translateY(-25px);opacity:0} to{transform:translateY(0);opacity:1}}
-@keyframes slideUp{ from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1}}
 @keyframes slideUp{ from{transform:translateY(40px);opacity:0} to{transform:translateY(0);opacity:1}}
 </style>
 </head>
@@ -324,7 +352,7 @@ h2{
 
 <header>
   <div class="header-left">
-    <img class="logo" src="img/logo.png" alt="Utilex logo"/>
+    <img class="logo" src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/logo.png" alt="Utilex logo" onerror="this.style.display='none'"/>
     <div class="header-text">
       <div class="brand">Utilex</div>
       <div class="slogan">Todo para tu lista escolar</div>
@@ -332,13 +360,13 @@ h2{
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="🔍 Buscar productos…"/>
+    <input type="text" id="searchInput" placeholder="🔍 Buscar productos…" onkeyup="buscarProductos()"/>
   </div>
 </header>
 
 <section class="main-banner">
-  <img src="img/banner%201.png" alt="Banner Utilex"
-  onerror="this.outerHTML='<p style=\'text-align:center;padding:20px;color:red;font-weight:bold\'>⚠ Error cargando banner</p>'"/>
+  <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/banner%201.png" alt="Banner Utilex"
+  onerror="this.outerHTML='<div style=\'background:linear-gradient(135deg, #28a745, #007bff);text-align:center;padding:80px 20px;color:white;font-size:28px;font-weight:bold\'>🎒 UTILEX - Todo para tu lista escolar 📚</div>'"/>
 </section>
 
 <div class="section-container">
@@ -354,19 +382,19 @@ h2{
 </div>
 
 <div id="cuadernos" class="productos">
-  <div class="product-card"><img src="img/Cuaderno%20cuadriculado%20anillado.png"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno a4"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
 </div>
 
 <div id="escritura" class="productos">
-  <div class="product-card"><img src="img/lapicero%20azul.png"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  <div class="product-card" data-nombre="lapicero azul"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/lapicero%20azul.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23007bff\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
 </div>
 
 <div id="mochilas" class="productos">
-  <div class="product-card"><img src="img/Mochila%20Dragon.png"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  <div class="product-card" data-nombre="mochila escolar"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Mochila%20Dragon.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎒%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
 </div>
 
 <div id="colores" class="productos">
-  <div class="product-card"><img src="img/caja%20de%20colores.png"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  <div class="product-card" data-nombre="caja colores"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/caja%20de%20colores.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff6b6b\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
 </div>
 
 </div>
@@ -400,6 +428,48 @@ let metodoPago = null;
 function mostrarProductos(id){
   document.querySelectorAll('.productos').forEach(e => e.style.display='none');
   document.getElementById(id).style.display='grid';
+  document.getElementById('searchInput').value = '';
+}
+
+function buscarProductos(){
+  const busqueda = document.getElementById('searchInput').value.toLowerCase().trim();
+  
+  if(busqueda === ''){
+    document.querySelectorAll('.productos').forEach(e => e.style.display='none');
+    return;
+  }
+  
+  let encontrados = 0;
+  
+  document.querySelectorAll('.productos').forEach(seccion => {
+    const productos = seccion.querySelectorAll('.product-card');
+    let hayResultados = false;
+    
+    productos.forEach(card => {
+      const nombre = card.getAttribute('data-nombre') || card.querySelector('.nombre').innerText.toLowerCase();
+      
+      if(nombre.includes(busqueda)){
+        card.style.display = 'block';
+        hayResultados = true;
+        encontrados++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    
+    seccion.style.display = hayResultados ? 'grid' : 'none';
+  });
+  
+  if(encontrados === 0){
+    document.querySelectorAll('.productos').forEach(e => e.style.display='none');
+    if(!document.querySelector('.no-resultados')){
+      const msg = document.createElement('div');
+      msg.className = 'no-resultados';
+      msg.textContent = '❌ No se encontraron productos con ese nombre';
+      document.querySelector('.section-container').appendChild(msg);
+      setTimeout(() => msg.remove(), 3000);
+    }
+  }
 }
 
 function addCarrito(btn){
@@ -429,6 +499,11 @@ function addCarrito(btn){
   actualizarCarrito();
 }
 
+function eliminarProducto(nombre){
+  carrito = carrito.filter(p => p.nombre !== nombre);
+  actualizarCarrito();
+}
+
 function actualizarCarrito(){
   const caja = document.getElementById('carritoLista');
   const totalCaja = document.getElementById('carritoTotal');
@@ -440,7 +515,11 @@ function actualizarCarrito(){
   carrito.forEach(p => {
     total += p.precio * p.cantidad;
     totalProductos += p.cantidad;
-    caja.innerHTML += `<div class="carrito-item">${p.nombre} x${p.cantidad} — S/${(p.precio * p.cantidad).toFixed(2)}</div>`;
+    caja.innerHTML += `
+      <div class="carrito-item">
+        <div class="carrito-item-info">${p.nombre} x${p.cantidad} — S/${(p.precio * p.cantidad).toFixed(2)}</div>
+        <button class="btn-eliminar" onclick="eliminarProducto('${p.nombre}')">❌</button>
+      </div>`;
   });
 
   if(totalProductos > 12){
