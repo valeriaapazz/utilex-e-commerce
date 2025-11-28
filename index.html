@@ -131,6 +131,14 @@ body{
   padding-bottom:50px;
 }
 
+.pagina{
+  display:none;
+}
+
+.pagina.activa{
+  display:block;
+}
+
 .contenido-principal{
   display:flex;
   gap:25px;
@@ -612,6 +620,8 @@ h2{
   onerror="this.outerHTML='<div style=\'background:linear-gradient(135deg, #28a745, #007bff);text-align:center;padding:80px 20px;color:white;font-size:28px;font-weight:bold\'>🎒 UTILEX - Todo para tu lista escolar 📚</div>'"/>
 </section>
 
+<!-- PÁGINA INICIO -->
+<div id="paginaInicio" class="pagina activa">
 <div class="contenido-principal">
   
 <div class="productos-lado">
@@ -620,27 +630,14 @@ h2{
 <h2>SECCIÓN 1: ÚTILES ESCOLARES</h2>
 <div class="circulos-categorias">
 
-  <div class="circulo" onclick="mostrarProductos('cuadernos')">📘 Cuadernos</div>
-  <div class="circulo" onclick="mostrarProductos('escritura')">✏️ Lápices y Lapiceros</div>
-  <div class="circulo" onclick="mostrarProductos('mochilas')">🎒 Mochilas</div>
-  <div class="circulo" onclick="mostrarProductos('colores')">🎨 Colores</div>
+  <div class="circulo" onclick="irAPagina('cuadernos')">📘 Cuadernos</div>
+  <div class="circulo" onclick="irAPagina('escritura')">✏️ Lápices y Lapiceros</div>
+  <div class="circulo" onclick="irAPagina('mochilas')">🎒 Mochilas</div>
+  <div class="circulo" onclick="irAPagina('coloresPlumones')">🎨 Colores y Plumones</div>
+  <div class="circulo" onclick="irAPagina('manualidades')">✂️ Materiales de Manualidades</div>
+  <div class="circulo" onclick="irAPagina('medicion')">📏 Instrumentos de Medición</div>
+  <div class="circulo" onclick="irAPagina('organizacion')">📂 Organización Escolar</div>
 
-</div>
-
-<div id="cuadernos" class="productos">
-  <div class="product-card" data-nombre="cuaderno a4"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-</div>
-
-<div id="escritura" class="productos">
-  <div class="product-card" data-nombre="lapicero azul"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/lapicero%20azul.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23007bff\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-</div>
-
-<div id="mochilas" class="productos">
-  <div class="product-card" data-nombre="mochila escolar"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Mochila%20Dragon.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎒%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-</div>
-
-<div id="colores" class="productos">
-  <div class="product-card" data-nombre="caja colores"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/caja%20de%20colores.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff6b6b\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
 </div>
 
 </div>
@@ -656,6 +653,182 @@ h2{
 </section>
 </div>
 
+</div>
+</div>
+
+<!-- PÁGINA CUADERNOS -->
+<div id="paginaCuadernos" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>📘 CUADERNOS</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="cuaderno a4"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista2"></div>
+  <div id="carritoTotal2">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar2" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA ESCRITURA -->
+<div id="paginaEscritura" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>✏️ LÁPICES Y LAPICEROS</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="lapicero azul"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/lapicero%20azul.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23007bff\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista3"></div>
+  <div id="carritoTotal3">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar3" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA MOCHILAS -->
+<div id="paginaMochilas" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>🎒 MOCHILAS</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="mochila escolar"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Mochila%20Dragon.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎒%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista4"></div>
+  <div id="carritoTotal4">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar4" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA COLORES Y PLUMONES -->
+<div id="paginaColoresPlumones" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>🎨 COLORES Y PLUMONES</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="caja colores"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/caja%20de%20colores.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff6b6b\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="plumones"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff9800' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🖍️%3C/text%3E%3C/svg%3E"/><div class="nombre">Set de Plumones</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista5"></div>
+  <div id="carritoTotal5">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar5" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA MANUALIDADES -->
+<div id="paginaManualidades" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>✂️ MATERIALES DE MANUALIDADES</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="tijeras"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%239c27b0' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E✂️%3C/text%3E%3C/svg%3E"/><div class="nombre">Tijeras escolares</div><div class="precio">S/8.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="goma"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23795548' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🧴%3C/text%3E%3C/svg%3E"/><div class="nombre">Goma líquida</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="cartulinas"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23e91e63' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📄%3C/text%3E%3C/svg%3E"/><div class="nombre">Pack Cartulinas</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista6"></div>
+  <div id="carritoTotal6">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar6" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA MEDICIÓN -->
+<div id="paginaMedicion" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>📏 INSTRUMENTOS DE MEDICIÓN</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="regla"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23607d8b' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📏%3C/text%3E%3C/svg%3E"/><div class="nombre">Regla 30cm</div><div class="precio">S/3.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="transportador"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23009688' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📐%3C/text%3E%3C/svg%3E"/><div class="nombre">Transportador</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="compas"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%233f51b5' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📐%3C/text%3E%3C/svg%3E"/><div class="nombre">Compás escolar</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista7"></div>
+  <div id="carritoTotal7">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar7" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA ORGANIZACIÓN -->
+<div id="paginaOrganizacion" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>📂 ORGANIZACIÓN ESCOLAR</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="archivador"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff5722' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📂%3C/text%3E%3C/svg%3E"/><div class="nombre">Archivador A4</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="separadores"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23cddc39' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🗂️%3C/text%3E%3C/svg%3E"/><div class="nombre">Separadores</div><div class="precio">S/6.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="agenda"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%234caf50' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📅%3C/text%3E%3C/svg%3E"/><div class="nombre">Agenda escolar</div><div class="precio">S/25.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista8"></div>
+  <div id="carritoTotal8">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar8" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
 </div>
 
 <div class="payment-overlay" id="paymentOverlay">
@@ -676,50 +849,53 @@ h2{
 let carrito = [];
 let metodoPago = null;
 
-function mostrarProductos(id){
-  document.querySelectorAll('.productos').forEach(e => e.style.display='none');
-  document.getElementById(id).style.display='grid';
-  document.getElementById('searchInput').value = '';
+function irAPagina(categoria){
+  document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
+  
+  const mapaPaginas = {
+    'cuadernos': 'paginaCuadernos',
+    'escritura': 'paginaEscritura',
+    'mochilas': 'paginaMochilas',
+    'coloresPlumones': 'paginaColoresPlumones',
+    'manualidades': 'paginaManualidades',
+    'medicion': 'paginaMedicion',
+    'organizacion': 'paginaOrganizacion'
+  };
+  
+  const paginaId = mapaPaginas[categoria];
+  if(paginaId){
+    document.getElementById(paginaId).classList.add('activa');
+    window.scrollTo(0, 0);
+    actualizarCarrito();
+  }
+}
+
+function volverInicio(){
+  document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
+  document.getElementById('paginaInicio').classList.add('activa');
+  window.scrollTo(0, 0);
+  actualizarCarrito();
 }
 
 function buscarProductos(){
   const busqueda = document.getElementById('searchInput').value.toLowerCase().trim();
   
   if(busqueda === ''){
-    document.querySelectorAll('.productos').forEach(e => e.style.display='none');
     return;
   }
   
   let encontrados = 0;
   
-  document.querySelectorAll('.productos').forEach(seccion => {
-    const productos = seccion.querySelectorAll('.product-card');
-    let hayResultados = false;
+  document.querySelectorAll('.product-card').forEach(card => {
+    const nombre = card.getAttribute('data-nombre') || card.querySelector('.nombre').innerText.toLowerCase();
     
-    productos.forEach(card => {
-      const nombre = card.getAttribute('data-nombre') || card.querySelector('.nombre').innerText.toLowerCase();
-      
-      if(nombre.includes(busqueda)){
-        card.style.display = 'block';
-        hayResultados = true;
-        encontrados++;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-    
-    seccion.style.display = hayResultados ? 'grid' : 'none';
+    if(nombre.includes(busqueda)){
+      encontrados++;
+    }
   });
   
   if(encontrados === 0){
-    document.querySelectorAll('.productos').forEach(e => e.style.display='none');
-    if(!document.querySelector('.no-resultados')){
-      const msg = document.createElement('div');
-      msg.className = 'no-resultados';
-      msg.textContent = '❌ No se encontraron productos con ese nombre';
-      document.querySelector('.section-container').appendChild(msg);
-      setTimeout(() => msg.remove(), 3000);
-    }
+    alert('❌ No se encontraron productos con ese nombre');
   }
 }
 
@@ -756,31 +932,37 @@ function eliminarProducto(nombre){
 }
 
 function actualizarCarrito(){
-  const caja = document.getElementById('carritoLista');
-  const totalCaja = document.getElementById('carritoTotal');
-  caja.innerHTML = '';
-
-  let total = 0;
-  let totalProductos = 0;
-
-  carrito.forEach(p => {
-    total += p.precio * p.cantidad;
-    totalProductos += p.cantidad;
-    caja.innerHTML += `
-      <div class="carrito-item">
-        <div class="carrito-item-info">${p.nombre} x${p.cantidad} — S/${(p.precio * p.cantidad).toFixed(2)}</div>
-        <button class="btn-eliminar" onclick="eliminarProducto('${p.nombre}')">❌</button>
-      </div>`;
-  });
-
-  if(totalProductos > 12){
-    alert("El carrito no puede tener más de 12 productos en total");
-    carrito = [];
+  // Actualizar todos los carritos en todas las páginas
+  for(let i = 1; i <= 8; i++){
+    const caja = document.getElementById(i === 1 ? 'carritoLista' : `carritoLista${i}`);
+    const totalCaja = document.getElementById(i === 1 ? 'carritoTotal' : `carritoTotal${i}`);
+    
+    if(!caja || !totalCaja) continue;
+    
     caja.innerHTML = '';
-    total = 0;
-  }
 
-  totalCaja.innerText = `Total: S/ ${total.toFixed(2)}`;
+    let total = 0;
+    let totalProductos = 0;
+
+    carrito.forEach(p => {
+      total += p.precio * p.cantidad;
+      totalProductos += p.cantidad;
+      caja.innerHTML += `
+        <div class="carrito-item">
+          <div class="carrito-item-info">${p.nombre} x${p.cantidad} — S/${(p.precio * p.cantidad).toFixed(2)}</div>
+          <button class="btn-eliminar" onclick="eliminarProducto('${p.nombre}')">❌</button>
+        </div>`;
+    });
+
+    if(totalProductos > 12){
+      alert("El carrito no puede tener más de 12 productos en total");
+      carrito = [];
+      caja.innerHTML = '';
+      total = 0;
+    }
+
+    totalCaja.innerText = `Total: S/ ${total.toFixed(2)}`;
+  }
 }
 
 function vaciarCarrito(){
@@ -814,8 +996,7 @@ function pagar(){
 
   alert(`✅ Pago simulado con ${metodoPago} a nombre de ${nombre}`);
   cerrarPago();
-  vaciarCarrito(); 
-  document.querySelectorAll('.productos').forEach(e => e.style.display='none');
+  vaciarCarrito();
 }
 
 function cerrarPago(){
