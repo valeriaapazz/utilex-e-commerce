@@ -1,223 +1,405 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Utilex - Todo para la lista escolar</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Utilex – E-Commerce</title>
 
-  <style>
-    :root{
-      --blue:#0b63ce;
-      --blue-dark:#094a99;
-      --green:#2fa52f;
-      --bg:#eaf8e8;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --radius:12px;
-      --shadow: 0 8px 20px rgba(12,38,84,0.08);
-    }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e4f4cc;
+  }
 
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#e4f4cc 0%,#eaf8e8 100%);padding-bottom:40px}
+  /* Barra superior */
+  .top-bar {
+    background: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:var(--blue);
-      color:white;
-      padding:15px 20px;
-      box-shadow:0 6px 18px rgba(11,99,206,0.14);
-    }
+  .logo img {
+    height: 55px;
+  }
 
-    .header-left{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+  .title-area {
+    text-align: center;
+    flex: 1;
+  }
 
-    .header-left img.logo{
-      height:55px;
-      width:auto;
-      border-radius:10px;
-      background:linear-gradient(90deg,var(--green),var(--blue));
-      padding:6px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    }
+  .title-area h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #0bce83;
+  }
 
-    .header-text div.brand{
-      font-size:22px;
-      font-weight:700;
-    }
+  .title-area p {
+    margin: 2px 0 0 0;
+    font-size: 14px;
+    color: #0b63ce;
+  }
 
-    .header-text div.slogan{
-      font-size:12px;
-      opacity:0.9;
-    }
+  .search-box input {
+    padding: 8px 14px;
+    border: 2px solid #0b63ce;
+    border-radius: 20px;
+    width: 170px;
+    font-size: 14px;
+  }
 
-    .search-box input{
-      padding:8px 12px;
-      width:220px;
-      border-radius:8px;
-      border:none;
-      outline:none;
-      font-size:14px;
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    }
+  /* Banner responsive */
+  .banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-    .main-banner img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      display:block;
-      max-height:320px;
-      min-height:140px;
-    }
+  .banner img {
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+  }
 
-    .wrap{
-      max-width:1100px;
-      margin:22px auto;
-      padding:0 18px;
-      display:grid;
-      grid-template-columns:1fr 360px;
-      gap:20px;
-    }
+  /* Secciones en círculos */
+  .sections {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 15px;
+    flex-wrap: wrap;
+  }
 
-    .sections{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:10px;
-    }
+  .section-circle {
+    width: 150px;
+    height: 150px;
+    background: #0bce83;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-    .circle{
-      width:130px;
-      height:130px;
-      background:var(--card);
-      border-radius:50%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      font-size:13px;
-      font-weight:600;
-      box-shadow:var(--shadow);
-      cursor:pointer;
-      transition:transform .2s;
-      padding:10px;
-    }
+  .section-circle:hover {
+    transform: scale(1.1);
+    background: #0b63ce;
+  }
 
-    .circle:hover{transform:scale(1.08)}
+  /* Productos */
+  .productos {
+    display: none;
+    padding: 20px;
+  }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-      gap:16px;
-    }
+  .productos.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+  }
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:12px;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      transition:transform .18s;
-      overflow:hidden;
-    }
+  .producto {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    animation: fadeIn 0.4s ease;
+    text-align: center;
+  }
 
-    .card:hover{transform:translateY(-6px)}
+  @keyframes fadeIn {
+    from{opacity:0; transform: translateY(10px);}
+    to{opacity:1; transform: translateY(0);}
+  }
 
-    .card img{width:100%;height:160px;object-fit:contain;border-radius:8px;background:#f5f5f5;padding:8px}
+  .producto img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
 
-    .price{font-weight:700;color:var(--blue-dark)}
+  .qty-selector {
+    margin-top: 8px;
+  }
 
-    .controls{display:flex;gap:8px;align-items:center;margin-top:6px}
-    .controls input{width:68px;padding:6px;border-radius:8px;border:1px solid #e6e7eb;font-size:14px}
+  .qty-selector input {
+    width: 60px;
+    padding: 5px;
+    border: 2px solid #0bce83;
+    border-radius: 15px;
+    text-align: center;
+  }
 
-    .btn{background:var(--blue);color:white;border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:600}
-    .btn:hover{background:var(--blue-dark)}
+  button {
+    background: #0bce83;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+  }
 
-    #carrito{
-      position:sticky;
-      top:18px;
-      background:var(--card);
-      padding:16px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+  button:hover {
+    background: #0b63ce;
+  }
 
-    #carrito h2{font-size:18px;margin-bottom:10px}
+  /* Botón volver */
+  .btn-volver {
+    background: #0b63ce;
+    margin: 20px 20px 0 20px;
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 20px;
+  }
 
-    #lista{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;max-height:420px;overflow:auto}
+  .btn-volver:hover {
+    background: #094a99;
+  }
 
-    .item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;transition:background .12s}
-    .item:hover{background:#f7fafc}
-    .item img{width:56px;height:56px;object-fit:contain;border-radius:6px}
+  /* Carrito */
+  #carrito {
+    background: white;
+    padding: 22px;
+    margin: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  }
 
-    .qty button{
-      background:#eef2ff;
-      border:1px solid #e0e7ff;
-      padding:6px 8px;
-      border-radius:6px;
-      cursor:pointer;
-      font-weight:600;
-    }
+  #carrito ul li {
+    font-size: 15px;
+    margin: 5px 0;
+  }
 
-    .remove{background:transparent;color:#ff4d4f;border:none;cursor:pointer;font-weight:700;font-size:14px}
+  #vaciar {
+    background: #ff3b3b;
+  }
+  #vaciar:hover {
+    background: #c20000;
+  }
 
-    .pay{display:flex;gap:8px;margin-top:12px}
-    .btn-pay{background:var(--green);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700}
-    .btn-empty{background:white;border:1px solid #ccc;padding:10px 12px;border-radius:8px;cursor:pointer}
+  /* Modal pago */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    animation: aparecerModal 0.3s ease;
+  }
 
-    /* Modal */
-    #modalPago{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.35);
-      justify-content:center;
-      align-items:center;
-    }
+  @keyframes aparecerModal {
+    from{opacity:0;}
+    to{opacity:1;}
+  }
 
-    .modal-content{
-      background:white;
-      width:90%;
-      max-width:320px;
-      padding:18px;
-      border-radius:var(--radius);
-      box-shadow:0 8px 22px rgba(0,0,0,0.2);
-      animation:pop .3s ease;
-    }
+  .modal-content {
+    background: white;
+    padding: 22px;
+    width: 90%;
+    max-width: 330px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  }
 
-    @keyframes pop{
-      0%{transform:scale(.9);opacity:.6}
-      60%{transform:scale(1.05)}
-      100%{transform:scale(1);opacity:1}
-    }
+  .modal-content button {
+    width: auto;
+    padding: 8px 20px;
+    margin-top: 12px;
+  }
 
-    @media (max-width:780px){
-      .wrap{grid-template-columns:1fr}
-      .search-box input{width:160px}
-    }
-  </style>
+  /* Responsivo extra */
+  @media (max-width: 600px) {
+    .title-area h1 {font-size:18px;}
+    .search-box input {width:140px;}
+    .section-circle {width:120px; height:120px; font-size:11px;}
+  }
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="header-left">
-      <img class="logo" src="img/logo.png" alt="Utilex logo" />
-      <div class="header-text">
-        <div class="brand">Utilex</div>
-        <div class="slogan">Todo para tu lista escolar</div>
-      </div>
-    </div>
+<div class="top-bar">
+  <div class="logo">
+    <img src="img/logo.png" alt="" />
+  </div>
 
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Buscar productos..." onkeyup="buscarProducto()"/>
-    </div>
-  </header>
+  <div class="title-area">
+    <h1>Utilex – Tienda Escolar</h1>
+    <p>¡Tu mejor aliado para la lista escolar! ✏📘</p>
+  </div>
 
-  <!
+  <div class="search-box">
+    <input type="text" id="buscador" placeholder="Buscar..." oninput="buscarProducto()" />
+  </div>
+</div>
+
+<div class="banner">
+  <img src="img/banner.png" alt="" />
+</div>
+
+<section class="sections" id="menuSecciones">
+  <div class="section-circle" onclick="mostrarSeccion('escolar')">ÚTILES ESCOLARES</div>
+  <div class="section-circle" onclick="mostrarSeccion('oficina')">MATERIALES DE OFICINA</div>
+</section>
+
+<button class="btn-volver" onclick="volverMenu()" id="volverBtn" style="display:none;">⬅ Volver</button>
+
+<section id="escolar" class="productos">
+  <div class="producto" data-nombre="cuaderno">
+    <img src="img/Cuaderno cuadriculado anillado.png"/>
+    <h3>Cuaderno cuadriculado</h3>
+    <p>S/ 12.50</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-cuaderno" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Cuaderno Cuadriculado',12.50,document.getElementById('qty-cuaderno').value)">Agregar</button>
+  </div>
+
+  <div class="producto" data-nombre="lapicero">
+    <img src="img/lapicero azul.png"/>
+    <h3>Lapicero azul</h3>
+    <p>S/ 2.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-lapicero" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Lapicero Azul',2.00,document.getElementById('qty-lapicero').value)">Agregar</button>
+  </div>
+
+  <div class="producto" data-nombre="mochila">
+    <img src="img/Mochila Dragon.png"/>
+    <h3>Mochila dragon</h3>
+    <p>S/ 75.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-mochila" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Mochila Dragon',75.00,document.getElementById('qty-mochila').value)">Agregar</button>
+  </div>
+
+  <div class="producto" data-nombre="colores">
+    <img src="img/caja de colores.png"/>
+    <h3>Caja de colores</h3>
+    <p>S/ 18.90</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-colores" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Caja de Colores',18.90,document.getElementById('qty-colores').value)">Agregar</button>
+  </div>
+</section>
+
+<section id="oficina" class="productos">
+  <div class="producto" data-nombre="engrapador">
+    <img src="img/engrapador.png"/>
+    <h3>Engrapador</h3>
+    <p>S/ 15.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-engrapador" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Engrapador',15.00,document.getElementById('qty-engrapador').value)">Agregar</button>
+  </div>
+
+  <div class="producto" data-nombre="resma">
+    <img src="img/resma.png"/>
+    <h3>Resma A4</h3>
+    <p>S/ 22.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-resma" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Resma A4',22.00,document.getElementById('qty-resma').value)">Agregar</button>
+  </div>
+</section>
+
+<div id="carrito">
+  <h2>🛒 Carrito de compras</h2>
+  <ul id="lista"></ul>
+  <h3 id="total">Total: S/ 0.00</h3>
+  <button id="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="pagar" onclick="abrirModalPago()">Pagar</button>
+</div>
+
+<!-- MODAL PAGO -->
+<div class="modal" id="modalPago">
+  <div class="modal-content">
+    <h3>💳 Simulación de pago</h3>
+    <p id="resumenPago"></p>
+    <button onclick="confirmarPago()">Confirmar pago</button>
+    <button onclick="cerrarModalPago()">Cerrar</button>
+    <p id="estadoPago"></p>
+  </div>
+</div>
+
+<script>
+  let carrito={};
+
+  function agregar(nombre,precio,qty){
+    qty=parseInt(qty);
+    if(!carrito[nombre]) carrito[nombre]={precio,cantidad:0};
+    if(carrito[nombre].cantidad+qty>12){alert("Máximo 12 unidades por producto");return;}
+    carrito[nombre].cantidad+=qty;
+    renderCarrito();
+  }
+
+  function renderCarrito(){
+    const lista=document.getElementById("lista");lista.innerHTML="";let suma=0;
+    Object.keys(carrito).forEach(p=>{let it=carrito[p];lista.innerHTML+=`<li>${p} x${it.cantidad} → S/ ${(it.precio*it.cantidad).toFixed(2)}</li>`;suma+=it.precio*it.cantidad;});
+    document.getElementById("total").textContent=`Total: S/ ${suma.toFixed(2)}`;
+  }
+
+  function vaciarCarrito(){carrito={};renderCarrito();}
+
+  function mostrarSeccion(id){
+    document.getElementById("menuSecciones").style.display="none";
+    document.getElementById("volverBtn").style.display="inline-block";
+    document.getElementById(id).classList.add("active");
+  }
+
+  function volverMenu(){
+    document.querySelectorAll(".productos").forEach(s=>s.classList.remove("active"));
+    document.getElementById("menuSecciones").style.display="flex";
+    document.getElementById("menuSecciones").style.display="flex";
+    document.getElementById("volverBtn").style.display="none";
+  }
+
+  // Modal pago
+  function abrirModalPago(){
+    document.getElementById("modalPago").style.display="flex";
+    document.getElementById("resumenPago").textContent="Procesando compra...";
+  }
+
+  function cerrarModalPago(){
+    document.getElementById("modalPago").style.display="none";
+    document.getElementById("estadoPago").textContent="";
+  }
+
+  function confirmarPago(){
+    document.getElementById("estadoPago").textContent="✅ ¡Pago simulado exitoso! 🎉";
+    carrito={};
+    renderCarrito();
+  }
+
+  function buscarProducto(){
+    const valor=document.getElementById("buscador").value.toLowerCase();
+    document.querySelectorAll(".producto").forEach(p=>{const n=p.dataset.nombre.toLowerCase();p.style.display=n.includes(valor)?"block":"none";});
+  }
+</script>
+
+</body>
+</html>
+
