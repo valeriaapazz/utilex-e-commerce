@@ -346,54 +346,42 @@
 </div>
 
 <script>
-  let carrito={};
-
-  function agregar(nombre,precio,qty){
-    qty=parseInt(qty);
-    if(!carrito[nombre]) carrito[nombre]={precio,cantidad:0};
-    if(carrito[nombre].cantidad+qty>12){alert("Máximo 12 unidades por producto");return;}
-    carrito[nombre].cantidad+=qty;
-    renderCarrito();
+function abrirModalPago(){
+  const total = Object.values(carrito).reduce((s, it)=> s + it.precio * it.cantidad, 0);
+  if(total === 0){
+    alert("Tu carrito está vacío");
+    return;
   }
 
-  function renderCarrito(){
-    const lista=document.getElementById("lista");lista.innerHTML="";let suma=0;
-    Object.keys(carrito).forEach(p=>{let it=carrito[p];lista.innerHTML+=`<li>${p} x${it.cantidad} → S/ ${(it.precio*it.cantidad).toFixed(2)}</li>`;suma+=it.precio*it.cantidad;});
-    document.getElementById("total").textContent=`Total: S/ ${suma.toFixed(2)}`;
+  // 1. Pedir tu nombre
+  const nombre = prompt("Ingrese su nombre para la compra:");
+  if(!nombre){
+    alert("Pago cancelado");
+    return;
   }
 
-  function vaciarCarrito(){carrito={};renderCarrito();}
+  // 2. Seleccionar método de pago
+  const metodo = prompt("¿Cómo deseas pagar? Escribe: yape o tarjeta", "tarjeta").toLowerCase();
 
-  function mostrarSeccion(id){
-    document.getElementById("menuSecciones").style.display="none";
-    document.getElementById("volverBtn").style.display="inline-block";
-    document.getElementById(id).classList.add("active");
+  if(metodo !== "yape" && metodo !== "tarjeta"){
+    alert("Método no válido. Pago cancelado");
+    return;
   }
 
-  function volverMenu(){
-    document.querySelectorAll(".productos").forEach(s=>s.classList.remove("active"));
-    document.getElementById("menuSecciones").style.display="flex";
-    document.getElementById("menuSecciones").style.display="flex";
-    document.getElementById("volverBtn").style.display="none";
-  }
+  // Mostrar modal con resumen
+  document.getElementById("modalPago").style.display = "flex";
+  document.getElementById("resumenPago").innerHTML = `
+    👤 Cliente: <b>${nombre}</b><br>
+    💰 Total a pagar: <b>S/ ${total.toFixed(2)}</b><br>
+    💳 Método simulado: <b>${metodo === "yape" ? "Yape" : "Tarjeta"}</b>
+  `;
+}
 
-  // Modal pago
-  function abrirModalPago(){
-    document.getElementById("modalPago").style.display="flex";
-    document.getElementById("resumenPago").textContent="Procesando compra...";
-  }
-
-  function cerrarModalPago(){
-    document.getElementById("modalPago").style.display="none";
-    document.getElementById("estadoPago").textContent="";
-  }
-
-  function confirmarPago(){
-    document.getElementById("estadoPago").textContent="✅ ¡Pago simulado exitoso! 🎉";
-    carrito={};
-    renderCarrito();
-  }
-
+function confirmarPago(){
+  document.getElementById("estadoPago").textContent="✅ ¡Pago simulado con éxito! 🎉";
+  carrito = {};
+  renderCarrito();
+}
   function buscarProducto(){
     const valor=document.getElementById("buscador").value.toLowerCase();
     document.querySelectorAll(".producto").forEach(p=>{const n=p.dataset.nombre.toLowerCase();p.style.display=n.includes(valor)?"block":"none";});
