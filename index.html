@@ -24,54 +24,60 @@
   }
 
   .logo img {
-    height: 60px;
+    height: 55px;
+  }
+
+  .title-area {
+    text-align: center;
+    flex: 1;
+  }
+
+  .title-area h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #0bce83;
+  }
+
+  .title-area p {
+    margin: 2px 0 0 0;
+    font-size: 14px;
+    color: #0b63ce;
   }
 
   .search-box input {
     padding: 8px 14px;
-    border: 2px solid #0bce83;
+    border: 2px solid #0b63ce;
     border-radius: 20px;
-    width: 190px;
+    width: 170px;
     font-size: 14px;
-  }
-
-  /* Header */
-  header {
-    background: linear-gradient(90deg, #0bce83, #0b63ce);
-    padding: 20px;
-    text-align: center;
-    color: white;
   }
 
   /* Banner responsive */
   .banner {
     width: 100%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   .banner img {
     width: 100%;
-    max-height: 420px;
+    height: auto;
+    max-height: 380px;
     object-fit: cover;
-    object-position: center;
-    display: block;
   }
 
   /* Secciones en círculos */
   .sections {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 30px;
+    gap: 25px;
+    padding: 30px 15px;
     flex-wrap: wrap;
   }
 
   .section-circle {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     background: #0bce83;
     border-radius: 50%;
     display: flex;
@@ -81,7 +87,7 @@
     padding: 10px;
     color: white;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     transition: 0.3s;
   }
@@ -99,28 +105,41 @@
 
   .productos.active {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 18px;
   }
 
   .producto {
     background: white;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15);
-    animation: aparecer 0.5s ease;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    animation: fadeIn 0.4s ease;
+    text-align: center;
   }
 
-  @keyframes aparecer {
-    from { opacity: 0; transform: translateY(15px);}
-    to { opacity: 1; transform: translateY(0);}
+  @keyframes fadeIn {
+    from{opacity:0; transform: translateY(10px);}
+    to{opacity:1; transform: translateY(0);}
   }
 
   .producto img {
     width: 100%;
-    height: 150px;
+    height: 140px;
     object-fit: contain;
     border-radius: 8px;
+  }
+
+  .qty-selector {
+    margin-top: 8px;
+  }
+
+  .qty-selector input {
+    width: 60px;
+    padding: 5px;
+    border: 2px solid #0bce83;
+    border-radius: 15px;
+    text-align: center;
   }
 
   button {
@@ -132,200 +151,254 @@
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+    font-size: 14px;
   }
 
   button:hover {
     background: #0b63ce;
   }
 
+  /* Botón volver */
+  .btn-volver {
+    background: #0b63ce;
+    margin: 20px 20px 0 20px;
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 20px;
+  }
+
+  .btn-volver:hover {
+    background: #094a99;
+  }
+
   /* Carrito */
   #carrito {
     background: white;
     padding: 22px;
-    margin: 20px;
-    border-radius: 10px;
+    margin: 25px;
+    border-radius: 12px;
     box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  }
+
+  #carrito ul li {
+    font-size: 15px;
+    margin: 5px 0;
   }
 
   #vaciar {
     background: #ff3b3b;
   }
-
   #vaciar:hover {
     background: #c20000;
   }
 
-  #pagar:hover {
-    background: #0055c7;
+  /* Modal pago */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    animation: aparecerModal 0.3s ease;
   }
 
-  /* Adaptación para celulares */
+  @keyframes aparecerModal {
+    from{opacity:0;}
+    to{opacity:1;}
+  }
+
+  .modal-content {
+    background: white;
+    padding: 22px;
+    width: 90%;
+    max-width: 330px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  }
+
+  .modal-content button {
+    width: auto;
+    padding: 8px 20px;
+    margin-top: 12px;
+  }
+
+  /* Responsivo extra */
   @media (max-width: 600px) {
-    .search-box input {
-      width: 140px;
-    }
-
-    .section-circle {
-      width: 130px;
-      height: 130px;
-      font-size: 12px;
-    }
-
-    .banner img {
-      max-height: 260px;
-    }
+    .title-area h1 {font-size:18px;}
+    .search-box input {width:140px;}
+    .section-circle {width:120px; height:120px; font-size:11px;}
   }
 </style>
 </head>
 
 <body>
 
-<!-- Barra superior con logo y buscador -->
 <div class="top-bar">
   <div class="logo">
     <img src="img/logo.png" alt="" />
   </div>
+
+  <div class="title-area">
+    <h1>Utilex – Tienda Escolar</h1>
+    <p>¡Tu mejor aliado para la lista escolar! ✏📘</p>
+  </div>
+
   <div class="search-box">
-    <input type="text" id="buscador" placeholder="Buscar producto…" oninput="buscarProducto()" />
+    <input type="text" id="buscador" placeholder="Buscar..." oninput="buscarProducto()" />
   </div>
 </div>
 
-<header>
-  <h1>Utilex</h1>
-  <p>¡Todo para tu lista escolar!</p>
-</header>
-
-<!-- Banner responsive -->
 <div class="banner">
   <img src="img/banner.png" alt="" />
 </div>
 
-<!-- Secciones tipo círculos -->
-<section class="sections">
+<section class="sections" id="menuSecciones">
   <div class="section-circle" onclick="mostrarSeccion('escolar')">ÚTILES ESCOLARES</div>
   <div class="section-circle" onclick="mostrarSeccion('oficina')">MATERIALES DE OFICINA</div>
 </section>
 
-<!-- Sección 1 -->
+<button class="btn-volver" onclick="volverMenu()" id="volverBtn" style="display:none;">⬅ Volver</button>
+
 <section id="escolar" class="productos">
-  <div class="producto" data-nombre="Cuaderno cuadriculado">
-    <img src="img/Cuaderno cuadriculado anillado.png" />
-    <h3>Cuaderno Cuadriculado</h3>
-    <p>Precio: S/ 12.50</p>
-    <button onclick="agregar('Cuaderno Cuadriculado', 12.50)">Agregar</button>
+  <div class="producto" data-nombre="cuaderno">
+    <img src="img/Cuaderno cuadriculado anillado.png"/>
+    <h3>Cuaderno cuadriculado</h3>
+    <p>S/ 12.50</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-cuaderno" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Cuaderno Cuadriculado',12.50,document.getElementById('qty-cuaderno').value)">Agregar</button>
   </div>
 
-  <div class="producto" data-nombre="Lapicero azul">
-    <img src="img/lapicero azul.png" />
-    <h3>Lapicero Azul</h3>
-    <p>Precio: S/ 2.00</p>
-    <button onclick="agregar('Lapicero Azul', 2.00)">Agregar</button>
+  <div class="producto" data-nombre="lapicero">
+    <img src="img/lapicero azul.png"/>
+    <h3>Lapicero azul</h3>
+    <p>S/ 2.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-lapicero" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Lapicero Azul',2.00,document.getElementById('qty-lapicero').value)">Agregar</button>
   </div>
 
-  <div class="producto" data-nombre="Mochila dragon">
-    <img src="img/Mochila Dragon.png" />
-    <h3>Mochila Dragon</h3>
-    <p>Precio: S/ 75.00</p>
-    <button onclick="agregar('Mochila Dragon', 75.00)">Agregar</button>
+  <div class="producto" data-nombre="mochila">
+    <img src="img/Mochila Dragon.png"/>
+    <h3>Mochila dragon</h3>
+    <p>S/ 75.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-mochila" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Mochila Dragon',75.00,document.getElementById('qty-mochila').value)">Agregar</button>
   </div>
 
-  <div class="producto" data-nombre="Caja de colores">
-    <img src="img/caja de colores.png" />
-    <h3>Caja de Colores</h3>
-    <p>Precio: S/ 18.90</p>
-    <button onclick="agregar('Caja de Colores', 18.90)">Agregar</button>
+  <div class="producto" data-nombre="colores">
+    <img src="img/caja de colores.png"/>
+    <h3>Caja de colores</h3>
+    <p>S/ 18.90</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-colores" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Caja de Colores',18.90,document.getElementById('qty-colores').value)">Agregar</button>
   </div>
 </section>
 
-<!-- Sección 2 -->
 <section id="oficina" class="productos">
-  <div class="producto" data-nombre="Engrapador">
-    <img src="img/engrapador.png" />
+  <div class="producto" data-nombre="engrapador">
+    <img src="img/engrapador.png"/>
     <h3>Engrapador</h3>
-    <p>Precio: S/ 15.00</p>
-    <button onclick="agregar('Engrapador', 15.00)">Agregar</button>
+    <p>S/ 15.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-engrapador" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Engrapador',15.00,document.getElementById('qty-engrapador').value)">Agregar</button>
   </div>
 
-  <div class="producto" data-nombre="Resma A4">
-    <img src="img/resma.png" />
-    <h3>Resma de papel A4</h3>
-    <p>Precio: S/ 22.00</p>
-    <button onclick="agregar('Resma A4', 22.00)">Agregar</button>
+  <div class="producto" data-nombre="resma">
+    <img src="img/resma.png"/>
+    <h3>Resma A4</h3>
+    <p>S/ 22.00</p>
+    <div class="qty-selector">
+      <input type="number" id="qty-resma" value="1" min="1" max="12"/>
+    </div>
+    <button onclick="agregar('Resma A4',22.00,document.getElementById('qty-resma').value)">Agregar</button>
   </div>
 </section>
 
-<!-- Carrito -->
 <div id="carrito">
   <h2>🛒 Carrito de compras</h2>
   <ul id="lista"></ul>
   <h3 id="total">Total: S/ 0.00</h3>
   <button id="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="pagar" onclick="simularPago()">Pagar</button>
-  <p id="estadoPago"></p>
+  <button id="pagar" onclick="abrirModalPago()">Pagar</button>
+</div>
+
+<!-- MODAL PAGO -->
+<div class="modal" id="modalPago">
+  <div class="modal-content">
+    <h3>💳 Simulación de pago</h3>
+    <p id="resumenPago"></p>
+    <button onclick="confirmarPago()">Confirmar pago</button>
+    <button onclick="cerrarModalPago()">Cerrar</button>
+    <p id="estadoPago"></p>
+  </div>
 </div>
 
 <script>
-  let carrito = {};
+  let carrito={};
 
-  function agregar(nombre, precio) {
-    if (carrito[nombre]?.cantidad >= 12) {
-      alert("Máximo 12 unidades por producto ❗");
-      return;
-    }
-
-    if (!carrito[nombre]) {
-      carrito[nombre] = { precio, cantidad: 1 };
-    } else {
-      carrito[nombre].cantidad++;
-    }
-
+  function agregar(nombre,precio,qty){
+    qty=parseInt(qty);
+    if(!carrito[nombre]) carrito[nombre]={precio,cantidad:0};
+    if(carrito[nombre].cantidad+qty>12){alert("Máximo 12 unidades por producto");return;}
+    carrito[nombre].cantidad+=qty;
     renderCarrito();
   }
 
-  function renderCarrito() {
-    const lista = document.getElementById("lista");
-    lista.innerHTML = "";
-    let suma = 0;
-
-    Object.keys(carrito).forEach((prod) => {
-      const item = carrito[prod];
-      const li = document.createElement("li");
-      li.textContent = `${prod} x${item.cantidad} → S/ ${(item.precio * item.cantidad).toFixed(2)}`;
-      lista.appendChild(li);
-      suma += item.precio * item.cantidad;
-    });
-
-    document.getElementById("total").textContent = `Total: S/ ${suma.toFixed(2)}`;
+  function renderCarrito(){
+    const lista=document.getElementById("lista");lista.innerHTML="";let suma=0;
+    Object.keys(carrito).forEach(p=>{let it=carrito[p];lista.innerHTML+=`<li>${p} x${it.cantidad} → S/ ${(it.precio*it.cantidad).toFixed(2)}</li>`;suma+=it.precio*it.cantidad;});
+    document.getElementById("total").textContent=`Total: S/ ${suma.toFixed(2)}`;
   }
 
-  function vaciarCarrito() {
-    carrito = {};
-    renderCarrito();
-  }
+  function vaciarCarrito(){carrito={};renderCarrito();}
 
-  function mostrarSeccion(id) {
-    document.querySelectorAll(".productos").forEach(sec => sec.classList.remove("active"));
+  function mostrarSeccion(id){
+    document.getElementById("menuSecciones").style.display="none";
+    document.getElementById("volverBtn").style.display="inline-block";
     document.getElementById(id).classList.add("active");
   }
 
-  function buscarProducto() {
-    const valor = document.getElementById("buscador").value.toLowerCase();
-    document.querySelectorAll(".producto").forEach((producto) => {
-      const nombre = producto.dataset.nombre.toLowerCase();
-      producto.style.display = nombre.includes(valor) ? "block" : "none";
-    });
+  function volverMenu(){
+    document.querySelectorAll(".productos").forEach(s=>s.classList.remove("active"));
+    document.getElementById("menuSecciones").style.display="flex";
+    document.getElementById("menuSecciones").style.display="flex";
+    document.getElementById("volverBtn").style.display="none";
   }
 
-  function simularPago() {
-    if (Object.keys(carrito).length === 0) {
-      document.getElementById("estadoPago").textContent = "El carrito está vacío 🥺";
-      return;
-    }
+  // Modal pago
+  function abrirModalPago(){
+    document.getElementById("modalPago").style.display="flex";
+    document.getElementById("resumenPago").textContent="Procesando compra...";
+  }
 
-    document.getElementById("estadoPago").textContent = "✅ Pago simulado exitosamente 💳🎉";
+  function cerrarModalPago(){
+    document.getElementById("modalPago").style.display="none";
+    document.getElementById("estadoPago").textContent="";
+  }
+
+  function confirmarPago(){
+    document.getElementById("estadoPago").textContent="✅ ¡Pago simulado exitoso! 🎉";
+    carrito={};
+    renderCarrito();
+  }
+
+  function buscarProducto(){
+    const valor=document.getElementById("buscador").value.toLowerCase();
+    document.querySelectorAll(".producto").forEach(p=>{const n=p.dataset.nombre.toLowerCase();p.style.display=n.includes(valor)?"block":"none";});
   }
 </script>
 
 </body>
 </html>
-
