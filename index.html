@@ -1,414 +1,497 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Utilex - Todo para la lista escolar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilex – E-commerce</title>
 
-  <style>
-    :root{
-      --blue:#0b63ce;
-      --blue-dark:#094a99;
-      --green:#2fa52f;
-      --bg:#eaf8e8;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --radius:12px;
-      --shadow: 0 8px 20px rgba(12,38,84,0.08);
-    }
+<style>
+:root{
+  --verde: #28a745;
+  --azul:  #007bff;
+}
 
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#e4f4cc 0%,#eaf8e8 100%);padding-bottom:40px}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:var(--blue);
-      color:white;
-      padding:15px 20px;
-      box-shadow:0 6px 18px rgba(11,99,206,0.14);
-    }
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:white;
+  border-bottom:3px solid var(--azul);
+}
 
-    .header-left{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    .header-left img.logo{
-      height:55px;
-      width:auto;
-      border-radius:10px;
-      background:linear-gradient(90deg,var(--green),var(--blue));
-      padding:6px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    }
+.logo{
+  height:55px;
+  animation:fadeIn 1.2s ease;
+}
 
-    .header-text div.brand{
-      font-size:22px;
-      font-weight:700;
-    }
+.header-text .brand{
+  font-size:24px;
+  font-weight:700;
+  color:var(--verde);
+}
 
-    .header-text div.slogan{
-      font-size:12px;
-      opacity:0.9;
-    }
+.header-text .slogan{
+  font-size:14px;
+  font-weight:500;
+  color:var(--azul);
+}
 
-    .search-box input{
-      padding:8px 12px;
-      width:220px;
-      border-radius:8px;
-      border:none;
-      outline:none;
-      font-size:14px;
-      box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    }
+.search-box input{
+  padding:10px 15px;
+  font-size:16px;
+  border:2px solid var(--verde);
+  border-radius:20px;
+  width:220px;
+  transition:0.3s;
+}
+.search-box input:focus{
+  width:260px;
+  outline:none;
+  border-color:var(--azul);
+}
 
-    .main-banner img{
-      width:100%;
-      height:auto;
-      object-fit:cover;
-      display:block;
-      max-height:320px;
-      min-height:140px;
-    }
+.main-banner img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  max-height:300px;
+  min-height:120px;
+  animation:slideDown 0.8s ease;
+}
 
-    .wrap{
-      max-width:1100px;
-      margin:22px auto;
-      padding:0 18px;
-      display:grid;
-      grid-template-columns:1fr 360px;
-      gap:20px;
-    }
+body{
+  background:#f2f2f2;
+  padding-bottom:50px;
+}
 
-    .sections{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:10px;
-    }
+.section-container{
+  padding:25px;
+}
 
-    .circle{
-      width:130px;
-      height:130px;
-      background:var(--card);
-      border-radius:50%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      font-size:13px;
-      font-weight:600;
-      box-shadow:var(--shadow);
-      cursor:pointer;
-      transition:transform .2s;
-      padding:10px;
-    }
+h2{
+  font-size:22px;
+  color:var(--azul);
+  margin-bottom:18px;
+  animation:fadeIn 0.7s ease;
+}
 
-    .circle:hover{transform:scale(1.08)}
+.circulos-categorias{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+  margin-bottom:30px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-      gap:16px;
-    }
+.circulo{
+  width:120px;
+  height:120px;
+  background:var(--verde);
+  color:white;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-weight:600;
+  padding:10px;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.3s;
+  animation:popIn 0.6s ease;
+}
+.circulo:hover{
+  transform:scale(1.1);
+  background:var(--azul);
+}
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:12px;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      transition:transform .18s;
-      overflow:hidden;
-    }
+.productos{
+  display:none;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:20px;
+}
 
-    .card:hover{transform:translateY(-6px)}
+.product-card{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  text-align:center;
+  transition:0.3s;
+  animation:fadeIn 0.5s ease;
+}
+.product-card:hover{
+  transform:translateY(-5px);
+  border:1px solid var(--azul);
+}
 
-    .card img{width:100%;height:160px;object-fit:contain;border-radius:8px;background:#f5f5f5;padding:8px}
+.product-card img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
 
-    .price{font-weight:700;color:var(--blue-dark)}
+.product-card .nombre{
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+.product-card .precio{
+  color:var(--verde);
+  font-weight:700;
+  margin-bottom:10px;
+  font-size:14px;
+}
 
-    .controls{display:flex;gap:8px;align-items:center;margin-top:6px}
-    .controls input{width:68px;padding:6px;border-radius:8px;border:1px solid #e6e7eb;font-size:14px}
+.btn-add{
+  background:var(--azul);
+  border:none;
+  padding:7px 10px;
+  color:white;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:13px;
+  transition:0.3s;
+}
+.btn-add:hover{
+  background:var(--verde);
+}
 
-    .btn{background:var(--blue);color:white;border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:600}
-    .btn:hover{background:var(--blue-dark)}
+.cantidad-box input{
+  width:55px;
+  padding:4px;
+  margin-bottom:8px;
+  text-align:center;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
 
-    #carrito{
-      position:sticky;
-      top:18px;
-      background:var(--card);
-      padding:16px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+.carrito-section{
+  background:white;
+  padding:20px;
+  margin:25px;
+  border-radius:15px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  animation:fadeIn 0.8s ease;
+}
 
-    #carrito h2{font-size:18px;margin-bottom:10px}
+.carrito-section h3{
+  font-size:18px;
+  color:var(--azul);
+  margin-bottom:15px;
+}
 
-    #lista{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;max-height:420px;overflow:auto}
+#carritoLista{
+  margin-bottom:15px;
+}
 
-    .item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;transition:background .12s}
-    .item:hover{background:#f7fafc}
-    .item img{width:56px;height:56px;object-fit:contain;border-radius:6px}
+.carrito-item{
+  font-size:15px;
+  margin-bottom:10px;
+  line-height:1.4;
+  border-bottom:1px dashed #ddd;
+  padding-bottom:5px;
+}
 
-    .qty button{
-      background:#eef2ff;
-      border:1px solid #e0e7ff;
-      padding:6px 8px;
-      border-radius:6px;
-      cursor:pointer;
-      font-weight:600;
-    }
+#carritoTotal{
+  font-size:17px;
+  font-weight:700;
+  color:var(--verde);
+  margin-bottom:12px;
+}
 
-    .remove{background:transparent;color:#ff4d4f;border:none;cursor:pointer;font-weight:700;font-size:14px}
+.btn-vaciar{
+  padding:8px 12px;
+  border:none;
+  border-radius:10px;
+  background:#dc3545;
+  color:white;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.3s;
+}
+.btn-vaciar:hover{
+  opacity:0.8;
+}
 
-    .pay{display:flex;gap:8px;margin-top:12px}
-    .btn-pay{background:var(--green);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700}
-    .btn-empty{background:white;border:1px solid #ccc;padding:10px 12px;border-radius:8px;cursor:pointer}
+.payment-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  animation:fadeIn 0.5s ease;
+}
 
-    /* Modal */
-    #modalPago{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.35);
-      justify-content:center;
-      align-items:center;
-    }
+.payment-box{
+  background:white;
+  width:100%;
+  max-width:360px;
+  padding:22px;
+  border-radius:18px;
+  animation:slideUp 0.6s ease;
+}
 
-    .modal-content{
-      background:white;
-      width:90%;
-      max-width:320px;
-      padding:18px;
-      border-radius:var(--radius);
-      box-shadow:0 8px 22px rgba(0,0,0,0.2);
-      animation:pop .3s ease;
-    }
+.payment-box h4{
+  color:var(--verde);
+  font-size:19px;
+  margin-bottom:12px;
+}
 
-    @keyframes pop{
-      0%{transform:scale(.9);opacity:.6}
-      60%{transform:scale(1.05)}
-      100%{transform:scale(1);opacity:1}
-    }
+.payment-box input{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  margin-bottom:12px;
+  font-size:15px;
+}
 
-    @media (max-width:780px){
-      .wrap{grid-template-columns:1fr}
-      .search-box input{width:160px}
-    }
-  </style>
+.payment-method{
+  display:flex;
+  gap:10px;
+  margin:10px 0 18px;
+}
+
+.btn-method{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+#btnYape{ background:#720e9e; }
+#btnTarjeta{ background:var(--azul); }
+
+#btnPagarAhora{
+  width:100%;
+  padding:12px;
+  background:var(--verde);
+  color:white;
+  border:none;
+  border-radius:12px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+#btnPagarAhora:hover{
+  opacity:0.85;
+}
+
+#btnCerrarPago{
+  width:100%;
+  padding:10px;
+  background:#6c757d;
+  color:white;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+@keyframes fadeIn{ from{opacity:0} to{opacity:1}}
+@keyframes popIn{ 0%{transform:scale(0.7);opacity:0} 100%{transform:scale(1);opacity:1}}
+@keyframes slideDown{ from{transform:translateY(-25px);opacity:0} to{transform:translateY(0);opacity:1}}
+@keyframes slideUp{ from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1}}
+@keyframes slideUp{ from{transform:translateY(40px);opacity:0} to{transform:translateY(0);opacity:1}}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="header-left">
-      <img class="logo" src="img/logo.png" alt="Utilex logo" />
-      <div class="header-text">
-        <div class="brand">Utilex</div>
-        <div class="slogan">Todo para tu lista escolar</div>
-      </div>
+<header>
+  <div class="header-left">
+    <img class="logo" src="img/logo.png" alt="Utilex logo"/>
+    <div class="header-text">
+      <div class="brand">Utilex</div>
+      <div class="slogan">Todo para tu lista escolar</div>
     </div>
-
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Buscar productos..." onkeyup="buscarProducto()"/>
-    </div>
-  </header>
-
-  <!-- Banner responsive -->
-  <section class="main-banner">
-    <img src="img/banner-1.png" alt="Banner Utilex" onerror="this.outerHTML='<p style=\'padding:20px;text-align:center\'>⚠ Error cargando banner</p>'"/>
-  </section>
-
-  <div class="wrap">
-
-    <!-- SECCIONES INICIALES -->
-    <section id="seccionesInicio">
-      <h2>Selecciona una sección</h2>
-      <div class="sections">
-        <div class="circle" onclick="abrirSeccion('seccionUtiles')">✨ Útiles Escolares</div>
-        <div class="circle" onclick="abrirSeccion('seccionOficina')">📂 Materiales de Oficina</div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN ÚTILES -->
-    <section id="seccionUtiles" style="display:none">
-      <h2>Útiles Escolares</h2>
-      <button class="btn" onclick="volver()">⬅ Volver</button>
-      <div class="grid" id="productsGrid1"></div>
-    </section>
-
-    <!-- SECCIÓN OFICINA -->
-    <section id="seccionOficina" style="display:none">
-      <h2>Materiales de Oficina</h2>
-      <button class="btn" onclick="volver()">⬅ Volver</button>
-      <div class="grid" id="productsGrid2"></div>
-    </section>
-
-    <!-- CARRITO -->
-    <aside>
-      <div id="carrito">
-        <h2>🛍 Carrito</h2>
-        <ul id="lista"></ul>
-        <p><strong>Total: </strong><span id="totalText">S/ 0.00</span></p>
-
-        <div class="pay">
-          <button class="btn-pay" onclick="abrirModalPago()">💳 Pagar</button>
-          <button class="btn-empty" onclick="vaciarCarrito()">Vaciar</button>
-        </div>
-      </div>
-    </aside>
   </div>
 
-  <!-- MODAL DE PAGO -->
-  <section id="modalPago">
-    <div class="modal-content">
-      <h3>💳 Pago simulado</h3>
-      <p id="resumenPago"></p>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 Buscar productos…"/>
+  </div>
+</header>
 
-      <p>Selecciona método:</p>
-      <button class="btn-pay" onclick="pagarAhora('yape')">🟢 Yape</button>
-      <button class="btn" onclick="pagarAhora('tarjeta')">🔵 Tarjeta</button>
+<section class="main-banner">
+  <img src="img/banner%201.png" alt="Banner Utilex"
+  onerror="this.outerHTML='<p style=\'text-align:center;padding:20px;color:red;font-weight:bold\'>⚠ Error cargando banner</p>'"/>
+</section>
 
-      <p id="estadoPago"></p>
+<div class="section-container">
+
+<h2>SECCIÓN 1: ÚTILES ESCOLARES</h2>
+<div class="circulos-categorias">
+
+  <div class="circulo" onclick="mostrarProductos('cuadernos')">📘 Cuadernos</div>
+  <div class="circulo" onclick="mostrarProductos('escritura')">✏️ Lápices y Lapiceros</div>
+  <div class="circulo" onclick="mostrarProductos('mochilas')">🎒 Mochilas</div>
+  <div class="circulo" onclick="mostrarProductos('colores')">🎨 Colores</div>
+
+</div>
+
+<div id="cuadernos" class="productos">
+  <div class="product-card"><img src="img/Cuaderno%20cuadriculado%20anillado.png"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+</div>
+
+<div id="escritura" class="productos">
+  <div class="product-card"><img src="img/lapicero%20azul.png"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+</div>
+
+<div id="mochilas" class="productos">
+  <div class="product-card"><img src="img/Mochila%20Dragon.png"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+</div>
+
+<div id="colores" class="productos">
+  <div class="product-card"><img src="img/caja%20de%20colores.png"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+</div>
+
+</div>
+
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista"></div>
+  <div id="carritoTotal">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+
+<div class="payment-overlay" id="paymentOverlay">
+  <div class="payment-box">
+    <h4>💳 Simulación de pago</h4>
+    <input type="text" id="nombreCliente" placeholder="Ingresa tu nombre"/>
+    <p>Elige método de pago:</p>
+    <div class="payment-method">
+      <button class="btn-method" id="btnYape" onclick="seleccionarMetodo('Yape')">YAPE</button>
+      <button class="btn-method" id="btnTarjeta" onclick="seleccionarMetodo('Tarjeta')">TARJETA</button>
     </div>
-  </section>
+    <button id="btnPagarAhora" onclick="pagar()">Pagar ahora</button>
+    <button id="btnCerrarPago" onclick="cerrarPago()">Cancelar / Volver</button>
+  </div>
+</div>
 
-  <script>
-    const productos1 = [
-      {id:'cuaderno', nombre:'Cuaderno cuadriculado anillado', precio:12.50, img:'img/Cuaderno%20cuadriculado%20anillado.png'},
-      {id:'lapicero', nombre:'Lapicero Azul', precio:2.00, img:'img/lapicero%20azul.png'},
-      {id:'mochila', nombre:'Mochila Dragon', precio:75.00, img:'img/Mochila%20Dragon.png'},
-      {id:'colores', nombre:'Caja de Colores', precio:18.90, img:'img/caja%20de%20colores.png'},
-    ];
+<script>
+let carrito = [];
+let metodoPago = null;
 
-    const productos2 = [
-      {id:'calc', nombre:'Calculadora básica', precio:15.00, img:'img/calculadora.png'},
-      {id:'corrector', nombre:'Corrector cinta', precio:6.50, img:'img/corrector.png'},
-    ];
+function mostrarProductos(id){
+  document.querySelectorAll('.productos').forEach(e => e.style.display='none');
+  document.getElementById(id).style.display='grid';
+}
 
-    let carrito = {};
+function addCarrito(btn){
+  const card = btn.closest('.product-card');
+  const nombre = card.querySelector('.nombre').innerText;
+  const precio = parseFloat(card.querySelector('.precio').innerText.replace('S/',''));
+  const input = card.querySelector('input');
+  const cantidad = parseInt(input.value);
+  const max = parseInt(input.dataset.max);
 
-    function abrirSeccion(id){
-      document.getElementById("seccionesInicio").style.display="none";
-      document.getElementById("seccionUtiles").style.display="none";
-      document.getElementById("seccionOficina").style.display="none";
-      document.getElementById(id).style.display="block";
+  if(cantidad > max){
+    alert(`Solo puedes agregar máximo ${max} unidades por producto`);
+    return;
+  }
+
+  const existente = carrito.find(p => p.nombre === nombre);
+  if(existente){
+    existente.cantidad += cantidad;
+    if(existente.cantidad > 12){
+      alert("No puedes comprar más de 12 unidades de un mismo producto");
+      existente.cantidad = 12;
     }
+  } else {
+    carrito.push({nombre, precio, cantidad});
+  }
 
-    function volver(){
-      document.getElementById("seccionUtiles").style.display="none";
-      document.getElementById("seccionOficina").style.display="none";
-      document.getElementById("seccionesInicio").style.display="block";
-    }
+  actualizarCarrito();
+}
 
-    function agregarCarrito(p, cantidad){
-      if(!carrito[p.id]){
-        carrito[p.id] = {...p, cantidad: 0};
-      }
-      if(carrito[p.id].cantidad + cantidad > 12){
-        alert("Límite máximo: 12 unidades por producto");
-        return;
-      }
-      carrito[p.id].cantidad += cantidad;
-      renderCarrito();
-    }
+function actualizarCarrito(){
+  const caja = document.getElementById('carritoLista');
+  const totalCaja = document.getElementById('carritoTotal');
+  caja.innerHTML = '';
 
-    function vaciarCarrito(){
-      if(confirm("¿Vaciar carrito?")){
-        carrito = {};
-        renderCarrito();
-      }
-    }
+  let total = 0;
+  let totalProductos = 0;
 
-    function abrirModalPago(){
-      const total = Object.values(carrito).reduce((s,it)=> s + it.precio * it.cantidad, 0);
-      if(total === 0){
-        alert("Tu carrito está vacío");
-        return;
-      }
-      const nombre = prompt("Escribe tu nombre:");
-      if(!nombre){ alert("Pago cancelado"); return; }
+  carrito.forEach(p => {
+    total += p.precio * p.cantidad;
+    totalProductos += p.cantidad;
+    caja.innerHTML += `<div class="carrito-item">${p.nombre} x${p.cantidad} — S/${(p.precio * p.cantidad).toFixed(2)}</div>`;
+  });
 
-      document.getElementById("modalPago").style.display="flex";
-      document.getElementById("resumenPago").innerHTML = `
-        👤 Cliente: <b>${nombre}</b><br>
-        💰 Total a pagar: <b>S/ ${total.toFixed(2)}</b>
-      `;
-    }
+  if(totalProductos > 12){
+    alert("El carrito no puede tener más de 12 productos en total");
+    carrito = [];
+    caja.innerHTML = '';
+    total = 0;
+  }
 
-    function pagarAhora(metodo){
-      const nombre = document.getElementById("resumenPago").textContent;
-      document.getElementById("estadoPago").textContent = `✅ Pago simulado realizado con ${metodo.toUpperCase()}`;
-      carrito = {};
-      renderCarrito();
-    }
+  totalCaja.innerText = `Total: S/ ${total.toFixed(2)}`;
+}
 
-    function buscarProducto(){
-      const term = document.getElementById("searchInput").value.toLowerCase();
-      document.querySelectorAll(".card").forEach(c=>{
-        const text = c.textContent.toLowerCase();
-        c.style.display = text.includes(term) ? "flex" : "none";
-      });
-    }
+function vaciarCarrito(){
+  carrito = [];
+  actualizarCarrito();
+}
 
-    const grid1 = document.getElementById("productsGrid1");
-    const grid2 = document.getElementById("productsGrid2");
+function abrirPago(){
+  if(carrito.length === 0){
+    alert("El carrito está vacío");
+    return;
+  }
+  document.getElementById('paymentOverlay').style.display='flex';
+}
 
-    productos1.forEach(p=>{
-      const card = document.createElement("article");
-      card.className="card";
-      card.innerHTML=`
-        <img src="${p.img}">
-        <h3>${p.nombre}</h3>
-        <div class="price">S/ ${p.precio.toFixed(2)}</div>
-        <div class="controls">
-          <input type="number" min="1" value="1" id="qty-${p.id}">
-          <button class="btn" onclick='agregarCarrito(${JSON.stringify(p)},1)'>Agregar</button>
-        </div>
-      `;
-      grid1.appendChild(card);
-    });
+function seleccionarMetodo(m){
+  metodoPago = m;
+  alert(`Método seleccionado: ${m}`);
+}
 
-    productos2.forEach(p=>{
-      const card = document.createElement("article");
-      card.className="card";
-      card.innerHTML=`
-        <img src="${p.img}">
-        <h3>${p.nombre}</h3>
-        <div class="price">S/ ${p.precio.toFixed(2)}</div>
-        <div class="controls">
-          <input type="number" min="1" value="1" id="qty-${p.id}">
-          <button class="btn" onclick='agregarCarrito(${JSON.stringify(p)},1)'>Agregar</button>
-        </div>
-      `;
-      grid2.appendChild(card);
-    });
+function pagar(){
+  const nombre = document.getElementById('nombreCliente').value.trim();
+  if(!nombre){
+    alert("Debes escribir tu nombre");
+    return;
+  }
+  if(!metodoPago){
+    alert("Debes seleccionar un método de pago");
+    return;
+  }
 
-    function renderCarrito(){
-      const lista = document.getElementById("lista");
-      lista.innerHTML="";
-      let total=0;
-      Object.values(carrito).forEach(it=>{
-        total += it.precio * it.cantidad;
-        const li=document.createElement("li");
-        li.className="item";
-        li.innerHTML=`
-          <img src="${it.img}">
-          <div class="meta"><b>${it.nombre}</b><br><small>${it.cantidad} uds</small></div>
-          <button class="remove" onclick="delete carrito['${it.id}'];renderCarrito()">×</button>
-        `;
-        lista.appendChild(li);
-      });
-      totalText.textContent = `S/ ${total.toFixed(2)}`;
-    }
-  </script>
+  alert(`✅ Pago simulado con ${metodoPago} a nombre de ${nombre}`);
+  cerrarPago();
+  vaciarCarrito(); 
+  document.querySelectorAll('.productos').forEach(e => e.style.display='none');
+}
+
+function cerrarPago(){
+  document.getElementById('paymentOverlay').style.display='none';
+}
+</script>
 
 </body>
 </html>
-
