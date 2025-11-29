@@ -178,6 +178,7 @@ h2{
   flex-direction:column;
   align-items:center;
 }
+/* circulo original, ahora solo imagen dentro */
 .circulo{
   width:140px;
   height:140px;
@@ -208,9 +209,11 @@ h2{
   left:0;
   border-radius:50%;
 }
+/* ocultamos el span superpuesto que venía antes */
 .circulo span{
   display:none;
 }
+/* etiqueta debajo del circulo */
 .label{
   margin-top:8px;
   font-size:13px;
@@ -642,6 +645,7 @@ h2{
     </div>
     <div class="label">Engrapado y Corte</div>
   </div>
+  <!-- Sección "Organización de Escritorio" ELIMINADA -->
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('calculadoras')">
       <img src="img/Fondo para circulo Calculadoras.png" alt="Calculadoras"/>
@@ -1123,8 +1127,10 @@ h2{
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
+  <!-- Botón Volver al inicio -->
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
   <h2>📘 CUADERNOS</h2>
+  <!-- Mostrar subsecciones -->
   <div class="circulos-categorias">
     <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosCuadriculados')"><div class="label">Anillados Cuadriculados</div></div></div>
     <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosRayados')"><div class="label">Anillados Rayados</div></div></div>
@@ -1406,6 +1412,34 @@ h2{
   </div>
 </div>
 
+<!-- PÁGINA LAPICEROS EN PAQUETES -->
+<div id="paginaLapicerosPaquetes" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="irAPagina('subEscritura')">⬅️ Volver a subsecciones</button>
+        <h2>✏️ Lapiceros en Paquetes</h2>
+        <div class="productos" style="display:grid">
+          <div class="product-card" data-nombre="lapiceros carioca"><img src="img/lapices y lapiceros/LAPICEROS CARIOCA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapiceros Carioca</div><div class="precio">S/8.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+          <div class="product-card" data-nombre="lapiceros faber castell color gel 0.8 mm"><img src="img/lapices y lapiceros/LAPICEROS FABER CASTELL COLOR GEL 0.8 m.m.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapiceros Faber Castell Color Gel 0.8 mm</div><div class="precio">S/14.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+          <div class="product-card" data-nombre="lapiceros ove tri-x 032"><img src="img/lapices y lapiceros/LAPICEROS OVE TRI-X 032.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapiceros OVE Tri-X 032</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+          <div class="product-card" data-nombre="lapiceros pilot fine"><img src="img/lapices y lapiceros/LAPICEROS PILOT FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapiceros Pilot Fine</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+          <div class="product-card" data-nombre="lapiceros yummy yummy glitter gel set of 12"><img src="img/lapices y lapiceros/LAPICEROS YUMMY YUMMY GLITTER GEL SET OF 12.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapiceros Yummy Yummy Glitter Gel (Set de 12)</div><div class="precio">S/22.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoLista29"></div>
+        <div id="carritoTotal29">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagar29" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
 <div class="payment-overlay" id="paymentOverlay">
   <div class="payment-box">
     <h4>💳 Simulación de pago</h4>
@@ -1436,6 +1470,7 @@ function irAPagina(categoria){
     'engrapadoCorte': 'paginaEngrapadoCorte',
     'calculadoras': 'paginaCalculadoras',
     'lapiceros': 'paginaLapiceros',
+    'lapicerosPaquetes': 'paginaLapicerosPaquetes',
     // Subsecciones de cuadernos
     'cuadernosAnilladosCuadriculados': 'paginaCuadernosAnilladosCuadriculados',
     'cuadernosAnilladosRayados': 'paginaCuadernosAnilladosRayados',
@@ -1512,13 +1547,14 @@ function eliminarProducto(nombre){
   actualizarCarrito();
 }
 function actualizarCarrito(){
+  // Actualizar todos los carritos en todas las páginas
   const idsCarrito = [
     'carritoLista', 'carritoLista2', 'carritoLista3', 'carritoLista4',
     'carritoLista5', 'carritoLista6', 'carritoLista7', 'carritoLista8',
     'carritoLista9', 'carritoLista10', 'carritoLista11', 'carritoLista12',
     'carritoLista13', 'carritoLista14', 'carritoLista15', 'carritoLista16',
     'carritoLista17', 'carritoLista18', 'carritoLista19', 'carritoLista20', 'carritoLista21', 'carritoLista22',
-    'carritoLista23', 'carritoLista24', 'carritoLista25', 'carritoLista26', 'carritoLista27', 'carritoLista28',
+    'carritoLista23', 'carritoLista24', 'carritoLista25', 'carritoLista26', 'carritoLista27', 'carritoLista28', 'carritoLista29',
     'carritoListaSubCuadernos', 'carritoListaSubEscritura', 'carritoListaSubColoresPlumones',
     'carritoListaSubEspecialesCartuchera', 'carritoListaSubPapeleria', 'carritoListaSubEngrapadoCorte'
   ];
@@ -1528,7 +1564,7 @@ function actualizarCarrito(){
     'carritoTotal9', 'carritoTotal10', 'carritoTotal11', 'carritoTotal12',
     'carritoTotal13', 'carritoTotal14', 'carritoTotal15', 'carritoTotal16',
     'carritoTotal17', 'carritoTotal18', 'carritoTotal19', 'carritoTotal20', 'carritoTotal21', 'carritoTotal22',
-    'carritoTotal23', 'carritoTotal24', 'carritoTotal25', 'carritoTotal26', 'carritoTotal27', 'carritoTotal28',
+    'carritoTotal23', 'carritoTotal24', 'carritoTotal25', 'carritoTotal26', 'carritoTotal27', 'carritoTotal28', 'carritoTotal29',
     'carritoTotalSubCuadernos', 'carritoTotalSubEscritura', 'carritoTotalSubColoresPlumones',
     'carritoTotalSubEspecialesCartuchera', 'carritoTotalSubPapeleria', 'carritoTotalSubEngrapadoCorte'
   ];
