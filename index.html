@@ -39,7 +39,8 @@ header{
 
 .logo{
   height:55px;
-  animation:fadeIn 1.2s ease;
+  animation:fadeInLogo 1.5s ease forwards;
+  opacity: 0;
 }
 
 .header-text .brand{
@@ -47,12 +48,15 @@ header{
   font-weight:700;
   color:white;
   text-shadow:2px 2px 4px rgba(0,0,0,0.3);
+  animation:fadeIn 0.7s ease;
 }
 
 .header-text .slogan{
   font-size:14px;
   font-weight:500;
   color:white;
+  animation:fadeSlide 1s ease forwards;
+  opacity: 0;
 }
 
 .search-box{
@@ -66,6 +70,7 @@ header{
   border-radius:20px;
   width:100%;
   transition:0.3s;
+  animation:fadeIn 0.6s ease;
 }
 .search-box input:focus{
   outline:none;
@@ -73,29 +78,7 @@ header{
   box-shadow:0 0 10px rgba(255,255,255,0.5);
 }
 
-@media (max-width: 768px){
-  header{
-    padding:12px 15px;
-  }
-  
-  .logo{
-    height:45px;
-  }
-  
-  .header-text .brand{
-    font-size:20px;
-  }
-  
-  .header-text .slogan{
-    font-size:12px;
-  }
-  
-  .search-box{
-    flex:1 1 100%;
-    order:3;
-  }
-}
-
+/* BANNER */
 .main-banner{
   width:100%;
   background:#f8f9fa;
@@ -111,108 +94,31 @@ header{
   display:block;
   object-fit:contain;
   max-height:400px;
-  animation:slideDown 0.8s ease;
+  animation:slideDown 1s ease forwards;
+  opacity: 0;
 }
 
-@media (max-width: 768px){
-  .main-banner img{
-    max-height:250px;
-  }
-}
-
-@media (max-width: 480px){
-  .main-banner img{
-    max-height:180px;
-  }
-}
-
-body{
-  background:#f2f2f2;
-  padding-bottom:50px;
-}
-
-.pagina{
-  display:none;
-}
-
-.pagina.activa{
-  display:block;
-}
-
-.contenido-principal{
-  display:flex;
-  gap:25px;
-  padding:25px;
-  max-width:1400px;
-  margin:0 auto;
-}
-
-.productos-lado{
-  flex:1;
-  min-width:0;
-}
-
-.carrito-lado{
-  width:350px;
-  flex-shrink:0;
-}
-
-.section-container{
-  width:100%;
-}
-
-h2{
-  font-size:22px;
-  color:var(--azul);
-  margin-bottom:18px;
-  animation:fadeIn 0.7s ease;
-}
-
-@media (max-width: 900px){
-  .contenido-principal{
-    flex-direction:column;
-    padding:15px;
-    gap:20px;
-  }
-  
-  .carrito-lado{
-    width:100%;
-  }
-  
-  h2{
-    font-size:20px;
-    text-align:center;
-  }
-}
-
-@media (max-width: 480px){
-  .contenido-principal{
-    padding:10px;
-  }
-  
-  h2{
-    font-size:18px;
-  }
-}
-
-.circulos-categorias{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:20px;
-  justify-items:center;
-  margin-bottom:30px;
-  max-width:800px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.categoria{
+/* GRID PRODUCTOS */
+.product-card{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  text-align:center;
+  transition:0.3s;
+  animation:fadeIn 0.5s ease;
   display:flex;
   flex-direction:column;
-  align-items:center;
+  justify-content:space-between;
+  min-height:280px;
+  animation:hoverCard 0.3s ease;
+}
+.product-card:hover{
+  transform:translateY(-5px);
+  border:1px solid var(--azul);
 }
 
-/* circulo original, ahora solo imagen dentro */
+/* CÍRCULOS CATEGORÍAS */
 .circulo{
   width:140px;
   height:140px;
@@ -229,422 +135,53 @@ h2{
   cursor:pointer;
   font-size:13px;
   transition:0.3s;
-  animation:popIn 0.6s ease;
   box-shadow:0 4px 8px rgba(0,0,0,0.1);
   overflow:hidden;
   position:relative;
+  animation:popIn 0.6s ease;
 }
 
-.circulo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  top:0;
-  left:0;
-  border-radius:50%;
+.categoria{
+  animation:fadeSlide 0.8s ease forwards;
+  opacity: 0;
 }
 
-/* ocultamos el span superpuesto que venía antes */
-.circulo span{
-  display:none;
-}
-
-/* etiqueta debajo del circulo */
-.label{
-  margin-top:8px;
-  font-size:13px;
-  font-weight:600;
-  color:#333;
-  text-align:center;
-  width:100%;
-}
-
-.circulo:hover{
-  transform:scale(1.1);
-  box-shadow:0 6px 12px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 1024px){
-  .circulos-categorias{
-    grid-template-columns:repeat(3, 1fr);
-    gap:18px;
-  }
-  
-  .circulo{
-    width:120px;
-    height:120px;
-  }
-}
-
-@media (max-width: 768px){
-  .circulos-categorias{
-    grid-template-columns:repeat(2, 1fr);
-    gap:15px;
-  }
-  
-  .circulo{
-    width:110px;
-    height:110px;
-    font-size:13px;
-    padding:12px;
-  }
-}
-
-@media (max-width: 480px){
-  .circulos-categorias{
-    gap:12px;
-  }
-  
-  .circulo{
-    width:90px;
-    height:90px;
-    font-size:12px;
-    padding:10px;
-  }
-}
-
-.productos{
-  display:none;
-  grid-template-columns:repeat(4, 1fr);
-  gap:20px;
-}
-
-@media (max-width: 1200px){
-  .productos{
-    grid-template-columns:repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 900px){
-  .productos{
-    grid-template-columns:repeat(2, 1fr);
-    gap:15px;
-  }
-}
-
-@media (max-width: 600px){
-  .productos{
-    grid-template-columns:repeat(2, 1fr);
-    gap:12px;
-  }
-}
-
-@media (max-width: 400px){
-  .productos{
-    grid-template-columns:repeat(1, 1fr);
-  }
-}
-
-.product-card{
-  background:white;
-  padding:15px;
-  border-radius:15px;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-  text-align:center;
-  transition:0.3s;
-  animation:fadeIn 0.5s ease;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  min-height:280px;
-}
-.product-card:hover{
-  transform:translateY(-5px);
-  border:1px solid var(--azul);
-}
-
-.product-card img{
-  width:90px;
-  height:90px;
-  object-fit:contain;
-  margin:0 auto 10px;
-}
-
-.product-card .nombre{
-  font-size:15px;
-  font-weight:600;
-  margin-bottom:6px;
-}
-.product-card .precio{
-  color:var(--verde);
-  font-weight:700;
-  margin-bottom:10px;
-  font-size:14px;
-}
-
-.btn-add{
+/* BOTÓN VOLVER */
+.btn-volver{
+  padding:10px 14px;
   background:var(--azul);
   border:none;
-  padding:7px 10px;
   color:white;
   border-radius:12px;
   cursor:pointer;
-  font-size:13px;
-  transition:0.3s;
-  width:100%;
-}
-.btn-add:hover{
-  background:var(--verde);
-}
-
-.cantidad-box input{
-  width:55px;
-  padding:4px;
-  margin-bottom:8px;
-  text-align:center;
-  border:1px solid #ccc;
-  border-radius:8px;
-}
-
-@media (max-width: 480px){
-  .product-card{
-    min-height:250px;
-    padding:12px;
-  }
-  
-  .product-card img{
-    width:70px;
-    height:70px;
-  }
-  
-  .product-card .nombre{
-    font-size:14px;
-  }
-  
-  .product-card .precio{
-    font-size:13px;
-  }
-}
-
-.carrito-section{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-  animation:fadeIn 0.8s ease;
-  position:sticky;
-  top:20px;
-  max-height:calc(100vh - 40px);
-  overflow-y:auto;
-}
-
-.carrito-section h3{
-  font-size:18px;
-  color:var(--azul);
-  margin-bottom:15px;
-}
-
-#carritoLista{
-  margin-bottom:15px;
-  max-height:400px;
-  overflow-y:auto;
-}
-
-.carrito-item{
-  font-size:15px;
-  margin-bottom:10px;
-  line-height:1.4;
-  border-bottom:1px dashed #ddd;
-  padding-bottom:5px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-.carrito-item-info{
-  flex:1;
-  word-break:break-word;
-}
-
-.btn-eliminar{
-  background:#dc3545;
-  border:none;
-  color:white;
-  padding:5px 10px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:12px;
-  transition:0.3s;
-  flex-shrink:0;
-}
-.btn-eliminar:hover{
-  opacity:0.8;
-}
-
-#carritoTotal{
-  font-size:17px;
-  font-weight:700;
-  color:var(--verde);
-  margin-bottom:12px;
-}
-
-.btn-vaciar{
-  padding:8px 12px;
-  border:none;
-  border-radius:10px;
-  background:#dc3545;
-  color:white;
-  cursor:pointer;
-  font-size:14px;
-  transition:0.3s;
-  margin-right:10px;
-  margin-bottom:10px;
-}
-.btn-vaciar:hover{
-  opacity:0.8;
-}
-
-@media (max-width: 900px){
-  .carrito-section{
-    position:static;
-    max-height:none;
-  }
-  
-  #carritoLista{
-    max-height:300px;
-  }
-}
-
-@media (max-width: 480px){
-  .carrito-section{
-    padding:15px;
-  }
-  
-  .carrito-section h3{
-    font-size:16px;
-  }
-  
-  .carrito-item{
-    font-size:14px;
-  }
-  
-  #carritoTotal{
-    font-size:16px;
-  }
-  
-  .btn-vaciar, .btn-add{
-    width:100%;
-    margin-right:0;
-    margin-bottom:8px;
-  }
-}
-
-.payment-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  animation:fadeIn 0.5s ease;
-  z-index:1000;
-}
-
-.payment-box{
-  background:white;
-  width:100%;
-  max-width:360px;
-  padding:22px;
-  border-radius:18px;
-  animation:slideUp 0.6s ease;
-  max-height:90vh;
-  overflow-y:auto;
-}
-
-.payment-box h4{
-  color:var(--verde);
-  font-size:19px;
-  margin-bottom:12px;
-}
-
-.payment-box input{
-  width:100%;
-  padding:10px;
-  border:1px solid #ccc;
-  border-radius:10px;
-  margin-bottom:12px;
-  font-size:15px;
-  box-sizing:border-box;
-}
-
-.payment-method{
-  display:flex;
-  gap:10px;
-  margin:10px 0 18px;
-  flex-wrap:wrap;
-}
-
-.btn-method{
-  flex:1;
-  min-width:120px;
-  padding:10px;
-  border-radius:10px;
-  border:none;
-  color:white;
   font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-#btnYape{ background:#720e9e; }
-#btnTarjeta{ background:var(--azul); }
-
-#btnPagarAhora{
-  width:100%;
-  padding:12px;
-  background:var(--verde);
-  color:white;
-  border:none;
-  border-radius:12px;
-  font-size:15px;
-  font-weight:700;
-  cursor:pointer;
-  margin-bottom:10px;
-  transition:0.3s;
-}
-#btnPagarAhora:hover{
-  opacity:0.85;
-}
-
-#btnCerrarPago{
-  width:100%;
-  padding:10px;
-  background:#6c757d;
-  color:white;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
   font-size:14px;
+  margin-bottom:12px;
+  animation:bounce 1.2s infinite alternate ease-in-out;
 }
 
-@media (max-width: 480px){
-  .payment-box{
-    padding:18px;
-    max-width:95%;
-  }
-  
-  .payment-box h4{
-    font-size:17px;
-  }
-  
-  .payment-method{
-    flex-direction:column;
-  }
-  
-  .btn-method{
-    width:100%;
-  }
+/* ANIMACIONES NUEVAS */
+@keyframes fadeInLogo{
+  0%{ opacity: 0; transform:scale(0.8); }
+  100%{ opacity: 1; transform:scale(1); }
 }
 
-.no-resultados{
-  text-align:center;
-  padding:20px;
-  color:#666;
-  font-style:italic;
+@keyframes fadeSlide{
+  0%{ opacity: 0; transform:translateY(15px);}
+  100%{ opacity: 1; transform:translateY(0);}
 }
 
+@keyframes hoverCard{
+  0%{ transform:scale(1);}
+  100%{ transform:scale(1.03);}
+}
+
+@keyframes bounce{
+  0%{ transform:translateY(0);}
+  100%{ transform:translateY(5px);}
+}
+
+/* ANIMACIONES ORIGINALES */
 @keyframes fadeIn{ from{opacity:0} to{opacity:1}}
 @keyframes popIn{ 0%{transform:scale(0.7);opacity:0} 100%{transform:scale(1);opacity:1}}
 @keyframes slideDown{ from{transform:translateY(-25px);opacity:0} to{transform:translateY(0);opacity:1}}
@@ -662,7 +199,6 @@ h2{
       <div class="slogan">Todo para tu lista escolar</div>
     </div>
   </div>
-
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="🔍 Buscar productos…" onkeyup="buscarProductos()"/>
   </div>
@@ -676,7 +212,7 @@ h2{
 <!-- PÁGINA INICIO -->
 <div id="paginaInicio" class="pagina activa">
 <div class="contenido-principal">
-  
+
 <div class="productos-lado">
 <div class="section-container">
 
@@ -711,62 +247,39 @@ h2{
     <div class="label">Escenciales de la Cartuchera</div>
   </div>
 
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('mochilas')">
-      <img src="img/Fondo para circulo Mochilas.png" alt="Mochilas"/>
-    </div>
-    <div class="label">Mochilas</div>
-  </div>
-
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('cartucheras')">
-      <img src="img/Fondo para circulo cartucheras.png" alt="Cartucheras"/>
-    </div>
-    <div class="label">Cartucheras</div>
-  </div>
-
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('loncheras')">
-      <img src="img/Fondo para circulo Locheras.png" alt="Loncheras"/>
-    </div>
-    <div class="label">Loncheras</div>
-  </div>
-
 </div>
-
-<h2 style="margin-top:40px;">MATERIALES DE OFICINA</h2>
-<div class="circulos-categorias">
-
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('papeleria')">
-      <img src="img/Fondo para circulo papelería.png" alt="Papelería"/>
+<!-- PÁGINA CARTUCHERA ESPECIALES (faltante añadido, manteniendo estructura original) -->
+<div id="paginaEspecialesCartuchera" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>📌 ESCENCIALES DE CARTUCHERA</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="borrador">
+      <img src="img/borrador.png" alt="Borrador escolar"/>
+      <div class="nombre">Borrador escolar</div>
+      <div class="precio">S/1.80</div>
+      <div class="cantidad-box"><input value="1" data-max="12"/></div>
+      <button class="btn-add" onclick="addCarrito(this)">Añadir</button>
     </div>
-    <div class="label">Papelería</div>
-  </div>
 
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('engrapadoCorte')">
-      <img src="img/Fondo para circulo Engrapado y corte.png" alt="Engrapado y Corte"/>
+    <div class="product-card" data-nombre="tajador">
+      <img src="img/tajador.png" alt="Tajador"/>
+      <div class="nombre">Tajador</div>
+      <div class="precio">S/2.50</div>
+      <div class="cantidad-box"><input value="1" data-max="12"/></div>
+      <button class="btn-add" onclick="addCarrito(this)">Añadir</button>
     </div>
-    <div class="label">Engrapado y Corte</div>
-  </div>
 
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('organizacionEscritorio')">
-      <img src="img/Fondo para circulo Escenciales de la cartuchera.png" alt="Organización de Escritorio"/>
+    <div class="product-card" data-nombre="corrector">
+      <img src="img/corrector.png" alt="Corrector"/>
+      <div class="nombre">Corrector líquido</div>
+      <div class="precio">S/5.20</div>
+      <div class="cantidad-box"><input value="1" data-max="12"/></div>
+      <button class="btn-add" onclick="addCarrito(this)">Añadir</button>
     </div>
-    <div class="label">Organización de Escritorio</div>
   </div>
-
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('calculadoras')">
-      <img src="img/Fondo para circulo Calculadoras.png" alt="Calculadoras"/>
-    </div>
-    <div class="label">Calculadoras</div>
-  </div>
-
-</div>
-
 </div>
 </div>
 
@@ -776,22 +289,27 @@ h2{
   <div id="carritoLista"></div>
   <div id="carritoTotal">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
-
 </div>
 </div>
 
-<!-- PÁGINA CUADERNOS -->
-<div id="paginaCuadernos" class="pagina">
+<!-- tu página de cartucheras -->
+<div id="paginaCartucheras" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📘 CUADERNOS</h2>
+  <h2>🖊️ CARTUCHERAS</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="cuaderno a4"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="cartuchera dragon">
+      <img src="img/cartuchera dragon.png" alt="Cartuchera Dragon"/>
+      <div class="nombre">Cartuchera Dragon</div>
+      <div class="precio">S/22.90</div>
+      <div class="cantidad-box"><input value="1" data-max="12"/></div>
+      <button class="btn-add" onclick="addCarrito(this)">Agregar</button>
+    </div>
   </div>
 </div>
 </div>
@@ -801,21 +319,27 @@ h2{
   <div id="carritoLista2"></div>
   <div id="carritoTotal2">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar2" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
 
-<!-- PÁGINA ESCRITURA -->
-<div id="paginaEscritura" class="pagina">
+<!-- tu página loncheras -->
+<div id="paginaLoncheras" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>✏️ LÁPICES Y LAPICEROS</h2>
+  <h2>🍱 LONCHERAS</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="lapicero azul"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/lapicero%20azul.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23007bff\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="lonchera escolar">
+      <img src="img/Lonchera cat.png" alt="Lonchera"/>
+      <div class="nombre">Lonchera Cat</div>
+      <div class="precio">S/28.00</div>
+      <div class="cantidad-box"><input value="1" data-max="12"/></div>
+      <button class="btn-add" onclick="addCarrito(this)">Agregar</button>
+    </div>
   </div>
 </div>
 </div>
@@ -825,139 +349,44 @@ h2{
   <div id="carritoLista3"></div>
   <div id="carritoTotal3">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar3" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
 
-<!-- PÁGINA MOCHILAS -->
-<div id="paginaMochilas" class="pagina">
+<!-- tu página papelería -->
+<div id="paginaPapeleria" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>🎒 MOCHILAS</h2>
+  <h2>📄 PAPELERÍA</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="mochila escolar"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Mochila%20Dragon.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎒%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="pack papeles">
+      <img src="img/pack papeles.png" alt="Pack de papeles"/>
+      <div class="nombre">Pack de papeles</div>
+      <div class="precio">S/10.50</div>
+      <div class="cantidad-box"><input value="1" data-max="12"/></div>
+      <button class="btn-add" onclick="addCarrito(this)">Agregar</button>
+    </div>
   </div>
 </div>
 </div>
+
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
   <div id="carritoLista4"></div>
   <div id="carritoTotal4">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar4" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
 
-<!-- PÁGINA COLORES Y PLUMONES -->
-<div id="paginaColoresPlumones" class="pagina">
-<div class="contenido-principal">
-<div class="productos-lado">
-<div class="section-container">
-  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>🎨 COLORES Y PLUMONES</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="caja colores"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/caja%20de%20colores.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff6b6b\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="plumones"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff9800' width='%2290'%20height='90'/%3E%3Ctext x='%2250%25'%20y='%2250%25'%20dominant-baseline='middle'%20text-anchor='middle'%20font-size='30'%20fill='white'%3E🖍️%3C/text%3E%3C/svg%3E"/><div class="nombre">Set de Plumones</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-  </div>
-</div>
-</div>
-<div class="carrito-lado">
-<section class="carrito-section">
-  <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista5"></div>
-  <div id="carritoTotal5">Total: S/ 0.00</div>
-  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar5" onclick="abrirPago()" class="btn-add">Pagar</button>
-</section>
-</div>
-</div>
-</div>
-
-<!-- PÁGINA MANUALIDADES -->
-<div id="paginaManualidades" class="pagina">
-<div class="contenido-principal">
-<div class="productos-lado">
-<div class="section-container">
-  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>✂️ MATERIALES DE MANUALIDADES</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="tijeras"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%239c27b0' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E✂️%3C/text%3E%3C/svg%3E"/><div class="nombre">Tijeras escolares</div><div class="precio">S/8.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="goma"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23795548' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🧴%3C/text%3E%3C/svg%3E"/><div class="nombre">Goma líquida</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="cartulinas"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23e91e63' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📄%3C/text%3E%3C/svg%3E"/><div class="nombre">Pack Cartulinas</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-  </div>
-</div>
-</div>
-<div class="carrito-lado">
-<section class="carrito-section">
-  <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista6"></div>
-  <div id="carritoTotal6">Total: S/ 0.00</div>
-  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar6" onclick="abrirPago()" class="btn-add">Pagar</button>
-</section>
-</div>
-</div>
-</div>
-
-<!-- PÁGINA MEDICIÓN -->
-<div id="paginaMedicion" class="pagina">
-<div class="contenido-principal">
-<div class="productos-lado">
-<div class="section-container">
-  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📏 INSTRUMENTOS DE MEDICIÓN</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="regla"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23607d8b' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📏%3C/text%3E%3C/svg%3E"/><div class="nombre">Regla 30cm</div><div class="precio">S/3.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="transportador"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23009688' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📐%3C/text%3E%3C/svg%3E"/><div class="nombre">Transportador</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="compas"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%233f51b5' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📐%3C/text%3E%3C/svg%3E"/><div class="nombre">Compás escolar</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-  </div>
-</div>
-</div>
-<div class="carrito-lado">
-<section class="carrito-section">
-  <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista7"></div>
-  <div id="carritoTotal7">Total: S/ 0.00</div>
-  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar7" onclick="abrirPago()" class="btn-add">Pagar</button>
-</section>
-</div>
-</div>
-</div>
-
-<!-- PÁGINA ORGANIZACIÓN -->
-<div id="paginaOrganizacion" class="pagina">
-<div class="contenido-principal">
-<div class="productos-lado">
-<div class="section-container">
-  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📂 ORGANIZACIÓN ESCOLAR</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="archivador"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff5722' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📂%3C/text%3E%3C/svg%3E"/><div class="nombre">Archivador A4</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="separadores"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23cddc39' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🗂️%3C/text%3E%3C/svg%3E"/><div class="nombre">Separadores</div><div class="precio">S/6.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="agenda"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%234caf50' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📅%3C/text%3E%3C/svg%3E"/><div class="nombre">Agenda escolar</div><div class="precio">S/25.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-  </div>
-</div>
-</div>
-<div class="carrito-lado">
-<section class="carrito-section">
-  <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista8"></div>
-  <div id="carritoTotal8">Total: S/ 0.00</div>
-  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar8" onclick="abrirPago()" class="btn-add">Pagar</button>
-</section>
-</div>
-</div>
-</div>
-
+<!-- overlay de pago (lo mantenemos igual) -->
 <div class="payment-overlay" id="paymentOverlay">
   <div class="payment-box">
     <h4>💳 Simulación de pago</h4>
@@ -978,162 +407,10 @@ let metodoPago = null;
 
 function irAPagina(categoria){
   document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
-  
+
   const mapaPaginas = {
     'cuadernos': 'paginaCuadernos',
     'escritura': 'paginaEscritura',
     'mochilas': 'paginaMochilas',
     'coloresPlumones': 'paginaColoresPlumones',
-    'especialesCartuchera': 'paginaEspecialesCartuchera',
-    'cartucheras': 'paginaCartucheras',
-    'loncheras': 'paginaLoncheras',
-    'papeleria': 'paginaPapeleria',
-    'engrapadoCorte': 'paginaEngrapadoCorte',
-    'organizacionEscritorio': 'paginaOrganizacionEscritorio',
-    'calculadoras': 'paginaCalculadoras'
-  };
-  
-  const paginaId = mapaPaginas[categoria];
-  if(paginaId){
-    document.getElementById(paginaId).classList.add('activa');
-    window.scrollTo(0, 0);
-    actualizarCarrito();
-  }
-}
-
-function volverInicio(){
-  document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
-  document.getElementById('paginaInicio').classList.add('activa');
-  window.scrollTo(0, 0);
-  actualizarCarrito();
-}
-
-function buscarProductos(){
-  const busqueda = document.getElementById('searchInput').value.toLowerCase().trim();
-  
-  if(busqueda === ''){
-    return;
-  }
-  
-  let encontrados = 0;
-  
-  document.querySelectorAll('.product-card').forEach(card => {
-    const nombre = card.getAttribute('data-nombre') || card.querySelector('.nombre').innerText.toLowerCase();
-    
-    if(nombre.includes(busqueda)){
-      encontrados++;
-    }
-  });
-  
-  if(encontrados === 0){
-    alert('❌ No se encontraron productos con ese nombre');
-  }
-}
-
-function addCarrito(btn){
-  const card = btn.closest('.product-card');
-  const nombre = card.querySelector('.nombre').innerText;
-  const precio = parseFloat(card.querySelector('.precio').innerText.replace('S/',''));
-  const input = card.querySelector('input');
-  const cantidad = parseInt(input.value);
-  const max = parseInt(input.dataset.max);
-
-  if(cantidad > max){
-    alert(`Solo puedes agregar máximo ${max} unidades por producto`);
-    return;
-  }
-
-  const existente = carrito.find(p => p.nombre === nombre);
-  if(existente){
-    existente.cantidad += cantidad;
-    if(existente.cantidad > 12){
-      alert("No puedes comprar más de 12 unidades de un mismo producto");
-      existente.cantidad = 12;
-    }
-  } else {
-    carrito.push({nombre, precio, cantidad});
-  }
-
-  actualizarCarrito();
-}
-
-function eliminarProducto(nombre){
-  carrito = carrito.filter(p => p.nombre !== nombre);
-  actualizarCarrito();
-}
-
-function actualizarCarrito(){
-  // Actualizar todos los carritos en todas las páginas
-  for(let i = 1; i <= 8; i++){
-    const caja = document.getElementById(i === 1 ? 'carritoLista' : `carritoLista${i}`);
-    const totalCaja = document.getElementById(i === 1 ? 'carritoTotal' : `carritoTotal${i}`);
-    
-    if(!caja || !totalCaja) continue;
-    
-    caja.innerHTML = '';
-
-    let total = 0;
-    let totalProductos = 0;
-
-    carrito.forEach(p => {
-      total += p.precio * p.cantidad;
-      totalProductos += p.cantidad;
-      caja.innerHTML += `
-        <div class="carrito-item">
-          <div class="carrito-item-info">${p.nombre} x${p.cantidad} — S/${(p.precio * p.cantidad).toFixed(2)}</div>
-          <button class="btn-eliminar" onclick="eliminarProducto('${p.nombre}')">❌</button>
-        </div>`;
-    });
-
-    if(totalProductos > 12){
-      alert("El carrito no puede tener más de 12 productos en total");
-      carrito = [];
-      caja.innerHTML = '';
-      total = 0;
-    }
-
-    totalCaja.innerText = `Total: S/ ${total.toFixed(2)}`;
-  }
-}
-
-function vaciarCarrito(){
-  carrito = [];
-  actualizarCarrito();
-}
-
-function abrirPago(){
-  if(carrito.length === 0){
-    alert("El carrito está vacío");
-    return;
-  }
-  document.getElementById('paymentOverlay').style.display='flex';
-}
-
-function seleccionarMetodo(m){
-  metodoPago = m;
-  alert(`Método seleccionado: ${m}`);
-}
-
-function pagar(){
-  const nombre = document.getElementById('nombreCliente').value.trim();
-  if(!nombre){
-    alert("Debes escribir tu nombre");
-    return;
-  }
-  if(!metodoPago){
-    alert("Debes seleccionar un método de pago");
-    return;
-  }
-
-  alert(`✅ Pago simulado con ${metodoPago} a nombre de ${nombre}`);
-  cerrarPago();
-  vaciarCarrito();
-}
-
-function cerrarPago(){
-  document.getElementById('paymentOverlay').style.display='none';
-}
-</script>
-
-</body>
-</html>
+    'especialesCartuchera':
