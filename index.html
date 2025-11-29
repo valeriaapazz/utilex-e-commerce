@@ -4,20 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Utilex – E-commerce</title>
-
 <style>
 :root{
   --verde: #28a745;
   --azul:  #007bff;
 }
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:'Segoe UI', sans-serif;
 }
-
 header{
   display:flex;
   justify-content:space-between;
@@ -28,7 +25,6 @@ header{
   flex-wrap:wrap;
   gap:15px;
 }
-
 .header-left{
   display:flex;
   align-items:center;
@@ -36,29 +32,24 @@ header{
   flex:1;
   min-width:200px;
 }
-
 .logo{
   height:55px;
   animation:fadeIn 1.2s ease;
 }
-
 .header-text .brand{
   font-size:24px;
   font-weight:700;
   color:white;
   text-shadow:2px 2px 4px rgba(0,0,0,0.3);
 }
-
 .header-text .slogan{
   font-size:14px;
   font-weight:500;
   color:white;
 }
-
 .search-box{
   flex:0 1 300px;
 }
-
 .search-box input{
   padding:10px 15px;
   font-size:16px;
@@ -72,30 +63,24 @@ header{
   border-color:var(--azul);
   box-shadow:0 0 10px rgba(255,255,255,0.5);
 }
-
 @media (max-width: 768px){
   header{
     padding:12px 15px;
   }
-  
   .logo{
     height:45px;
   }
-  
   .header-text .brand{
     font-size:20px;
   }
-  
   .header-text .slogan{
     font-size:12px;
   }
-  
   .search-box{
     flex:1 1 100%;
     order:3;
   }
 }
-
 .main-banner{
   width:100%;
   background:#f8f9fa;
@@ -104,7 +89,6 @@ header{
   align-items:center;
   overflow:hidden;
 }
-
 .main-banner img{
   width:100%;
   height:auto;
@@ -113,32 +97,26 @@ header{
   max-height:400px;
   animation:slideDown 0.8s ease;
 }
-
 @media (max-width: 768px){
   .main-banner img{
     max-height:250px;
   }
 }
-
 @media (max-width: 480px){
   .main-banner img{
     max-height:180px;
   }
 }
-
 body{
   background:#f2f2f2;
   padding-bottom:50px;
 }
-
 .pagina{
   display:none;
 }
-
 .pagina.activa{
   display:block;
 }
-
 .contenido-principal{
   display:flex;
   gap:25px;
@@ -146,55 +124,45 @@ body{
   max-width:1400px;
   margin:0 auto;
 }
-
 .productos-lado{
   flex:1;
   min-width:0;
 }
-
 .carrito-lado{
   width:350px;
   flex-shrink:0;
 }
-
 .section-container{
   width:100%;
 }
-
 h2{
   font-size:22px;
   color:var(--azul);
   margin-bottom:18px;
   animation:fadeIn 0.7s ease;
 }
-
 @media (max-width: 900px){
   .contenido-principal{
     flex-direction:column;
     padding:15px;
     gap:20px;
   }
-  
   .carrito-lado{
     width:100%;
   }
-  
   h2{
     font-size:20px;
     text-align:center;
   }
 }
-
 @media (max-width: 480px){
   .contenido-principal{
     padding:10px;
   }
-  
   h2{
     font-size:18px;
   }
 }
-
 .circulos-categorias{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
@@ -205,13 +173,11 @@ h2{
   margin-left:auto;
   margin-right:auto;
 }
-
 .categoria{
   display:flex;
   flex-direction:column;
   align-items:center;
 }
-
 /* circulo original, ahora solo imagen dentro */
 .circulo{
   width:140px;
@@ -234,7 +200,6 @@ h2{
   overflow:hidden;
   position:relative;
 }
-
 .circulo img{
   width:100%;
   height:100%;
@@ -244,12 +209,10 @@ h2{
   left:0;
   border-radius:50%;
 }
-
 /* ocultamos el span superpuesto que venía antes */
 .circulo span{
   display:none;
 }
-
 /* etiqueta debajo del circulo */
 .label{
   margin-top:8px;
@@ -259,30 +222,25 @@ h2{
   text-align:center;
   width:100%;
 }
-
 .circulo:hover{
   transform:scale(1.1);
   box-shadow:0 6px 12px rgba(0,0,0,0.2);
 }
-
 @media (max-width: 1024px){
   .circulos-categorias{
     grid-template-columns:repeat(3, 1fr);
     gap:18px;
   }
-  
   .circulo{
     width:120px;
     height:120px;
   }
 }
-
 @media (max-width: 768px){
   .circulos-categorias{
     grid-template-columns:repeat(2, 1fr);
     gap:15px;
   }
-  
   .circulo{
     width:110px;
     height:110px;
@@ -290,12 +248,10 @@ h2{
     padding:12px;
   }
 }
-
 @media (max-width: 480px){
   .circulos-categorias{
     gap:12px;
   }
-  
   .circulo{
     width:90px;
     height:90px;
@@ -303,39 +259,33 @@ h2{
     padding:10px;
   }
 }
-
 .productos{
   display:none;
   grid-template-columns:repeat(4, 1fr);
   gap:20px;
 }
-
 @media (max-width: 1200px){
   .productos{
     grid-template-columns:repeat(3, 1fr);
   }
 }
-
 @media (max-width: 900px){
   .productos{
     grid-template-columns:repeat(2, 1fr);
     gap:15px;
   }
 }
-
 @media (max-width: 600px){
   .productos{
     grid-template-columns:repeat(2, 1fr);
     gap:12px;
   }
 }
-
 @media (max-width: 400px){
   .productos{
     grid-template-columns:repeat(1, 1fr);
   }
 }
-
 .product-card{
   background:white;
   padding:15px;
@@ -353,14 +303,12 @@ h2{
   transform:translateY(-5px);
   border:1px solid var(--azul);
 }
-
 .product-card img{
   width:90px;
   height:90px;
   object-fit:contain;
   margin:0 auto 10px;
 }
-
 .product-card .nombre{
   font-size:15px;
   font-weight:600;
@@ -372,7 +320,6 @@ h2{
   margin-bottom:10px;
   font-size:14px;
 }
-
 .btn-add{
   background:var(--azul);
   border:none;
@@ -387,7 +334,6 @@ h2{
 .btn-add:hover{
   background:var(--verde);
 }
-
 .cantidad-box input{
   width:55px;
   padding:4px;
@@ -396,27 +342,22 @@ h2{
   border:1px solid #ccc;
   border-radius:8px;
 }
-
 @media (max-width: 480px){
   .product-card{
     min-height:250px;
     padding:12px;
   }
-  
   .product-card img{
     width:70px;
     height:70px;
   }
-  
   .product-card .nombre{
     font-size:14px;
   }
-  
   .product-card .precio{
     font-size:13px;
   }
 }
-
 .carrito-section{
   background:white;
   padding:20px;
@@ -428,19 +369,16 @@ h2{
   max-height:calc(100vh - 40px);
   overflow-y:auto;
 }
-
 .carrito-section h3{
   font-size:18px;
   color:var(--azul);
   margin-bottom:15px;
 }
-
 #carritoLista{
   margin-bottom:15px;
   max-height:400px;
   overflow-y:auto;
 }
-
 .carrito-item{
   font-size:15px;
   margin-bottom:10px;
@@ -452,12 +390,10 @@ h2{
   align-items:center;
   gap:10px;
 }
-
 .carrito-item-info{
   flex:1;
   word-break:break-word;
 }
-
 .btn-eliminar{
   background:#dc3545;
   border:none;
@@ -472,14 +408,12 @@ h2{
 .btn-eliminar:hover{
   opacity:0.8;
 }
-
 #carritoTotal{
   font-size:17px;
   font-weight:700;
   color:var(--verde);
   margin-bottom:12px;
 }
-
 .btn-vaciar{
   padding:8px 12px;
   border:none;
@@ -495,42 +429,34 @@ h2{
 .btn-vaciar:hover{
   opacity:0.8;
 }
-
 @media (max-width: 900px){
   .carrito-section{
     position:static;
     max-height:none;
   }
-  
   #carritoLista{
     max-height:300px;
   }
 }
-
 @media (max-width: 480px){
   .carrito-section{
     padding:15px;
   }
-  
   .carrito-section h3{
     font-size:16px;
   }
-  
   .carrito-item{
     font-size:14px;
   }
-  
   #carritoTotal{
     font-size:16px;
   }
-  
   .btn-vaciar, .btn-add{
     width:100%;
     margin-right:0;
     margin-bottom:8px;
   }
 }
-
 .payment-overlay{
   display:none;
   position:fixed;
@@ -542,7 +468,6 @@ h2{
   animation:fadeIn 0.5s ease;
   z-index:1000;
 }
-
 .payment-box{
   background:white;
   width:100%;
@@ -553,13 +478,11 @@ h2{
   max-height:90vh;
   overflow-y:auto;
 }
-
 .payment-box h4{
   color:var(--verde);
   font-size:19px;
   margin-bottom:12px;
 }
-
 .payment-box input{
   width:100%;
   padding:10px;
@@ -569,14 +492,12 @@ h2{
   font-size:15px;
   box-sizing:border-box;
 }
-
 .payment-method{
   display:flex;
   gap:10px;
   margin:10px 0 18px;
   flex-wrap:wrap;
 }
-
 .btn-method{
   flex:1;
   min-width:120px;
@@ -590,7 +511,6 @@ h2{
 }
 #btnYape{ background:#720e9e; }
 #btnTarjeta{ background:var(--azul); }
-
 #btnPagarAhora{
   width:100%;
   padding:12px;
@@ -607,7 +527,6 @@ h2{
 #btnPagarAhora:hover{
   opacity:0.85;
 }
-
 #btnCerrarPago{
   width:100%;
   padding:10px;
@@ -618,42 +537,34 @@ h2{
   cursor:pointer;
   font-size:14px;
 }
-
 @media (max-width: 480px){
   .payment-box{
     padding:18px;
     max-width:95%;
   }
-  
   .payment-box h4{
     font-size:17px;
   }
-  
   .payment-method{
     flex-direction:column;
   }
-  
   .btn-method{
     width:100%;
   }
 }
-
 .no-resultados{
   text-align:center;
   padding:20px;
   color:#666;
   font-style:italic;
 }
-
 @keyframes fadeIn{ from{opacity:0} to{opacity:1}}
 @keyframes popIn{ 0%{transform:scale(0.7);opacity:0} 100%{transform:scale(1);opacity:1}}
 @keyframes slideDown{ from{transform:translateY(-25px);opacity:0} to{transform:translateY(0);opacity:1}}
 @keyframes slideUp{ from{transform:translateY(40px);opacity:0} to{transform:translateY(0);opacity:1}}
 </style>
 </head>
-
 <body>
-
 <header>
   <div class="header-left">
     <img class="logo" src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/logo.png  " alt="Utilex logo" onerror="this.style.display='none'"/>
@@ -662,109 +573,88 @@ h2{
       <div class="slogan">Todo para tu lista escolar</div>
     </div>
   </div>
-
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="🔍 Buscar productos…" onkeyup="buscarProductos()"/>
   </div>
 </header>
-
 <section class="main-banner">
   <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/banner.png  " alt="Banner Utilex"
   onerror="this.outerHTML='<div style=\'background:linear-gradient(135deg, #28a745, #007bff);text-align:center;padding:80px 20px;color:white;font-size:28px;font-weight:bold\'>🎒 UTILEX - Todo para tu lista escolar 📚</div>'"/>
 </section>
-
 <!-- PÁGINA INICIO -->
 <div id="paginaInicio" class="pagina activa">
 <div class="contenido-principal">
-  
 <div class="productos-lado">
 <div class="section-container">
-
 <h2>ÚTILES ESCOLARES</h2>
 <div class="circulos-categorias">
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('cuadernos')">
       <img src="img/Fondo para circulo cuadernos.png" alt="Cuadernos"/>
     </div>
     <div class="label">Cuadernos</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('escritura')">
       <img src="img/Fondo para circulo lapiceros y lapices.png" alt="Lápices y Lapiceros"/>
     </div>
     <div class="label">Lápices y lapiceros</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('coloresPlumones')">
       <img src="img/Fondo para circulo colores y plumones.png" alt="Colores y Plumones"/>
     </div>
     <div class="label">Colores y Plumones</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('especialesCartuchera')">
       <img src="img/Fondo para circulo escenciales de la cartuchera.png" alt="Escenciales de la Cartuchera"/>
     </div>
     <div class="label">Escenciales de la Cartuchera</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('mochilas')">
       <img src="img/Fondo para circulo Mochilas.png" alt="Mochilas"/>
     </div>
     <div class="label">Mochilas</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('cartucheras')">
       <img src="img/Fondo para circulo cartucheras.png" alt="Cartucheras"/>
     </div>
     <div class="label">Cartucheras</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('loncheras')">
       <img src="img/Fondo para circulo Locheras.png" alt="Loncheras"/>
     </div>
     <div class="label">Loncheras</div>
   </div>
-
 </div>
-
 <h2 style="margin-top:40px;">MATERIALES DE OFICINA</h2>
 <div class="circulos-categorias">
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('papeleria')">
       <img src="img/Fondo para circulo papelería.png" alt="Papelería"/>
     </div>
     <div class="label">Papelería</div>
   </div>
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('engrapadoCorte')">
       <img src="img/Fondo para circulo Engrapado y corte.png" alt="Engrapado y Corte"/>
     </div>
     <div class="label">Engrapado y Corte</div>
   </div>
-
   <!-- Sección "Organización de Escritorio" ELIMINADA -->
-
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('calculadoras')">
       <img src="img/Fondo para circulo Calculadoras.png" alt="Calculadoras"/>
     </div>
     <div class="label">Calculadoras</div>
   </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
@@ -774,10 +664,8 @@ h2{
   <button id="btnPagar" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
-
 </div>
 </div>
-
 <!-- SUBSECCIONES DE CUADERNOS -->
 <div id="paginaSubCuadernos" class="pagina">
   <div class="contenido-principal">
@@ -810,7 +698,6 @@ h2{
     </div>
   </div>
 </div>
-
 <!-- SUBSECCIONES DE ESCRITURA -->
 <div id="paginaSubEscritura" class="pagina">
   <div class="contenido-principal">
@@ -836,7 +723,6 @@ h2{
     </div>
   </div>
 </div>
-
 <!-- SUBSECCIONES DE COLORES Y PLUMONES -->
 <div id="paginaSubColoresPlumones" class="pagina">
   <div class="contenido-principal">
@@ -865,7 +751,6 @@ h2{
     </div>
   </div>
 </div>
-
 <!-- SUBSECCIONES DE ESENCIALES DE LA CARTUCHERA -->
 <div id="paginaSubEspecialesCartuchera" class="pagina">
   <div class="contenido-principal">
@@ -892,7 +777,6 @@ h2{
     </div>
   </div>
 </div>
-
 <!-- SUBSECCIONES DE PAPELERIA -->
 <div id="paginaSubPapeleria" class="pagina">
   <div class="contenido-principal">
@@ -918,7 +802,6 @@ h2{
     </div>
   </div>
 </div>
-
 <!-- SUBSECCIONES DE ENGRAPADO Y CORTE -->
 <div id="paginaSubEngrapadoCorte" class="pagina">
   <div class="contenido-principal">
@@ -944,7 +827,6 @@ h2{
     </div>
   </div>
 </div>
-
 <!-- PÁGINAS FINALES DE PRODUCTOS (EJEMPLO: CUADERNOS ANILLADOS CUADRICULADOS) -->
 <!-- Aquí solo dejamos uno como ejemplo. En tu caso real, deberías replicar similar a este para cada subsección -->
 <div id="paginaCuadernosAnilladosCuadriculados" class="pagina">
@@ -954,7 +836,23 @@ h2{
   <button class="btn-volver" onclick="irAPagina('subCuadernos')">⬅️ Volver a subsecciones</button>
   <h2>📘 Cuadernos Anillados Cuadriculados</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="cuaderno anillado cuadriculado"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png  " onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4 Anillado</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado negro a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO NEGRO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Negro A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado verde limón a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO VERDE LIMÓN A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Verde Limón A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado verde oscuro a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO VERDE OSCURO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Verde Oscuro A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno justus cuadriculado anillado con diseño a4"><img src="img/CUADERNO JUSTUS CUADRICULADO ANILLADO CON DISEÑO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Justus con Diseño A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno minerva anillado cuadriculado deadpool vs. wolverine a4"><img src="img/CUADERNO MINERVA ANILLADO CUADRICULADO DEADPOOL VS. WOLVERINE A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Minerva Deadpool vs. Wolverine A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno minerva anillado cuadriculado hello kitty a4"><img src="img/CUADERNO MINERVA ANILLADO CUADRICULADO HELLO KITTY A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Minerva Hello Kitty A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno minerva anillado cuadriculado one punch man a4"><img src="img/CUADERNO MINERVA ANILLADO CUADRICULADO ONE PUNCH MAN A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Minerva One Punch Man A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno minerva anillado cuadriculado pochacco sanrio a4"><img src="img/CUADERNO MINERVA ANILLADO CUADRICULADO POCHACCO SANRIO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Minerva Pochacco Sanrio A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno minerva anillado cuadriculado sanrio a4"><img src="img/CUADERNO MINERVA ANILLADO CUADRICULADO SANRIO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Minerva Sanrio A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno minerva anillado cuadriculado siperpunk a4"><img src="img/CUADERNO MINERVA ANILLADO CUADRICULADO SIPERPUNK A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Minerva Siperpunk A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cadriculado azul a4"><img src="img/CUADERNO STANFORD ANILLADO CADRICULADO AZUL A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Azul A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado amarillo a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO AMARILLO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Amarillo A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado celeste a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO CELESTE A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Celeste A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado color morado a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO COLOR MORADO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Morado A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado color rojo a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO COLOR ROJO A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Rojo A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado marrón a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO MARRÓN A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Marrón A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  <div class="product-card" data-nombre="cuaderno stanford anillado cuadriculado naraja a4"><img src="img/CUADERNO STANFORD ANILLADO CUADRICULADO NARAJA A4.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno Stanford Naranja A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
   </div>
 </div>
 </div>
@@ -969,7 +867,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA CUADERNOS -->
 <div id="paginaCuadernos" class="pagina">
 <div class="contenido-principal">
@@ -1004,7 +901,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA ESCRITURA -->
 <div id="paginaEscritura" class="pagina">
 <div class="contenido-principal">
@@ -1030,7 +926,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA COLORES Y PLUMONES -->
 <div id="paginaColoresPlumones" class="pagina">
 <div class="contenido-principal">
@@ -1059,7 +954,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA ESPECIALES DE LA CARTUCHERA -->
 <div id="paginaEspecialesCartuchera" class="pagina">
 <div class="contenido-principal">
@@ -1086,7 +980,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA MOCHILAS -->
 <div id="paginaMochilas" class="pagina">
 <div class="contenido-principal">
@@ -1110,7 +1003,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA CARTUCHERAS -->
 <div id="paginaCartucheras" class="pagina">
 <div class="contenido-principal">
@@ -1134,7 +1026,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA LONCHERAS -->
 <div id="paginaLoncheras" class="pagina">
 <div class="contenido-principal">
@@ -1158,7 +1049,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA PAPELERIA -->
 <div id="paginaPapeleria" class="pagina">
 <div class="contenido-principal">
@@ -1184,7 +1074,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA ENGRAPADO Y CORTE -->
 <div id="paginaEngrapadoCorte" class="pagina">
 <div class="contenido-principal">
@@ -1210,7 +1099,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA CALCULADORAS -->
 <div id="paginaCalculadoras" class="pagina">
 <div class="contenido-principal">
@@ -1234,7 +1122,6 @@ h2{
 </div>
 </div>
 </div>
-
 <div class="payment-overlay" id="paymentOverlay">
   <div class="payment-box">
     <h4>💳 Simulación de pago</h4>
@@ -1248,14 +1135,11 @@ h2{
     <button id="btnCerrarPago" onclick="cerrarPago()">Cancelar / Volver</button>
   </div>
 </div>
-
 <script>
 let carrito = [];
 let metodoPago = null;
-
 function irAPagina(categoria){
   document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
-  
   const mapaPaginas = {
     'cuadernos': 'paginaCuadernos',
     'escritura': 'paginaEscritura',
@@ -1277,7 +1161,6 @@ function irAPagina(categoria){
     'subPapeleria': 'paginaSubPapeleria',
     'subEngrapadoCorte': 'paginaSubEngrapadoCorte'
   };
-  
   const paginaId = mapaPaginas[categoria];
   if(paginaId){
     document.getElementById(paginaId).classList.add('activa');
@@ -1285,36 +1168,28 @@ function irAPagina(categoria){
     actualizarCarrito();
   }
 }
-
 function volverInicio(){
   document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
   document.getElementById('paginaInicio').classList.add('activa');
   window.scrollTo(0, 0);
   actualizarCarrito();
 }
-
 function buscarProductos(){
   const busqueda = document.getElementById('searchInput').value.toLowerCase().trim();
-  
   if(busqueda === ''){
     return;
   }
-  
   let encontrados = 0;
-  
   document.querySelectorAll('.product-card').forEach(card => {
     const nombre = card.getAttribute('data-nombre') || card.querySelector('.nombre').innerText.toLowerCase();
-    
     if(nombre.includes(busqueda)){
       encontrados++;
     }
   });
-  
   if(encontrados === 0){
     alert('❌ No se encontraron productos con ese nombre');
   }
 }
-
 function addCarrito(btn){
   const card = btn.closest('.product-card');
   const nombre = card.querySelector('.nombre').innerText;
@@ -1322,12 +1197,10 @@ function addCarrito(btn){
   const input = card.querySelector('input');
   const cantidad = parseInt(input.value);
   const max = parseInt(input.dataset.max);
-
   if(cantidad > max){
     alert(`Solo puedes agregar máximo ${max} unidades por producto`);
     return;
   }
-
   const existente = carrito.find(p => p.nombre === nombre);
   if(existente){
     existente.cantidad += cantidad;
@@ -1338,15 +1211,12 @@ function addCarrito(btn){
   } else {
     carrito.push({nombre, precio, cantidad});
   }
-
   actualizarCarrito();
 }
-
 function eliminarProducto(nombre){
   carrito = carrito.filter(p => p.nombre !== nombre);
   actualizarCarrito();
 }
-
 function actualizarCarrito(){
   // Actualizar todos los carritos en todas las páginas
   const idsCarrito = [
@@ -1367,18 +1237,13 @@ function actualizarCarrito(){
     'carritoTotalSubCuadernos', 'carritoTotalSubEscritura', 'carritoTotalSubColoresPlumones',
     'carritoTotalSubEspecialesCartuchera', 'carritoTotalSubPapeleria', 'carritoTotalSubEngrapadoCorte'
   ];
-  
   for(let i = 0; i < idsCarrito.length; i++){
     const caja = document.getElementById(idsCarrito[i]);
     const totalCaja = document.getElementById(idsTotal[i]);
-    
     if(!caja || !totalCaja) continue;
-    
     caja.innerHTML = '';
-
     let total = 0;
     let totalProductos = 0;
-
     carrito.forEach(p => {
       total += p.precio * p.cantidad;
       totalProductos += p.cantidad;
@@ -1388,23 +1253,19 @@ function actualizarCarrito(){
           <button class="btn-eliminar" onclick="eliminarProducto('${p.nombre}')">❌</button>
         </div>`;
     });
-
     if(totalProductos > 12){
       alert("El carrito no puede tener más de 12 productos en total");
       carrito = [];
       caja.innerHTML = '';
       total = 0;
     }
-
     totalCaja.innerText = `Total: S/ ${total.toFixed(2)}`;
   }
 }
-
 function vaciarCarrito(){
   carrito = [];
   actualizarCarrito();
 }
-
 function abrirPago(){
   if(carrito.length === 0){
     alert("El carrito está vacío");
@@ -1412,12 +1273,10 @@ function abrirPago(){
   }
   document.getElementById('paymentOverlay').style.display='flex';
 }
-
 function seleccionarMetodo(m){
   metodoPago = m;
   alert(`Método seleccionado: ${m}`);
 }
-
 function pagar(){
   const nombre = document.getElementById('nombreCliente').value.trim();
   if(!nombre){
@@ -1428,12 +1287,10 @@ function pagar(){
     alert("Debes seleccionar un método de pago");
     return;
   }
-
   alert(`✅ Pago simulado con ${metodoPago} a nombre de ${nombre}`);
   cerrarPago();
   vaciarCarrito();
 }
-
 function cerrarPago(){
   document.getElementById('paymentOverlay').style.display='none';
 }
