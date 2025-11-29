@@ -402,15 +402,3 @@ header{
 </div>
 
 <script>
-let carrito = [];
-let metodoPago = null;
-
-function irAPagina(categoria){
-  document.querySelectorAll('.pagina').forEach(p => p.classList.remove('activa'));
-
-  const mapaPaginas = {
-    'cuadernos': 'paginaCuadernos',
-    'escritura': 'paginaEscritura',
-    'mochilas': 'paginaMochilas',
-    'coloresPlumones': 'paginaColoresPlumones',
-    'especialesCartuchera':
