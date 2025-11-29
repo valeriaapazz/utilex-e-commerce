@@ -206,6 +206,13 @@ h2{
   margin-right:auto;
 }
 
+.categoria{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* circulo original, ahora solo imagen dentro */
 .circulo{
   width:140px;
   height:140px;
@@ -238,14 +245,19 @@ h2{
   border-radius:50%;
 }
 
+/* ocultamos el span superpuesto que venía antes */
 .circulo span{
-  position:relative;
-  z-index:1;
-  color:white;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.7);
-  padding:5px 8px;
-  background:rgba(0,0,0,0.3);
-  border-radius:8px;
+  display:none;
+}
+
+/* etiqueta debajo del circulo */
+.label{
+  margin-top:8px;
+  font-size:13px;
+  font-weight:600;
+  color:#333;
+  text-align:center;
+  width:100%;
 }
 
 .circulo:hover{
@@ -671,33 +683,53 @@ h2{
 <h2>ÚTILES ESCOLARES</h2>
 <div class="circulos-categorias">
 
-  <div class="circulo" onclick="irAPagina('cuadernos')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20cuadernos.png" alt="Cuadernos"/>
-    <span>Cuadernos</span>
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('cuadernos')">
+      <img src="img/Fondo para circulo cuadernos.png" alt="Cuadernos"/>
+    </div>
+    <div class="label">Cuadernos</div>
   </div>
-  <div class="circulo" onclick="irAPagina('escritura')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20lapices%20y%20lapiceros.png" alt="Lápices y Lapiceros"/>
-    <span>Lápices y Lapiceros</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('escritura')">
+      <img src="img/Fondo para circulo lapiceros y lapices.png" alt="Lápices y Lapiceros"/>
+    </div>
+    <div class="label">Lápices y lapiceros</div>
   </div>
-  <div class="circulo" onclick="irAPagina('coloresPlumones')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20colores%20y%20plumones.png" alt="Colores y Plumones"/>
-    <span>Colores y Plumones</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('coloresPlumones')">
+      <img src="img/Fondo para circulo colores y plumones.png" alt="Colores y Plumones"/>
+    </div>
+    <div class="label">Colores y Plumones</div>
   </div>
-  <div class="circulo" onclick="irAPagina('especialesCartuchera')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20especiales%20de%20la%20cartuchera.png" alt="Especiales de la Cartuchera"/>
-    <span>Especiales de la Cartuchera</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('especialesCartuchera')">
+      <img src="img/Fondo para circulo escenciales de la cartuchera.png" alt="Escenciales de la Cartuchera"/>
+    </div>
+    <div class="label">Escenciales de la Cartuchera</div>
   </div>
-  <div class="circulo" onclick="irAPagina('mochilas')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20mochilas.png" alt="Mochilas"/>
-    <span>Mochilas</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('mochilas')">
+      <img src="img/Fondo para circulo Mochilas.png" alt="Mochilas"/>
+    </div>
+    <div class="label">Mochilas</div>
   </div>
-  <div class="circulo" onclick="irAPagina('cartucheras')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20cartucheras.png" alt="Cartucheras"/>
-    <span>Cartucheras</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('cartucheras')">
+      <img src="img/Fondo para circulo cartucheras.png" alt="Cartucheras"/>
+    </div>
+    <div class="label">Cartucheras</div>
   </div>
-  <div class="circulo" onclick="irAPagina('loncheras')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20loncheras.png" alt="Loncheras"/>
-    <span>Loncheras</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('loncheras')">
+      <img src="img/Fondo para circulo Locheras.png" alt="Loncheras"/>
+    </div>
+    <div class="label">Loncheras</div>
   </div>
 
 </div>
@@ -705,21 +737,32 @@ h2{
 <h2 style="margin-top:40px;">MATERIALES DE OFICINA</h2>
 <div class="circulos-categorias">
 
-  <div class="circulo" onclick="irAPagina('papeleria')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20papeleria.png" alt="Papelería"/>
-    <span>Papelería</span>
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('papeleria')">
+      <img src="img/Fondo para circulo papelería.png" alt="Papelería"/>
+    </div>
+    <div class="label">Papelería</div>
   </div>
-  <div class="circulo" onclick="irAPagina('engrapadoCorte')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20engrapado%20y%20corte.png" alt="Engrapado y Corte"/>
-    <span>Engrapado y Corte</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('engrapadoCorte')">
+      <img src="img/Fondo para circulo Engrapado y corte.png" alt="Engrapado y Corte"/>
+    </div>
+    <div class="label">Engrapado y Corte</div>
   </div>
-  <div class="circulo" onclick="irAPagina('organizacionEscritorio')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20organizacion%20de%20escritorio.png" alt="Organización de Escritorio"/>
-    <span>Organización de Escritorio</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('organizacionEscritorio')">
+      <img src="img/Fondo para circulo Escenciales de la cartuchera.png" alt="Organización de Escritorio"/>
+    </div>
+    <div class="label">Organización de Escritorio</div>
   </div>
-  <div class="circulo" onclick="irAPagina('calculadoras')">
-    <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/fondo%20para%20circulo%20calculadoras.png" alt="Calculadoras"/>
-    <span>Calculadoras</span>
+
+  <div class="categoria">
+    <div class="circulo" onclick="irAPagina('calculadoras')">
+      <img src="img/Fondo para circulo Calculadoras.png" alt="Calculadoras"/>
+    </div>
+    <div class="label">Calculadoras</div>
   </div>
 
 </div>
@@ -821,7 +864,7 @@ h2{
   <h2>🎨 COLORES Y PLUMONES</h2>
   <div class="productos" style="display:grid">
     <div class="product-card" data-nombre="caja colores"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/caja%20de%20colores.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff6b6b\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="plumones"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff9800' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🖍️%3C/text%3E%3C/svg%3E"/><div class="nombre">Set de Plumones</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="plumones"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff9800' width='%2290'%20height='90'/%3E%3Ctext x='%2250%25'%20y='%2250%25'%20dominant-baseline='middle'%20text-anchor='middle'%20font-size='30'%20fill='white'%3E🖍️%3C/text%3E%3C/svg%3E"/><div class="nombre">Set de Plumones</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
   </div>
 </div>
 </div>
