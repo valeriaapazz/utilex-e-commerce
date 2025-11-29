@@ -666,63 +666,6 @@ h2{
 </div>
 </div>
 </div>
-<!-- SUBSECCIONES DE CUADERNOS -->
-<div id="paginaSubCuadernos" class="pagina">
-  <div class="contenido-principal">
-    <div class="productos-lado">
-      <div class="section-container">
-        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-        <h2>📘 SUBTIPOS DE CUADERNOS</h2>
-        <div class="circulos-categorias">
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosCuadriculados')"><div class="label">Anillados Cuadriculados</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosRayados')"><div class="label">Anillados Rayados</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosCuadriculados')"><div class="label">Cocidos Cuadriculados</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosDobleLinea')"><div class="label">Cocidos Doble Línea</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosRayados')"><div class="label">Cocidos Rayados</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosMusica')"><div class="label">Cuadernos de Música</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosCuadriculados')"><div class="label">Engrapados Cuadriculados</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosDobleLinea')"><div class="label">Engrapados Doble Línea</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosRayados')"><div class="label">Engrapados Rayados</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosTripleReglon')"><div class="label">Engrapados Triple Reglón</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="carrito-lado">
-      <section class="carrito-section">
-        <h3>🛒 Carrito de compras</h3>
-        <div id="carritoListaSubCuadernos"></div>
-        <div id="carritoTotalSubCuadernos">Total: S/ 0.00</div>
-        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-        <button id="btnPagarSubCuadernos" onclick="abrirPago()" class="btn-add">Pagar</button>
-      </section>
-    </div>
-  </div>
-</div>
-<!-- SUBSECCIONES DE ESCRITURA -->
-<div id="paginaSubEscritura" class="pagina">
-  <div class="contenido-principal">
-    <div class="productos-lado">
-      <div class="section-container">
-        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-        <h2>✏️ SUBTIPOS DE ESCRITURA</h2>
-        <div class="circulos-categorias">
-          <div class="categoria"><div class="circulo" onclick="irAPagina('lapiceros')"><div class="label">Lapiceros</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('lapicerosPaquetes')"><div class="label">Lapiceros en Paquetes</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('lapicesPortaminas')"><div class="label">Lápices y Portaminas</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="carrito-lado">
-      <section class="carrito-section">
-        <h3>🛒 Carrito de compras</h3>
-        <div id="carritoListaSubEscritura"></div>
-        <div id="carritoTotalSubEscritura">Total: S/ 0.00</div>
-        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-        <button id="btnPagarSubEscritura" onclick="abrirPago()" class="btn-add">Pagar</button>
-      </section>
-    </div>
-  </div>
-</div>
 <!-- SUBSECCIONES DE COLORES Y PLUMONES -->
 <div id="paginaSubColoresPlumones" class="pagina">
   <div class="contenido-principal">
@@ -751,217 +694,175 @@ h2{
     </div>
   </div>
 </div>
-<!-- SUBSECCIONES DE ESENCIALES DE LA CARTUCHERA -->
-<div id="paginaSubEspecialesCartuchera" class="pagina">
-  <div class="contenido-principal">
-    <div class="productos-lado">
-      <div class="section-container">
-        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-        <h2>🧷 SUBTIPOS DE ESENCIALES</h2>
-        <div class="circulos-categorias">
-          <div class="categoria"><div class="circulo" onclick="irAPagina('borradores')"><div class="label">Borradores</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('reglas')"><div class="label">Reglas</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('tajadores')"><div class="label">Tajadores</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('tijeras')"><div class="label">Tijeras</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="carrito-lado">
-      <section class="carrito-section">
-        <h3>🛒 Carrito de compras</h3>
-        <div id="carritoListaSubEspecialesCartuchera"></div>
-        <div id="carritoTotalSubEspecialesCartuchera">Total: S/ 0.00</div>
-        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-        <button id="btnPagarSubEspecialesCartuchera" onclick="abrirPago()" class="btn-add">Pagar</button>
-      </section>
-    </div>
-  </div>
-</div>
-<!-- SUBSECCIONES DE PAPELERIA -->
-<div id="paginaSubPapeleria" class="pagina">
-  <div class="contenido-principal">
-    <div class="productos-lado">
-      <div class="section-container">
-        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-        <h2>📄 SUBTIPOS DE PAPELERÍA</h2>
-        <div class="circulos-categorias">
-          <div class="categoria"><div class="circulo" onclick="irAPagina('blocksHojas')"><div class="label">Blocks de Hojas</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('blocksHojasColores')"><div class="label">Blocks de Hojas de Colores</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('papelografos')"><div class="label">Papelógrafos</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="carrito-lado">
-      <section class="carrito-section">
-        <h3>🛒 Carrito de compras</h3>
-        <div id="carritoListaSubPapeleria"></div>
-        <div id="carritoTotalSubPapeleria">Total: S/ 0.00</div>
-        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-        <button id="btnPagarSubPapeleria" onclick="abrirPago()" class="btn-add">Pagar</button>
-      </section>
-    </div>
-  </div>
-</div>
-<!-- SUBSECCIONES DE ENGRAPADO Y CORTE -->
-<div id="paginaSubEngrapadoCorte" class="pagina">
-  <div class="contenido-principal">
-    <div class="productos-lado">
-      <div class="section-container">
-        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-        <h2>✂️ SUBTIPOS DE ENGRAPADO Y CORTE</h2>
-        <div class="circulos-categorias">
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cajasGrapas')"><div class="label">Cajas de Grapas</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('cutters')"><div class="label">Cutters</div></div></div>
-          <div class="categoria"><div class="circulo" onclick="irAPagina('engrapadores')"><div class="label">Engrapadores</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="carrito-lado">
-      <section class="carrito-section">
-        <h3>🛒 Carrito de compras</h3>
-        <div id="carritoListaSubEngrapadoCorte"></div>
-        <div id="carritoTotalSubEngrapadoCorte">Total: S/ 0.00</div>
-        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-        <button id="btnPagarSubEngrapadoCorte" onclick="abrirPago()" class="btn-add">Pagar</button>
-      </section>
-    </div>
-  </div>
-</div>
-
-<!-- PÁGINA LAPICEROS -->
-<div id="paginaLapiceros" class="pagina">
+<!-- PÁGINA CAJAS DE COLORES -->
+<div id="paginaCajasColores" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
-  <button class="btn-volver" onclick="irAPagina('subEscritura')">⬅️ Volver a subsecciones</button>
-  <h2>✏️ Lapiceros</h2>
+  <button class="btn-volver" onclick="irAPagina('subColoresPlumones')">⬅️ Volver a subsecciones</button>
+  <h2>🎨 Cajas de Colores</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="lapicero pilot negro con borrador"><img src="img/LAPICERO PILOT NEGRO CON BORRADOR.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Pilot Negro con Borrador</div><div class="precio">S/3.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero pilot negro fine"><img src="img/LAPICERO PILOT NEGRO FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Pilot Negro Fine</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero pilot rojo con borrador"><img src="img/LAPICERO PILOT ROJO CON BORRADOR.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Pilot Rojo con Borrador</div><div class="precio">S/3.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero stabilo rojo"><img src="img/LAPICERO STABILO ROJO.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Rojo</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero econovo azul"><img src="img/LAPICERO ECONOVO AZUL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Econovo Azul</div><div class="precio">S/2.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell 034 azul"><img src="img/LAPICERO FABER CASTELL 034 AZUL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell 034 Azul</div><div class="precio">S/4.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell azul trillux 035 fine"><img src="img/LAPICERO FABER CASTELL AZUL TRILLUX 035 FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Azul Trillux</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell celeste"><img src="img/LAPICERO FABER CASTELL CELESTE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Celeste</div><div class="precio">S/4.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell negro lux 034 medium"><img src="img/LAPICERO FABER CASTELL NEGRO LUX 034 MEDIUM.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Negro Lux</div><div class="precio">S/6.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell negro tinta liquida"><img src="img/LAPICERO FABER CASTELL NEGRO TINTA LIQUIDA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Tinta Líquida</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell rojo 034 fine"><img src="img/LAPICERO FABER CASTELL ROJO 034 FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Rojo 034</div><div class="precio">S/4.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell rojo trillux 031 fine"><img src="img/LAPICERO FABER CASTELL ROJO TRILLUX 031 FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Rojo Trillux 031</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero faber castell rojo trillux 035 fine"><img src="img/LAPICERO FABER CASTELL ROJO TRILLUX 035 FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Rojo Trillux 035</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero fulton azul punta metalica"><img src="img/LAPICERO FULTON AZUL PUNTA METÁLICA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Fulton Azul Punta Metálica</div><div class="precio">S/8.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapicero pilot azul"><img src="img/LAPICERO PILOT AZUL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Pilot Azul</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="colores faber castell 12 ecolapices +6 neones"><img src="img/COLORES FABER CASTELL 12 ECOLAPICES +6 NEONES.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell 12 + 6 Neones</div><div class="precio">S/28.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="colores maped color peps world"><img src="img/COLORES MAPED COLOR PEPS WORLD.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Maped Color Peps World</div><div class="precio">S/22.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="colores stabilo jumbo 12"><img src="img/COLORES STABILO JUMBO 12.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Jumbo 12</div><div class="precio">S/18.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="colores stabilo triangulares trio 12 + lapiz"><img src="img/COLORES STABILO TRIANGULARES TRIO 12 + LAPIZ.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Trio 12 + Lápiz</div><div class="precio">S/20.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="colores artesco 12 colores super intensos +1 lapiz"><img src="img/COLORES ARTESCO 12 COLORES SUPER INTENSOS +1 LAPIZ.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Super Intensos + Lápiz</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="colores crayola colored pencils 12"><img src="img/COLORES CRAYOLA COLORED PENCILS 12.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Crayola 12 Colores</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista30"></div>
-  <div id="carritoTotal30">Total: S/ 0.00</div>
+  <div id="carritoLista40"></div>
+  <div id="carritoTotal40">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar30" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar40" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
-
-<!-- PÁGINA LAPICEROS EN PAQUETES -->
-<div id="paginaLapicerosPaquetes" class="pagina">
+<!-- PÁGINA MARCADORES PERMANENTES -->
+<div id="paginaMarcadoresPermanentes" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
-  <button class="btn-volver" onclick="irAPagina('subEscritura')">⬅️ Volver a subsecciones</button>
-  <h2>✏️ Lapiceros en Paquetes</h2>
+  <button class="btn-volver" onclick="irAPagina('subColoresPlumones')">⬅️ Volver a subsecciones</button>
+  <h2>🖌️ Marcadores Permanentes</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="lapiceros ove tri-x 032"><img src="img/LAPICEROS OVE TRI-X 032.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Ove Tri-X 032 (Paq)</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiceros pilot fine"><img src="img/LAPICEROS PILOT FINE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Pilot Fine (Paq)</div><div class="precio">S/20.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiceros yummy yummy glitter gel set of 12"><img src="img/LAPICEROS YUMMY YUMMY GLITTER GEL SET OF 12.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Yummy Yummy Glitter (12)</div><div class="precio">S/25.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiceros carioca"><img src="img/LAPICEROS CARIOCA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Carioca (Paq)</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiceros faber castell color gel 0.8 m.m"><img src="img/LAPICEROS FABER CASTELL COLOR GEL 0.8 m.m.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Gel (0.8mm)</div><div class="precio">S/18.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcador permanente delgado faber castell"><img src="img/MARCADOR PERMANENTE DELGADO FABER CASTELL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Delgado</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcador permanente delgado rojo faber castell"><img src="img/MARCADOR PERMANENTE DELGADO ROJO FABER CASTELL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Rojo Delgado</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcador permanente negro artesco"><img src="img/MARCADOR PERMANENTE NEGRO ARTESCO.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Negro</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcador permanente rojo artesco"><img src="img/MARCADOR PERMANENTE ROJO ARTESCO.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Rojo</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcadores permanentes sharpie"><img src="img/MARCADORES PERMANENTES SHARPIE.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Sharpie</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="multimark plus faber castell marcadores permanentes"><img src="img/MULTIMARK PLUS FABER CASTELL MARCADORES PERMANENTES.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Multimark+</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcador permanente azul artesco"><img src="img/MARCADOR PERMANENTE AZUL ARTESCO.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Azul</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="marcador permanente delgado azul faber castell"><img src="img/MARCADOR PERMANENTE DELGADO AZUL FABER CASTELL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖌️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Azul Delgado</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista31"></div>
-  <div id="carritoTotal31">Total: S/ 0.00</div>
+  <div id="carritoLista41"></div>
+  <div id="carritoTotal41">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar31" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar41" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
-
-<!-- PÁGINA LÁPICES Y PORTAMINAS -->
-<div id="paginaLapicesPortaminas" class="pagina">
+<!-- PÁGINA PLUMONES DE PIZARRA -->
+<div id="paginaPlumonesPizarra" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
-  <button class="btn-volver" onclick="irAPagina('subEscritura')">⬅️ Volver a subsecciones</button>
-  <h2>✏️ Lápices y Portaminas</h2>
+  <button class="btn-volver" onclick="irAPagina('subColoresPlumones')">⬅️ Volver a subsecciones</button>
+  <h2>✏️ Plumones de Pizarra</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="lapiz layconsa teknic-o 2b"><img src="img/LAPIZ LAYCONSA TEKNIC-O 2B.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Layconsa Teknic-O 2B</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiz mongol 482"><img src="img/LAPIZ MONGOL 482.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mongol 482</div><div class="precio">S/3.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiz stabilo 2b"><img src="img/LAPIZ STABILO 2B.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo 2B</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiz artesco 2b"><img src="img/LAPIZ ARTESCO 2B.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco 2B</div><div class="precio">S/2.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="lapiz faber castell 2b"><img src="img/LAPIZ FABER CASTELL 2B.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell 2B</div><div class="precio">S/3.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="portaminas class & work 2.0mm"><img src="img/PORTAMINAS CLASS & WORK 2.0MM.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Class & Work 2.0mm</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="portaminas faber castell poly tri"><img src="img/PORTAMINAS FABER CASTELL POLY TRI.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Poly Tri</div><div class="precio">S/18.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="portaminas pilot super grip"><img src="img/PORTAMINAS PILOT SUPER GRIP.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Pilot Super Grip</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="portaminas artesco trend juvenil"><img src="img/PORTAMINAS ARTESCO TREND JUVENIL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Trend Juvenil</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
-    <div class="product-card" data-nombre="portaminas bic 2mm"><img src="img/PORTAMINAS BIC 2MM.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">BIC 2mm</div><div class="precio">S/8.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon ove azul jumbo 123 para pizarra"><img src="img/PLUMON OVE AZUL JUMBO 123 PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Ove Azul Jumbo</div><div class="precio">S/6.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon ove negro jumbo 123 para pizarra"><img src="img/PLUMON OVE NEGRO JUMBO 123 PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Ove Negro Jumbo</div><div class="precio">S/6.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon ove rojo jumbo 123 para pizarra"><img src="img/PLUMON OVE ROJO JUMBO 123 PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Ove Rojo Jumbo</div><div class="precio">S/6.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon stabilo azul para pizarra"><img src="img/PLUMON STABILO AZUL PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Azul</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon stabilo negro para pizarra"><img src="img/PLUMON STABILO NEGRO PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Negro</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon stabilo rojo para pizarra"><img src="img/PLUMON STABILO ROJO PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Rojo</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="paquete de 3 plumones layconsa para pizarra"><img src="img/PAQUETE DE 3 PLUMONES LAYCONSA PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Layconsa (3 plumones)</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="paquete de 3 plumones stabilo para pizarra"><img src="img/PAQUETE DE 3 PLUMONES STABILO PARA PIZARRA.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo (3 plumones)</div><div class="precio">S/18.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista32"></div>
-  <div id="carritoTotal32">Total: S/ 0.00</div>
+  <div id="carritoLista42"></div>
+  <div id="carritoTotal42">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar32" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar42" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
-
-<!-- PÁGINA CUADERNOS -->
-<div id="paginaCuadernos" class="pagina">
+<!-- PÁGINA PLUMONES DELGADOS -->
+<div id="paginaPlumonesDelgados" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
-  <!-- Botón Volver al inicio -->
-  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📘 CUADERNOS</h2>
-  <!-- Mostrar subsecciones -->
-  <div class="circulos-categorias">
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosCuadriculados')"><div class="label">Anillados Cuadriculados</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosRayados')"><div class="label">Anillados Rayados</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosCuadriculados')"><div class="label">Cocidos Cuadriculados</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosDobleLinea')"><div class="label">Cocidos Doble Línea</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosRayados')"><div class="label">Cocidos Rayados</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosMusica')"><div class="label">Cuadernos de Música</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosCuadriculados')"><div class="label">Engrapados Cuadriculados</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosDobleLinea')"><div class="label">Engrapados Doble Línea</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosRayados')"><div class="label">Engrapados Rayados</div></div></div>
-    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosTripleReglon')"><div class="label">Engrapados Triple Reglón</div></div></div>
+  <button class="btn-volver" onclick="irAPagina('subColoresPlumones')">⬅️ Volver a subsecciones</button>
+  <h2>✏️ Plumones Delgados</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="plumones delgado arti caja de 12"><img src="img/PLUMONES DELGADO ARTI CAJA DE 12.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Arti Caja de 12</div><div class="precio">S/20.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumones delgados faber castell 12 grip clour marker"><img src="img/PLUMONES DELGADOS FABER CASTELL 12 GRIP CLOUR MARKER.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Grip 12</div><div class="precio">S/25.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumones kp doble punta 24 unidades"><img src="img/PLUMONES KP DOBLE PUNTA 24 UNIDADES.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">KP Doble Punta (24)</div><div class="precio">S/35.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumones delgados vinifan"><img src="img/PLUMONES DELGADOS VINIFAN.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Vinifan Delgados</div><div class="precio">S/18.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumones artesco duo color 24 colores"><img src="img/PLUMONES ARTESCO DUO COLOR 24 COLORES.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Duo Color (24)</div><div class="precio">S/30.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista10"></div>
-  <div id="carritoTotal10">Total: S/ 0.00</div>
+  <div id="carritoLista43"></div>
+  <div id="carritoTotal43">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar10" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar43" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
-
+<!-- PÁGINA PLUMONES GRUESOS -->
+<div id="paginaPlumonesGruesos" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="irAPagina('subColoresPlumones')">⬅️ Volver a subsecciones</button>
+  <h2>✏️ Plumones Gruesos</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="plumon grueso faber castell azul jumbo 47"><img src="img/PLUMON GRUESO FABER CASTELL AZUL JUMBO 47.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Azul Jumbo</div><div class="precio">S/8.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon grueso faber castell rojo jumbo 47"><img src="img/PLUMON GRUESO FABER CASTELL ROJO JUMBO 47.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Rojo Jumbo</div><div class="precio">S/8.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon grueso negro artesco aquamax 47"><img src="img/PLUMON GRUESO NEGRO ARTESCO AQUAMAX 47.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Negro Aquamax</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon grueso negro faber castell jumbo 47"><img src="img/PLUMON GRUESO NEGRO FABER CASTELL JUMBO 47.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell Negro Jumbo</div><div class="precio">S/8.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon grueso artesco rojo aquamax 47"><img src="img/PLUMON GRUESO ARTESCO ROJO AQUAMAX 47.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Rojo Aquamax</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="plumon grueso azul artesco aquamax 47"><img src="img/PLUMON GRUESO AZUL ARTESCO AQUAMAX 47.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Azul Aquamax</div><div class="precio">S/7.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista44"></div>
+  <div id="carritoTotal44">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar44" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+<!-- PÁGINA RESALTADORES -->
+<div id="paginaResaltadores" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="irAPagina('subColoresPlumones')">⬅️ Volver a subsecciones</button>
+  <h2>🖍️ Resaltadores</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="paquete de 5 resaltadores mini artesco"><img src="img/PAQUETE DE 5 RESALTADORES MINI ARTESCO.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖍️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Artesco Mini (5)</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="resaltadores de texto vinifan"><img src="img/RESALTADORES DE TEXTO VINIFAN.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖍️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Vinifan Resaltadores</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="caja de 5 resaltadores faber castell"><img src="img/CAJA DE 5 RESALTADORES FABER CASTELL.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖍️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Faber Castell (5)</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="paquete de 4 resaltadores stabilo boss"><img src="img/PAQUETE DE 4 RESALTADORES STABILO BOSS.jpeg" onerror="this.src='image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🖍️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Stabilo Boss (4)</div><div class="precio">S/20.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista45"></div>
+  <div id="carritoTotal45">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar45" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
 <!-- PÁGINA ESCRITURA -->
 <div id="paginaEscritura" class="pagina">
 <div class="contenido-principal">
@@ -987,7 +888,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA COLORES Y PLUMONES -->
 <div id="paginaColoresPlumones" class="pagina">
 <div class="contenido-principal">
@@ -1016,7 +916,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA ESPECIALES DE LA CARTUCHERA -->
 <div id="paginaEspecialesCartuchera" class="pagina">
 <div class="contenido-principal">
@@ -1043,7 +942,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA MOCHILAS -->
 <div id="paginaMochilas" class="pagina">
 <div class="contenido-principal">
@@ -1067,7 +965,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA CARTUCHERAS -->
 <div id="paginaCartucheras" class="pagina">
 <div class="contenido-principal">
@@ -1091,7 +988,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA LONCHERAS -->
 <div id="paginaLoncheras" class="pagina">
 <div class="contenido-principal">
@@ -1115,7 +1011,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA PAPELERIA -->
 <div id="paginaPapeleria" class="pagina">
 <div class="contenido-principal">
@@ -1141,7 +1036,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA ENGRAPADO Y CORTE -->
 <div id="paginaEngrapadoCorte" class="pagina">
 <div class="contenido-principal">
@@ -1167,7 +1061,6 @@ h2{
 </div>
 </div>
 </div>
-
 <!-- PÁGINA CALCULADORAS -->
 <div id="paginaCalculadoras" class="pagina">
 <div class="contenido-principal">
@@ -1191,7 +1084,6 @@ h2{
 </div>
 </div>
 </div>
-
 <div class="payment-overlay" id="paymentOverlay">
   <div class="payment-box">
     <h4>💳 Simulación de pago</h4>
@@ -1236,6 +1128,13 @@ function irAPagina(categoria){
     'lapiceros': 'paginaLapiceros',
     'lapicerosPaquetes': 'paginaLapicerosPaquetes',
     'lapicesPortaminas': 'paginaLapicesPortaminas',
+    // Subsecciones de colores y plumones
+    'cajasColores': 'paginaCajasColores',
+    'marcadoresPermanentes': 'paginaMarcadoresPermanentes',
+    'plumonesPizarra': 'paginaPlumonesPizarra',
+    'plumonesDelgados': 'paginaPlumonesDelgados',
+    'plumonesGruesos': 'paginaPlumonesGruesos',
+    'resaltadores': 'paginaResaltadores',
     // Subsecciones intermedias
     'subCuadernos': 'paginaSubCuadernos',
     'subEscritura': 'paginaSubEscritura',
@@ -1310,6 +1209,7 @@ function actualizarCarrito(){
     'carritoLista17', 'carritoLista18', 'carritoLista20', 'carritoLista21', 'carritoLista22',
     'carritoLista23', 'carritoLista24', 'carritoLista25', 'carritoLista26', 'carritoLista27', 'carritoLista28',
     'carritoLista30', 'carritoLista31', 'carritoLista32',
+    'carritoLista40', 'carritoLista41', 'carritoLista42', 'carritoLista43', 'carritoLista44', 'carritoLista45',
     'carritoListaSubCuadernos', 'carritoListaSubEscritura', 'carritoListaSubColoresPlumones',
     'carritoListaSubEspecialesCartuchera', 'carritoListaSubPapeleria', 'carritoListaSubEngrapadoCorte'
   ];
@@ -1321,6 +1221,7 @@ function actualizarCarrito(){
     'carritoTotal17', 'carritoTotal18', 'carritoTotal20', 'carritoTotal21', 'carritoTotal22',
     'carritoTotal23', 'carritoTotal24', 'carritoTotal25', 'carritoTotal26', 'carritoTotal27', 'carritoTotal28',
     'carritoTotal30', 'carritoTotal31', 'carritoTotal32',
+    'carritoTotal40', 'carritoTotal41', 'carritoTotal42', 'carritoTotal43', 'carritoTotal44', 'carritoTotal45',
     'carritoTotalSubCuadernos', 'carritoTotalSubEscritura', 'carritoTotalSubColoresPlumones',
     'carritoTotalSubEspecialesCartuchera', 'carritoTotalSubPapeleria', 'carritoTotalSubEngrapadoCorte'
   ];
