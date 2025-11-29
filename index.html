@@ -656,7 +656,7 @@ h2{
 
 <header>
   <div class="header-left">
-    <img class="logo" src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/logo.png" alt="Utilex logo" onerror="this.style.display='none'"/>
+    <img class="logo" src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/logo.png  " alt="Utilex logo" onerror="this.style.display='none'"/>
     <div class="header-text">
       <div class="brand">Utilex</div>
       <div class="slogan">Todo para tu lista escolar</div>
@@ -669,7 +669,7 @@ h2{
 </header>
 
 <section class="main-banner">
-  <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/banner.png" alt="Banner Utilex"
+  <img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/banner.png  " alt="Banner Utilex"
   onerror="this.outerHTML='<div style=\'background:linear-gradient(135deg, #28a745, #007bff);text-align:center;padding:80px 20px;color:white;font-size:28px;font-weight:bold\'>🎒 UTILEX - Todo para tu lista escolar 📚</div>'"/>
 </section>
 
@@ -751,12 +751,7 @@ h2{
     <div class="label">Engrapado y Corte</div>
   </div>
 
-  <div class="categoria">
-    <div class="circulo" onclick="irAPagina('organizacionEscritorio')">
-      <img src="img/Fondo para circulo Escenciales de la cartuchera.png" alt="Organización de Escritorio"/>
-    </div>
-    <div class="label">Organización de Escritorio</div>
-  </div>
+  <!-- Sección "Organización de Escritorio" ELIMINADA -->
 
   <div class="categoria">
     <div class="circulo" onclick="irAPagina('calculadoras')">
@@ -783,25 +778,228 @@ h2{
 </div>
 </div>
 
-<!-- PÁGINA CUADERNOS -->
-<div id="paginaCuadernos" class="pagina">
+<!-- SUBSECCIONES DE CUADERNOS -->
+<div id="paginaSubCuadernos" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+        <h2>📘 SUBTIPOS DE CUADERNOS</h2>
+        <div class="circulos-categorias">
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosCuadriculados')"><div class="label">Anillados Cuadriculados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosRayados')"><div class="label">Anillados Rayados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosCuadriculados')"><div class="label">Cocidos Cuadriculados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosDobleLinea')"><div class="label">Cocidos Doble Línea</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosRayados')"><div class="label">Cocidos Rayados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosMusica')"><div class="label">Cuadernos de Música</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosCuadriculados')"><div class="label">Engrapados Cuadriculados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosDobleLinea')"><div class="label">Engrapados Doble Línea</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosRayados')"><div class="label">Engrapados Rayados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosTripleReglon')"><div class="label">Engrapados Triple Reglón</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoListaSubCuadernos"></div>
+        <div id="carritoTotalSubCuadernos">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagarSubCuadernos" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- SUBSECCIONES DE ESCRITURA -->
+<div id="paginaSubEscritura" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+        <h2>✏️ SUBTIPOS DE ESCRITURA</h2>
+        <div class="circulos-categorias">
+          <div class="categoria"><div class="circulo" onclick="irAPagina('lapiceros')"><div class="label">Lapiceros</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('lapicerosPaquetes')"><div class="label">Lapiceros en Paquetes</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('lapicesPortaminas')"><div class="label">Lápices y Portaminas</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoListaSubEscritura"></div>
+        <div id="carritoTotalSubEscritura">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagarSubEscritura" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- SUBSECCIONES DE COLORES Y PLUMONES -->
+<div id="paginaSubColoresPlumones" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+        <h2>🎨 SUBTIPOS DE COLORES Y PLUMONES</h2>
+        <div class="circulos-categorias">
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cajasColores')"><div class="label">Cajas de Colores</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('marcadoresPermanentes')"><div class="label">Marcadores Permanentes</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('plumonesPizarra')"><div class="label">Plumones de Pizarra</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('plumonesDelgados')"><div class="label">Plumones Delgados</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('plumonesGruesos')"><div class="label">Plumones Gruesos</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('resaltadores')"><div class="label">Resaltadores</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoListaSubColoresPlumones"></div>
+        <div id="carritoTotalSubColoresPlumones">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagarSubColoresPlumones" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- SUBSECCIONES DE ESENCIALES DE LA CARTUCHERA -->
+<div id="paginaSubEspecialesCartuchera" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+        <h2>🧷 SUBTIPOS DE ESENCIALES</h2>
+        <div class="circulos-categorias">
+          <div class="categoria"><div class="circulo" onclick="irAPagina('borradores')"><div class="label">Borradores</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('reglas')"><div class="label">Reglas</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('tajadores')"><div class="label">Tajadores</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('tijeras')"><div class="label">Tijeras</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoListaSubEspecialesCartuchera"></div>
+        <div id="carritoTotalSubEspecialesCartuchera">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagarSubEspecialesCartuchera" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- SUBSECCIONES DE PAPELERIA -->
+<div id="paginaSubPapeleria" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+        <h2>📄 SUBTIPOS DE PAPELERÍA</h2>
+        <div class="circulos-categorias">
+          <div class="categoria"><div class="circulo" onclick="irAPagina('blocksHojas')"><div class="label">Blocks de Hojas</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('blocksHojasColores')"><div class="label">Blocks de Hojas de Colores</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('papelografos')"><div class="label">Papelógrafos</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoListaSubPapeleria"></div>
+        <div id="carritoTotalSubPapeleria">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagarSubPapeleria" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- SUBSECCIONES DE ENGRAPADO Y CORTE -->
+<div id="paginaSubEngrapadoCorte" class="pagina">
+  <div class="contenido-principal">
+    <div class="productos-lado">
+      <div class="section-container">
+        <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+        <h2>✂️ SUBTIPOS DE ENGRAPADO Y CORTE</h2>
+        <div class="circulos-categorias">
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cajasGrapas')"><div class="label">Cajas de Grapas</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('cutters')"><div class="label">Cutters</div></div></div>
+          <div class="categoria"><div class="circulo" onclick="irAPagina('engrapadores')"><div class="label">Engrapadores</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-lado">
+      <section class="carrito-section">
+        <h3>🛒 Carrito de compras</h3>
+        <div id="carritoListaSubEngrapadoCorte"></div>
+        <div id="carritoTotalSubEngrapadoCorte">Total: S/ 0.00</div>
+        <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button id="btnPagarSubEngrapadoCorte" onclick="abrirPago()" class="btn-add">Pagar</button>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINAS FINALES DE PRODUCTOS (EJEMPLO: CUADERNOS ANILLADOS CUADRICULADOS) -->
+<!-- Aquí solo dejamos uno como ejemplo. En tu caso real, deberías replicar similar a este para cada subsección -->
+<div id="paginaCuadernosAnilladosCuadriculados" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
-  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📘 CUADERNOS</h2>
+  <button class="btn-volver" onclick="irAPagina('subCuadernos')">⬅️ Volver a subsecciones</button>
+  <h2>📘 Cuadernos Anillados Cuadriculados</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="cuaderno a4"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
+    <div class="product-card" data-nombre="cuaderno anillado cuadriculado"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Cuaderno%20cuadriculado%20anillado.png  " onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E📘%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cuaderno A4 Anillado</div><div class="precio">S/12.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Añadir</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista2"></div>
-  <div id="carritoTotal2">Total: S/ 0.00</div>
+  <div id="carritoLista9"></div>
+  <div id="carritoTotal9">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar2" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar9" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA CUADERNOS -->
+<div id="paginaCuadernos" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <!-- Botón Volver al inicio -->
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>📘 CUADERNOS</h2>
+  <!-- Mostrar subsecciones -->
+  <div class="circulos-categorias">
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosCuadriculados')"><div class="label">Anillados Cuadriculados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosAnilladosRayados')"><div class="label">Anillados Rayados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosCuadriculados')"><div class="label">Cocidos Cuadriculados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosDobleLinea')"><div class="label">Cocidos Doble Línea</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosCocidosRayados')"><div class="label">Cocidos Rayados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosMusica')"><div class="label">Cuadernos de Música</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosCuadriculados')"><div class="label">Engrapados Cuadriculados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosDobleLinea')"><div class="label">Engrapados Doble Línea</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosRayados')"><div class="label">Engrapados Rayados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cuadernosEngrapadosTripleReglon')"><div class="label">Engrapados Triple Reglón</div></div></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista10"></div>
+  <div id="carritoTotal10">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar10" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
@@ -814,18 +1012,76 @@ h2{
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
   <h2>✏️ LÁPICES Y LAPICEROS</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="lapicero azul"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/lapicero%20azul.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23007bff\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lapicero azul</div><div class="precio">S/2.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  <div class="circulos-categorias">
+    <div class="categoria"><div class="circulo" onclick="irAPagina('lapiceros')"><div class="label">Lapiceros</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('lapicerosPaquetes')"><div class="label">Lapiceros en Paquetes</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('lapicesPortaminas')"><div class="label">Lápices y Portaminas</div></div></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista3"></div>
-  <div id="carritoTotal3">Total: S/ 0.00</div>
+  <div id="carritoLista11"></div>
+  <div id="carritoTotal11">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar3" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar11" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA COLORES Y PLUMONES -->
+<div id="paginaColoresPlumones" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>🎨 COLORES Y PLUMONES</h2>
+  <div class="circulos-categorias">
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cajasColores')"><div class="label">Cajas de Colores</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('marcadoresPermanentes')"><div class="label">Marcadores Permanentes</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('plumonesPizarra')"><div class="label">Plumones de Pizarra</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('plumonesDelgados')"><div class="label">Plumones Delgados</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('plumonesGruesos')"><div class="label">Plumones Gruesos</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('resaltadores')"><div class="label">Resaltadores</div></div></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista12"></div>
+  <div id="carritoTotal12">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar12" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA ESPECIALES DE LA CARTUCHERA -->
+<div id="paginaEspecialesCartuchera" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>🧷 ESCENCIALES DE LA CARTUCHERA</h2>
+  <div class="circulos-categorias">
+    <div class="categoria"><div class="circulo" onclick="irAPagina('borradores')"><div class="label">Borradores</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('reglas')"><div class="label">Reglas</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('tajadores')"><div class="label">Tajadores</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('tijeras')"><div class="label">Tijeras</div></div></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista13"></div>
+  <div id="carritoTotal13">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar13" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
@@ -839,7 +1095,7 @@ h2{
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
   <h2>🎒 MOCHILAS</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="mochila escolar"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Mochila%20Dragon.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎒%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="mochila escolar"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/Mochila%20Dragon.png  " onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎒%3C/text%3E%3C/svg%3E'"/><div class="nombre">Mochila escolar</div><div class="precio">S/75.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
   </div>
 </div>
 </div>
@@ -855,104 +1111,125 @@ h2{
 </div>
 </div>
 
-<!-- PÁGINA COLORES Y PLUMONES -->
-<div id="paginaColoresPlumones" class="pagina">
+<!-- PÁGINA CARTUCHERAS -->
+<div id="paginaCartucheras" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>🎨 COLORES Y PLUMONES</h2>
+  <h2>✏️ CARTUCHERAS</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="caja colores"><img src="https://github.com/valeriaapazz/utilex-e-commerce/raw/main/img/caja%20de%20colores.png" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff6b6b\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🎨%3C/text%3E%3C/svg%3E'"/><div class="nombre">Caja colores</div><div class="precio">S/18.90</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="plumones"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff9800' width='%2290'%20height='90'/%3E%3Ctext x='%2250%25'%20y='%2250%25'%20dominant-baseline='middle'%20text-anchor='middle'%20font-size='30'%20fill='white'%3E🖍️%3C/text%3E%3C/svg%3E"/><div class="nombre">Set de Plumones</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="cartuchera"><img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%2328a745\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E✏️%3C/text%3E%3C/svg%3E'"/><div class="nombre">Cartuchera escolar</div><div class="precio">S/25.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista5"></div>
-  <div id="carritoTotal5">Total: S/ 0.00</div>
+  <div id="carritoLista14"></div>
+  <div id="carritoTotal14">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar5" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar14" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
 
-<!-- PÁGINA MANUALIDADES -->
-<div id="paginaManualidades" class="pagina">
+<!-- PÁGINA LONCHERAS -->
+<div id="paginaLoncheras" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>✂️ MATERIALES DE MANUALIDADES</h2>
+  <h2>🍱 LONCHERAS</h2>
   <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="tijeras"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%239c27b0' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E✂️%3C/text%3E%3C/svg%3E"/><div class="nombre">Tijeras escolares</div><div class="precio">S/8.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="goma"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23795548' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🧴%3C/text%3E%3C/svg%3E"/><div class="nombre">Goma líquida</div><div class="precio">S/5.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="cartulinas"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23e91e63' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📄%3C/text%3E%3C/svg%3E"/><div class="nombre">Pack Cartulinas</div><div class="precio">S/12.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+    <div class="product-card" data-nombre="lonchera"><img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23ff9800\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🍱%3C/text%3E%3C/svg%3E'"/><div class="nombre">Lonchera escolar</div><div class="precio">S/30.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista6"></div>
-  <div id="carritoTotal6">Total: S/ 0.00</div>
+  <div id="carritoLista15"></div>
+  <div id="carritoTotal15">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar6" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar15" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
 
-<!-- PÁGINA MEDICIÓN -->
-<div id="paginaMedicion" class="pagina">
+<!-- PÁGINA PAPELERIA -->
+<div id="paginaPapeleria" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📏 INSTRUMENTOS DE MEDICIÓN</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="regla"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23607d8b' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📏%3C/text%3E%3C/svg%3E"/><div class="nombre">Regla 30cm</div><div class="precio">S/3.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="transportador"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23009688' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📐%3C/text%3E%3C/svg%3E"/><div class="nombre">Transportador</div><div class="precio">S/4.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="compas"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%233f51b5' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📐%3C/text%3E%3C/svg%3E"/><div class="nombre">Compás escolar</div><div class="precio">S/10.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  <h2>📄 PAPELERÍA</h2>
+  <div class="circulos-categorias">
+    <div class="categoria"><div class="circulo" onclick="irAPagina('blocksHojas')"><div class="label">Blocks de Hojas</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('blocksHojasColores')"><div class="label">Blocks de Hojas de Colores</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('papelografos')"><div class="label">Papelógrafos</div></div></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista7"></div>
-  <div id="carritoTotal7">Total: S/ 0.00</div>
+  <div id="carritoLista16"></div>
+  <div id="carritoTotal16">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar7" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar16" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
 </div>
 
-<!-- PÁGINA ORGANIZACIÓN -->
-<div id="paginaOrganizacion" class="pagina">
+<!-- PÁGINA ENGRAPADO Y CORTE -->
+<div id="paginaEngrapadoCorte" class="pagina">
 <div class="contenido-principal">
 <div class="productos-lado">
 <div class="section-container">
   <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
-  <h2>📂 ORGANIZACIÓN ESCOLAR</h2>
-  <div class="productos" style="display:grid">
-    <div class="product-card" data-nombre="archivador"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23ff5722' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📂%3C/text%3E%3C/svg%3E"/><div class="nombre">Archivador A4</div><div class="precio">S/15.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="separadores"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%23cddc39' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E🗂️%3C/text%3E%3C/svg%3E"/><div class="nombre">Separadores</div><div class="precio">S/6.50</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
-    <div class="product-card" data-nombre="agenda"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Crect fill='%234caf50' width='90' height='90'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='30' fill='white'%3E📅%3C/text%3E%3C/svg%3E"/><div class="nombre">Agenda escolar</div><div class="precio">S/25.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  <h2>✂️ ENGRAPADO Y CORTE</h2>
+  <div class="circulos-categorias">
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cajasGrapas')"><div class="label">Cajas de Grapas</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('cutters')"><div class="label">Cutters</div></div></div>
+    <div class="categoria"><div class="circulo" onclick="irAPagina('engrapadores')"><div class="label">Engrapadores</div></div></div>
   </div>
 </div>
 </div>
 <div class="carrito-lado">
 <section class="carrito-section">
   <h3>🛒 Carrito de compras</h3>
-  <div id="carritoLista8"></div>
-  <div id="carritoTotal8">Total: S/ 0.00</div>
+  <div id="carritoLista17"></div>
+  <div id="carritoTotal17">Total: S/ 0.00</div>
   <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button id="btnPagar8" onclick="abrirPago()" class="btn-add">Pagar</button>
+  <button id="btnPagar17" onclick="abrirPago()" class="btn-add">Pagar</button>
+</section>
+</div>
+</div>
+</div>
+
+<!-- PÁGINA CALCULADORAS -->
+<div id="paginaCalculadoras" class="pagina">
+<div class="contenido-principal">
+<div class="productos-lado">
+<div class="section-container">
+  <button class="btn-volver" onclick="volverInicio()">⬅️ Volver al inicio</button>
+  <h2>🧮 CALCULADORAS</h2>
+  <div class="productos" style="display:grid">
+    <div class="product-card" data-nombre="calculadora"><img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'90\' height=\'90\'%3E%3Crect fill=\'%23007bff\' width=\'90\' height=\'90\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'30\' fill=\'white\'%3E🧮%3C/text%3E%3C/svg%3E'"/><div class="nombre">Calculadora científica</div><div class="precio">S/45.00</div><div class="cantidad-box"><input value="1" data-max="12"/></div><button class="btn-add" onclick="addCarrito(this)">Agregar</button></div>
+  </div>
+</div>
+</div>
+<div class="carrito-lado">
+<section class="carrito-section">
+  <h3>🛒 Carrito de compras</h3>
+  <div id="carritoLista18"></div>
+  <div id="carritoTotal18">Total: S/ 0.00</div>
+  <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button id="btnPagar18" onclick="abrirPago()" class="btn-add">Pagar</button>
 </section>
 </div>
 </div>
@@ -989,8 +1266,16 @@ function irAPagina(categoria){
     'loncheras': 'paginaLoncheras',
     'papeleria': 'paginaPapeleria',
     'engrapadoCorte': 'paginaEngrapadoCorte',
-    'organizacionEscritorio': 'paginaOrganizacionEscritorio',
-    'calculadoras': 'paginaCalculadoras'
+    'calculadoras': 'paginaCalculadoras',
+    // Subsecciones de cuadernos
+    'cuadernosAnilladosCuadriculados': 'paginaCuadernosAnilladosCuadriculados',
+    // Subsecciones intermedias
+    'subCuadernos': 'paginaSubCuadernos',
+    'subEscritura': 'paginaSubEscritura',
+    'subColoresPlumones': 'paginaSubColoresPlumones',
+    'subEspecialesCartuchera': 'paginaSubEspecialesCartuchera',
+    'subPapeleria': 'paginaSubPapeleria',
+    'subEngrapadoCorte': 'paginaSubEngrapadoCorte'
   };
   
   const paginaId = mapaPaginas[categoria];
@@ -1064,9 +1349,28 @@ function eliminarProducto(nombre){
 
 function actualizarCarrito(){
   // Actualizar todos los carritos en todas las páginas
-  for(let i = 1; i <= 8; i++){
-    const caja = document.getElementById(i === 1 ? 'carritoLista' : `carritoLista${i}`);
-    const totalCaja = document.getElementById(i === 1 ? 'carritoTotal' : `carritoTotal${i}`);
+  const idsCarrito = [
+    'carritoLista', 'carritoLista2', 'carritoLista3', 'carritoLista4',
+    'carritoLista5', 'carritoLista6', 'carritoLista7', 'carritoLista8',
+    'carritoLista9', 'carritoLista10', 'carritoLista11', 'carritoLista12',
+    'carritoLista13', 'carritoLista14', 'carritoLista15', 'carritoLista16',
+    'carritoLista17', 'carritoLista18',
+    'carritoListaSubCuadernos', 'carritoListaSubEscritura', 'carritoListaSubColoresPlumones',
+    'carritoListaSubEspecialesCartuchera', 'carritoListaSubPapeleria', 'carritoListaSubEngrapadoCorte'
+  ];
+  const idsTotal = [
+    'carritoTotal', 'carritoTotal2', 'carritoTotal3', 'carritoTotal4',
+    'carritoTotal5', 'carritoTotal6', 'carritoTotal7', 'carritoTotal8',
+    'carritoTotal9', 'carritoTotal10', 'carritoTotal11', 'carritoTotal12',
+    'carritoTotal13', 'carritoTotal14', 'carritoTotal15', 'carritoTotal16',
+    'carritoTotal17', 'carritoTotal18',
+    'carritoTotalSubCuadernos', 'carritoTotalSubEscritura', 'carritoTotalSubColoresPlumones',
+    'carritoTotalSubEspecialesCartuchera', 'carritoTotalSubPapeleria', 'carritoTotalSubEngrapadoCorte'
+  ];
+  
+  for(let i = 0; i < idsCarrito.length; i++){
+    const caja = document.getElementById(idsCarrito[i]);
+    const totalCaja = document.getElementById(idsTotal[i]);
     
     if(!caja || !totalCaja) continue;
     
@@ -1134,6 +1438,5 @@ function cerrarPago(){
   document.getElementById('paymentOverlay').style.display='none';
 }
 </script>
-
 </body>
 </html>
